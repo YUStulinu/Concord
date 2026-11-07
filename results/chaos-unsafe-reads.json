@@ -5,8 +5,8 @@
    "linearizable": 0,
    "not_linearizable": 20,
    "gave_up": 2,
-   "ops": 69090,
-   "unknown": 5325
+   "ops": 68645,
+   "unknown": 5613
   },
   "by_schedule": {
    "none": {
@@ -14,7 +14,7 @@
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 7757,
+    "ops": 7732,
     "unknown": 0
    },
    "partition": {
@@ -22,15 +22,15 @@
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 6487,
-    "unknown": 27
+    "ops": 7125,
+    "unknown": 11
    },
    "isolate-leader": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 5668,
+    "ops": 5707,
     "unknown": 72
    },
    "bridge": {
@@ -38,47 +38,47 @@
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 6689,
-    "unknown": 661
+    "ops": 6499,
+    "unknown": 876
    },
    "kill": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 1,
     "gave_up": 1,
-    "ops": 5831,
-    "unknown": 2389
+    "ops": 5322,
+    "unknown": 2413
    },
    "kill-leader": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 5566,
-    "unknown": 60
+    "ops": 5439,
+    "unknown": 74
    },
    "packet-loss": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 7265,
-    "unknown": 671
+    "ops": 7816,
+    "unknown": 401
    },
    "delay": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 1,
     "gave_up": 1,
-    "ops": 3459,
-    "unknown": 1372
+    "ops": 3293,
+    "unknown": 1660
    },
    "clock-skew": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 7898,
+    "ops": 7874,
     "unknown": 0
    },
    "membership": {
@@ -86,16 +86,16 @@
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 5661,
-    "unknown": 50
+    "ops": 5262,
+    "unknown": 70
    },
    "mixed": {
     "runs": 2,
     "linearizable": 0,
     "not_linearizable": 2,
     "gave_up": 0,
-    "ops": 6809,
-    "unknown": 23
+    "ops": 6576,
+    "unknown": 36
    }
   }
  },
@@ -104,97 +104,55 @@
    "schedule": "none",
    "seed": 0,
    "unsafe_reads": true,
-   "ops": 3904,
+   "ops": 3969,
    "by_op": {
-    "get": 1730,
-    "put": 1401,
-    "cas": 404,
-    "delete": 369
+    "get": 1755,
+    "put": 1428,
+    "cas": 412,
+    "delete": 374
    },
    "unknown": 0,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.008,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 703,
-    "steps": 1572,
+    "ops": 710,
+    "steps": 356,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 145,
+      "linearized": 52,
       "stuck_at": [
        {
-        "call": 7393667510600,
+        "call": 15305548365800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
         "process": 4,
         "result": {
-         "found": false,
-         "value": null
+         "found": true,
+         "value": "3-40"
         },
-        "ret": 7393670297300,
+        "ret": 15305550135900,
         "value": null
        },
        {
-        "call": 7393676924900,
-        "expect": "1-104",
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 8,
-        "result": {
-         "found": true,
-         "value": "4-107"
-        },
-        "ret": 7393696501400,
-        "value": "8-121"
-       },
-       {
-        "call": 7393686967100,
+        "call": 15305549570800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2,
+        "process": 8,
         "result": {
          "found": true,
-         "value": "4-107"
+         "value": "3-40"
         },
-        "ret": 7393689100400,
+        "ret": 15305552127000,
         "value": null
        },
        {
-        "call": 7393707998200,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 5,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7393752070000,
-        "value": "5-111"
-       },
-       {
-        "call": 7393709094000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "delete",
-        "process": 1,
-        "result": {
-         "found": true,
-         "value": null
-        },
-        "ret": 7393728278400,
-        "value": null
-       },
-       {
-        "call": 7393709455900,
+        "call": 15305554329200,
         "expect": null,
         "key": "k0",
         "ok": true,
@@ -204,41 +162,97 @@
          "found": false,
          "value": null
         },
-        "ret": 7393728667500,
-        "value": "3-118"
+        "ret": 15305569659500,
+        "value": "3-46"
+       },
+       {
+        "call": 15305565888000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 7,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15305589496200,
+        "value": null
+       },
+       {
+        "call": 15305577156500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 1,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15305615966800,
+        "value": "1-50"
+       },
+       {
+        "call": 15305608884900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 3,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15305610643300,
+        "value": null
        }
       ]
      }
     }
    },
    "faults": {},
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 1,
    "unsafe_reads": true,
-   "ops": 3115,
+   "ops": 3539,
    "by_op": {
-    "get": 1341,
-    "put": 1124,
-    "delete": 315,
-    "cas": 335
+    "get": 1505,
+    "put": 1277,
+    "delete": 367,
+    "cas": 390
    },
-   "unknown": 10,
+   "unknown": 2,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 516,
-    "steps": 46,
+    "ops": 590,
+    "steps": 43,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 7,
+      "linearized": 8,
       "stuck_at": [
        {
-        "call": 7404628646200,
+        "call": 15317508179100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 17,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15317510534300,
+        "value": null
+       },
+       {
+        "call": 15317527663200,
         "expect": null,
         "key": "k0",
         "ok": true,
@@ -248,25 +262,11 @@
          "found": false,
          "value": null
         },
-        "ret": 7404630249900,
+        "ret": 15317529075600,
         "value": null
        },
        {
-        "call": 7404642477300,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 17,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7404644386600,
-        "value": null
-       },
-       {
-        "call": 7404649184800,
+        "call": 15317532262500,
         "expect": null,
         "key": "k0",
         "ok": true,
@@ -276,39 +276,11 @@
          "found": false,
          "value": null
         },
-        "ret": 7404686143000,
+        "ret": 15317596527700,
         "value": "17-15"
        },
        {
-        "call": 7404656000900,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 20,
-        "result": {
-         "found": true,
-         "value": "16-5"
-        },
-        "ret": 7404657889500,
-        "value": null
-       },
-       {
-        "call": 7404662069800,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 18,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7404682478900,
-        "value": "18-8"
-       },
-       {
-        "call": 7404678523300,
+        "call": 15317535393100,
         "expect": null,
         "key": "k0",
         "ok": true,
@@ -318,7 +290,35 @@
          "found": false,
          "value": null
         },
-        "ret": 7404680974600,
+        "ret": 15317536914400,
+        "value": null
+       },
+       {
+        "call": 15317536933000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 19,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15317581008700,
+        "value": "19-12"
+       },
+       {
+        "call": 15317545409500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 20,
+        "result": {
+         "found": true,
+         "value": "16-5"
+        },
+        "ret": 15317546615000,
         "value": null
        }
       ]
@@ -328,114 +328,114 @@
    "faults": {
     "partition": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 2,
    "unsafe_reads": true,
-   "ops": 2957,
+   "ops": 2850,
    "by_op": {
-    "get": 1324,
-    "put": 1033,
-    "cas": 295,
-    "delete": 305
+    "get": 1233,
+    "put": 1032,
+    "cas": 287,
+    "delete": 298
    },
    "unknown": 32,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.009,
+   "check_seconds": 0.004,
    "violation": {
     "key": "k0",
-    "ops": 492,
-    "steps": 1701,
+    "ops": 485,
+    "steps": 884,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 30,
+      "linearized": 13,
       "stuck_at": [
        {
-        "call": 7418035281900,
+        "call": 15330660985700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 45,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7418037961900,
-        "value": null
-       },
-       {
-        "call": 7418045779100,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 44,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7418069245500,
-        "value": "44-27"
-       },
-       {
-        "call": 7418055770700,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 43,
+        "process": 41,
         "result": {
          "found": true,
-         "value": "46-27"
+         "value": "30-1"
         },
-        "ret": 7418060321200,
+        "ret": 15330662558200,
         "value": null
        },
        {
-        "call": 7418061866400,
+        "call": 15330666196900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 35,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15330688895600,
+        "value": null
+       },
+       {
+        "call": 15330673918600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "delete",
-        "process": 45,
+        "process": 36,
         "result": {
          "found": true,
          "value": null
         },
-        "ret": 7418079464800,
+        "ret": 15330738697900,
         "value": null
        },
        {
-        "call": 7418065992500,
+        "call": 15330679747200,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 48,
+        "process": 42,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7418107271300,
-        "value": "48-25"
+        "ret": 15330713332400,
+        "value": "42-15"
        },
        {
-        "call": 7418086374300,
+        "call": 15330692973800,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "put",
-        "process": 50,
+        "op": "get",
+        "process": 39,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7418167030400,
-        "value": "50-31"
+        "ret": 15330694729100,
+        "value": null
+       },
+       {
+        "call": 15330710397900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 37,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15330726985200,
+        "value": "37-18"
        }
       ]
      }
@@ -444,114 +444,114 @@
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.7
+   "seconds": 13.0
   },
   {
    "schedule": "bridge",
    "seed": 3,
    "unsafe_reads": true,
-   "ops": 3590,
+   "ops": 3513,
    "by_op": {
-    "get": 1609,
+    "get": 1555,
     "put": 1198,
-    "delete": 391,
-    "cas": 392
+    "delete": 374,
+    "cas": 386
    },
-   "unknown": 4,
+   "unknown": 2,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 598,
-    "steps": 1001,
+    "ops": 574,
+    "steps": 31,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 42,
+      "linearized": 4,
       "stuck_at": [
        {
-        "call": 7430464197900,
+        "call": 15343067323900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 80,
-        "result": {
-         "found": true,
-         "value": "81-31"
-        },
-        "ret": 7430467354600,
-        "value": null
-       },
-       {
-        "call": 7430471992000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 85,
-        "result": {
-         "found": true,
-         "value": "81-31"
-        },
-        "ret": 7430474048100,
-        "value": null
-       },
-       {
-        "call": 7430474069000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 85,
-        "result": {
-         "found": true,
-         "value": "81-31"
-        },
-        "ret": 7430476432500,
-        "value": null
-       },
-       {
-        "call": 7430489907700,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 86,
+        "process": 74,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7430491935600,
+        "ret": 15343068856800,
         "value": null
        },
        {
-        "call": 7430497404900,
+        "call": 15343070506500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 86,
+        "process": 74,
+        "result": {
+         "found": true,
+         "value": "77-2"
+        },
+        "ret": 15343071805000,
+        "value": null
+       },
+       {
+        "call": 15343075939300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 75,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7430499838400,
-        "value": null
+        "ret": 15343091571700,
+        "value": "75-4"
        },
        {
-        "call": 7430511434900,
+        "call": 15343091588000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 75,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15343109514300,
+        "value": "75-5"
+       },
+       {
+        "call": 15343113471900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 81,
+        "process": 73,
+        "result": {
+         "found": true,
+         "value": "75-5"
+        },
+        "ret": 15343127389900,
+        "value": null
+       },
+       {
+        "call": 15343267050000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 72,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7430534043200,
-        "value": null
+        "ret": 15343289487200,
+        "value": "72-8"
        }
       ]
      }
@@ -566,107 +566,107 @@
    "schedule": "kill",
    "seed": 4,
    "unsafe_reads": true,
-   "ops": 3402,
+   "ops": 2885,
    "by_op": {
-    "get": 1554,
-    "put": 1172,
-    "cas": 327,
-    "delete": 349
+    "get": 1326,
+    "put": 990,
+    "cas": 278,
+    "delete": 291
    },
-   "unknown": 11,
+   "unknown": 20,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.002,
    "violation": {
     "key": "k0",
-    "ops": 533,
-    "steps": 42,
+    "ops": 466,
+    "steps": 380,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 4,
+      "linearized": 44,
       "stuck_at": [
        {
-        "call": 7442711167000,
+        "call": 15356370163100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 99,
+        "process": 90,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7442713591500,
+        "ret": 15356389453000,
         "value": null
        },
        {
-        "call": 7442717981400,
+        "call": 15356389466900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 99,
+        "process": 90,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7442769065600,
-        "value": "99-7"
+        "ret": 15356464618900,
+        "value": "90-53"
        },
        {
-        "call": 7442734088900,
+        "call": 15356453834600,
         "expect": null,
         "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 97,
+        "ok": true,
+        "op": "get",
+        "process": 88,
         "result": {
          "found": true,
-         "value": "98-7"
+         "value": "88-47"
         },
-        "ret": 7442750510000,
-        "value": "97-5"
+        "ret": 15356467466500,
+        "value": null
        },
        {
-        "call": 7442745360100,
+        "call": 15356478510900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 98,
+        "process": 92,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7442781182200,
-        "value": "98-10"
+        "ret": 15356510338600,
+        "value": "92-55"
        },
        {
-        "call": 7442804489600,
+        "call": 15356550062000,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "get",
-        "process": 102,
+        "op": "delete",
+        "process": 88,
         "result": {
          "found": true,
-         "value": "98-10"
+         "value": null
         },
-        "ret": 7442806350600,
+        "ret": 15356569531700,
         "value": null
        },
        {
-        "call": 7442806367200,
+        "call": 15356557641800,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "get",
-        "process": 102,
+        "op": "delete",
+        "process": 86,
         "result": {
-         "found": true,
-         "value": "98-10"
+         "found": false,
+         "value": null
         },
-        "ret": 7442808685000,
+        "ret": 15356576966400,
         "value": null
        }
       ]
@@ -676,114 +676,114 @@
    "faults": {
     "kill": 5
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "kill-leader",
    "seed": 5,
    "unsafe_reads": true,
-   "ops": 2775,
+   "ops": 2884,
    "by_op": {
-    "get": 1280,
-    "cas": 282,
-    "put": 962,
-    "delete": 251
+    "get": 1346,
+    "cas": 277,
+    "put": 995,
+    "delete": 266
    },
-   "unknown": 32,
+   "unknown": 38,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 471,
-    "steps": 2038,
+    "ops": 475,
+    "steps": 2911,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 36,
+      "linearized": 14,
       "stuck_at": [
        {
-        "call": 7456507712800,
+        "call": 15369352742700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 130,
+        "process": 133,
         "result": {
-         "found": true,
-         "value": "118-3"
+         "found": false,
+         "value": null
         },
-        "ret": 7456510352200,
+        "ret": 15369356578100,
         "value": null
        },
        {
-        "call": 7456511833600,
+        "call": 15369359504700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 128,
+        "process": 137,
         "result": {
          "found": true,
-         "value": "130-9"
+         "value": "126-64"
         },
-        "ret": 7456514594700,
+        "ret": 15369362440000,
         "value": null
        },
        {
-        "call": 7456516618100,
+        "call": 15369392160500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 126,
+        "result": {
+         "found": true,
+         "value": "134-4"
+        },
+        "ret": 15369416069200,
+        "value": null
+       },
+       {
+        "call": 15369408968300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 133,
+        "result": {
+         "found": true,
+         "value": "134-4"
+        },
+        "ret": 15369410485500,
+        "value": null
+       },
+       {
+        "call": 15369439480900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 119,
+        "process": 136,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7456535975800,
-        "value": "119-60"
+        "ret": 15369528129900,
+        "value": "136-15"
        },
        {
-        "call": 7456584349300,
-        "expect": "128-37",
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 119,
-        "result": {
-         "found": true,
-         "value": "119-60"
-        },
-        "ret": 7456605523900,
-        "value": "119-63"
-       },
-       {
-        "call": 7456595855800,
+        "call": 15369454563100,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "delete",
-        "process": 129,
-        "result": {
-         "found": true,
-         "value": null
-        },
-        "ret": 7456613516900,
-        "value": null
-       },
-       {
-        "call": 7456601820700,
-        "expect": "128-48",
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 123,
+        "op": "put",
+        "process": 133,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7456621065500,
-        "value": "123-61"
+        "ret": 15369472379700,
+        "value": "133-13"
        }
       ]
      }
@@ -798,108 +798,108 @@
    "schedule": "packet-loss",
    "seed": 6,
    "unsafe_reads": true,
-   "ops": 3434,
+   "ops": 3904,
    "by_op": {
-    "get": 1201,
-    "put": 1443,
-    "delete": 387,
-    "cas": 403
+    "get": 1503,
+    "put": 1553,
+    "cas": 436,
+    "delete": 412
    },
-   "unknown": 671,
+   "unknown": 401,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 591,
-    "steps": 211,
+    "ops": 663,
+    "steps": 123,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 13,
+      "linearized": 10,
       "stuck_at": [
        {
-        "call": 7468680171000,
+        "call": 15381629272300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 162,
+        "process": 173,
         "result": {
          "found": true,
-         "value": "164-2"
+         "value": "168-2"
         },
-        "ret": 7468682692100,
+        "ret": 15381630613700,
         "value": null
        },
        {
-        "call": 7468680316400,
+        "call": 15381638993000,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "get",
-        "process": 168,
-        "result": {
-         "found": true,
-         "value": "164-2"
-        },
-        "ret": 7468682852100,
-        "value": null
-       },
-       {
-        "call": 7468684883000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
+        "op": "put",
         "process": 169,
         "result": {
-         "found": true,
-         "value": "164-5"
+         "found": false,
+         "value": null
         },
-        "ret": 7468686266000,
-        "value": null
+        "ret": 15381653713700,
+        "value": "169-5"
        },
        {
-        "call": 7468697426500,
+        "call": 15381644911600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 166,
+        "process": 171,
         "result": {
          "found": true,
-         "value": "164-5"
+         "value": "169-5"
         },
-        "ret": 7468698735600,
+        "ret": 15381665674300,
         "value": null
        },
        {
-        "call": 7468705801800,
+        "call": 15381646872300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 165,
+        "process": 174,
         "result": {
          "found": true,
-         "value": "166-4"
+         "value": "173-11"
         },
-        "ret": 7468707118900,
+        "ret": 15381648277900,
         "value": null
        },
        {
-        "call": 7468723503100,
-        "expect": "164-2",
+        "call": 15381653512500,
+        "expect": null,
         "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 162,
+        "ok": true,
+        "op": "get",
+        "process": 170,
         "result": {
          "found": true,
-         "value": "168-17"
+         "value": "169-5"
         },
-        "ret": 7468762960700,
-        "value": "162-12"
+        "ret": 15381681137200,
+        "value": null
+       },
+       {
+        "call": 15381672866700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 167,
+        "result": {
+         "found": true,
+         "value": "169-5"
+        },
+        "ret": 15381674698300,
+        "value": null
        }
       ]
      }
@@ -914,93 +914,108 @@
    "schedule": "delay",
    "seed": 7,
    "unsafe_reads": true,
-   "ops": 1924,
+   "ops": 1796,
    "by_op": {
-    "get": 266,
-    "put": 1036,
-    "cas": 314,
-    "delete": 308
+    "get": 71,
+    "delete": 328,
+    "put": 1076,
+    "cas": 321
    },
-   "unknown": 1372,
+   "unknown": 1660,
    "linearizable": false,
    "gave_up": true,
-   "check_seconds": 56.101,
+   "check_seconds": 43.756,
    "violation": {
     "key": "k0",
-    "ops": 329,
-    "steps": 239,
+    "ops": 314,
+    "steps": 35,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 8,
+      "linearized": 3,
       "stuck_at": [
        {
-        "call": 7481423557500,
+        "call": 15394394263500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 856,
+        "process": 586,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7481427815400,
+        "ret": 15394397233300,
         "value": null
        },
        {
-        "call": 7481436772900,
+        "call": 15394396318800,
         "expect": null,
         "key": "k0",
-        "ok": null,
-        "op": "put",
-        "process": 858,
-        "result": null,
-        "ret": null,
-        "value": "858-16"
+        "ok": true,
+        "op": "get",
+        "process": 580,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15394399445900,
+        "value": null
        },
        {
-        "call": 7481444557400,
+        "call": 15394399463600,
         "expect": null,
         "key": "k0",
-        "ok": null,
-        "op": "put",
-        "process": 860,
-        "result": null,
-        "ret": null,
-        "value": "860-18"
+        "ok": true,
+        "op": "get",
+        "process": 580,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15394402652700,
+        "value": null
        },
        {
-        "call": 7481524615200,
+        "call": 15394406165300,
         "expect": null,
         "key": "k0",
-        "ok": null,
-        "op": "put",
-        "process": 868,
-        "result": null,
-        "ret": null,
-        "value": "868-7"
+        "ok": false,
+        "op": "cas",
+        "process": 584,
+        "result": {
+         "found": true,
+         "value": "582-2"
+        },
+        "ret": 15394541346100,
+        "value": "584-3"
        },
        {
-        "call": 7481537670600,
+        "call": 15394413944700,
         "expect": null,
         "key": "k0",
-        "ok": null,
-        "op": "put",
-        "process": 872,
-        "result": null,
-        "ret": null,
-        "value": "872-8"
+        "ok": true,
+        "op": "get",
+        "process": 583,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15394416032800,
+        "value": null
        },
        {
-        "call": 7481543892400,
+        "call": 15394519566900,
         "expect": null,
         "key": "k0",
-        "ok": null,
-        "op": "put",
-        "process": 873,
-        "result": null,
-        "ret": null,
-        "value": "873-6"
+        "ok": true,
+        "op": "get",
+        "process": 587,
+        "result": {
+         "found": true,
+         "value": "581-1"
+        },
+        "ret": 15394525201500,
+        "value": null
        }
       ]
      }
@@ -1009,18 +1024,18 @@
    "faults": {
     "delay": 4
    },
-   "seconds": 69.0
+   "seconds": 56.4
   },
   {
    "schedule": "clock-skew",
    "seed": 8,
    "unsafe_reads": true,
-   "ops": 3966,
+   "ops": 3942,
    "by_op": {
-    "get": 1788,
-    "put": 1414,
-    "cas": 343,
-    "delete": 421
+    "get": 1776,
+    "delete": 415,
+    "put": 1411,
+    "cas": 340
    },
    "unknown": 0,
    "linearizable": false,
@@ -1028,95 +1043,95 @@
    "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 670,
-    "steps": 804,
+    "ops": 666,
+    "steps": 73,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 44,
+      "linearized": 13,
       "stuck_at": [
        {
-        "call": 7550703463500,
+        "call": 15450827174000,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2229,
+        "process": 2252,
         "result": {
-         "found": true,
-         "value": "2236-27"
+         "found": false,
+         "value": null
         },
-        "ret": 7550705276900,
+        "ret": 15450828575400,
         "value": null
        },
        {
-        "call": 7550719276300,
+        "call": 15450828588700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2230,
+        "process": 2252,
         "result": {
          "found": true,
-         "value": "2229-41"
+         "value": "2256-10"
         },
-        "ret": 7550721152100,
+        "ret": 15450829920700,
         "value": null
        },
        {
-        "call": 7550744881100,
+        "call": 15450846642500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2255,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15450867793100,
+        "value": null
+       },
+       {
+        "call": 15450867811100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2233,
+        "process": 2255,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7550786789600,
-        "value": "2233-36"
+        "ret": 15450886973500,
+        "value": "2255-15"
        },
        {
-        "call": 7550760057200,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 2232,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7550807264200,
-        "value": "2232-33"
-       },
-       {
-        "call": 7550767287100,
+        "call": 15450872083100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2229,
+        "process": 2257,
         "result": {
          "found": true,
-         "value": "2231-29"
+         "value": "2255-15"
         },
-        "ret": 7550769468400,
+        "ret": 15450896669100,
         "value": null
        },
        {
-        "call": 7550769487900,
+        "call": 15450886823900,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "put",
-        "process": 2229,
+        "op": "get",
+        "process": 2259,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7550791018200,
-        "value": "2229-47"
+        "ret": 15450889927900,
+        "value": null
        }
       ]
      }
@@ -1125,114 +1140,114 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 9,
    "unsafe_reads": true,
-   "ops": 2532,
+   "ops": 2504,
    "by_op": {
-    "get": 1142,
-    "put": 883,
-    "delete": 258,
-    "cas": 249
+    "get": 1138,
+    "put": 865,
+    "delete": 254,
+    "cas": 247
    },
-   "unknown": 48,
+   "unknown": 50,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": {
     "key": "k0",
-    "ops": 413,
-    "steps": 32,
+    "ops": 405,
+    "steps": 307,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 5,
+      "linearized": 28,
       "stuck_at": [
        {
-        "call": 7562926481300,
+        "call": 15463767819100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2245,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7562928137000,
-        "value": null
-       },
-       {
-        "call": 7562930943400,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 2245,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7562950445100,
-        "value": "2245-6"
-       },
-       {
-        "call": 7562946641400,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2248,
+        "process": 2266,
         "result": {
          "found": true,
-         "value": "2245-6"
+         "value": "2265-24"
         },
-        "ret": 7562968419900,
+        "ret": 15463770102800,
         "value": null
        },
        {
-        "call": 7562976244100,
+        "call": 15463792390600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2241,
+        "process": 2269,
         "result": {
-         "found": true,
-         "value": "2245-6"
+         "found": false,
+         "value": null
         },
-        "ret": 7562977653100,
+        "ret": 15463794309500,
         "value": null
        },
        {
-        "call": 7562981282600,
+        "call": 15463798053900,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "put",
-        "process": 2243,
+        "op": "delete",
+        "process": 2267,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7563045627100,
-        "value": "2243-5"
+        "ret": 15463813710500,
+        "value": null
        },
        {
-        "call": 7562993683100,
+        "call": 15463806124300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2247,
+        "process": 2265,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7563034930300,
-        "value": "2247-5"
+        "ret": 15463824882800,
+        "value": "2265-29"
+       },
+       {
+        "call": 15463809915100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2266,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15463828762400,
+        "value": null
+       },
+       {
+        "call": 15463824899000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2265,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15463826501500,
+        "value": null
        }
       ]
      }
@@ -1242,114 +1257,114 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.3
+   "seconds": 13.7
   },
   {
    "schedule": "mixed",
    "seed": 10,
    "unsafe_reads": true,
-   "ops": 3828,
+   "ops": 3765,
    "by_op": {
-    "get": 1729,
-    "put": 1359,
-    "cas": 366,
-    "delete": 374
+    "get": 1704,
+    "put": 1331,
+    "cas": 364,
+    "delete": 366
    },
-   "unknown": 0,
+   "unknown": 1,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 561,
-    "steps": 402,
+    "ops": 551,
+    "steps": 208,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 38,
+      "linearized": 25,
       "stuck_at": [
        {
-        "call": 7576741050700,
+        "call": 15477333182600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2304,
+        "process": 2328,
         "result": {
          "found": true,
-         "value": "2304-31"
+         "value": "2328-19"
         },
-        "ret": 7576742619200,
+        "ret": 15477335627000,
         "value": null
        },
        {
-        "call": 7576757523700,
+        "call": 15477368414200,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 2332,
+        "result": {
+         "found": true,
+         "value": "2333-23"
+        },
+        "ret": 15477383757500,
+        "value": "2332-21"
+       },
+       {
+        "call": 15477374663200,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2307,
+        "process": 2329,
         "result": {
          "found": true,
-         "value": "2301-28"
+         "value": "2333-23"
         },
-        "ret": 7576759483800,
+        "ret": 15477377763100,
         "value": null
        },
        {
-        "call": 7576765643900,
+        "call": 15477399759600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2308,
+        "process": 2330,
         "result": {
          "found": true,
-         "value": "2301-28"
+         "value": "2333-23"
         },
-        "ret": 7576769296100,
+        "ret": 15477402089100,
         "value": null
        },
        {
-        "call": 7576769615900,
+        "call": 15477419410400,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2303,
+        "process": 2332,
         "result": {
          "found": true,
-         "value": "2301-28"
+         "value": "2333-23"
         },
-        "ret": 7576771869400,
+        "ret": 15477421485400,
         "value": null
        },
        {
-        "call": 7576770775800,
+        "call": 15477475925400,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2301,
+        "process": 2328,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7576809831800,
-        "value": "2301-31"
-       },
-       {
-        "call": 7576789711400,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2304,
-        "result": {
-         "found": true,
-         "value": "2301-28"
-        },
-        "ret": 7576792432100,
-        "value": null
+        "ret": 15477486500400,
+        "value": "2328-29"
        }
       ]
      }
@@ -1361,18 +1376,18 @@
     "clock skew": 2,
     "bridge": 2
    },
-   "seconds": 12.8
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 11,
    "unsafe_reads": true,
-   "ops": 3853,
+   "ops": 3763,
    "by_op": {
-    "get": 1741,
-    "cas": 382,
-    "put": 1322,
-    "delete": 408
+    "get": 1707,
+    "cas": 372,
+    "put": 1289,
+    "delete": 395
    },
    "unknown": 0,
    "linearizable": false,
@@ -1380,95 +1395,95 @@
    "check_seconds": 0.005,
    "violation": {
     "key": "k0",
-    "ops": 603,
-    "steps": 225,
+    "ops": 578,
+    "steps": 1219,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 35,
+      "linearized": 131,
       "stuck_at": [
        {
-        "call": 7589644533200,
+        "call": 15491888012700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2317,
+        "process": 2340,
         "result": {
          "found": true,
-         "value": "2319-30"
+         "value": "2341-103"
         },
-        "ret": 7589647376800,
+        "ret": 15491891295600,
         "value": null
        },
        {
-        "call": 7589651222700,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2314,
-        "result": {
-         "found": true,
-         "value": "2317-30"
-        },
-        "ret": 7589654506700,
-        "value": null
-       },
-       {
-        "call": 7589680371300,
+        "call": 15491916480000,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2319,
+        "process": 2343,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7589726782800,
-        "value": "2319-36"
+        "ret": 15491933558900,
+        "value": "2343-119"
        },
        {
-        "call": 7589700791300,
+        "call": 15491920090500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2316,
+        "process": 2342,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7589718878900,
-        "value": "2316-33"
+        "ret": 15491937842600,
+        "value": "2342-118"
        },
        {
-        "call": 7589710487300,
+        "call": 15491939306900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "delete",
-        "process": 2317,
+        "process": 2345,
         "result": {
          "found": true,
          "value": null
         },
-        "ret": 7589730689000,
+        "ret": 15491984523100,
         "value": null
        },
        {
-        "call": 7589713527900,
+        "call": 15491940623400,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2320,
+        "process": 2340,
+        "result": {
+         "found": true,
+         "value": "2343-119"
+        },
+        "ret": 15491943579800,
+        "value": null
+       },
+       {
+        "call": 15491948501600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2339,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7589715795700,
-        "value": null
+        "ret": 15491992349300,
+        "value": "2339-113"
        }
       ]
      }
@@ -1481,108 +1496,108 @@
    "schedule": "partition",
    "seed": 12,
    "unsafe_reads": true,
-   "ops": 3372,
+   "ops": 3586,
    "by_op": {
-    "get": 1553,
-    "put": 1179,
-    "delete": 317,
-    "cas": 323
+    "get": 1667,
+    "put": 1253,
+    "cas": 337,
+    "delete": 329
    },
-   "unknown": 17,
+   "unknown": 9,
    "linearizable": false,
    "gave_up": false,
    "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 570,
-    "steps": 444,
+    "ops": 612,
+    "steps": 604,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 13,
+      "linearized": 61,
       "stuck_at": [
        {
-        "call": 7602334639500,
+        "call": 15503148208900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2336,
+        "process": 2355,
         "result": {
          "found": true,
-         "value": "2335-8"
+         "value": "2353-44"
         },
-        "ret": 7602337698000,
+        "ret": 15503149607300,
         "value": null
        },
        {
-        "call": 7602342963700,
+        "call": 15503202324100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2353,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15503221369200,
+        "value": null
+       },
+       {
+        "call": 15503222716100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2335,
+        "process": 2353,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7602385086000,
-        "value": "2335-13"
+        "ret": 15503266070800,
+        "value": "2353-53"
        },
        {
-        "call": 7602364547700,
+        "call": 15503228853900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2337,
+        "process": 2358,
         "result": {
-         "found": true,
-         "value": "2336-10"
+         "found": false,
+         "value": null
         },
-        "ret": 7602367215500,
+        "ret": 15503231228000,
         "value": null
        },
        {
-        "call": 7602378766000,
+        "call": 15503236942600,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "get",
-        "process": 2339,
-        "result": {
-         "found": true,
-         "value": "2336-10"
-        },
-        "ret": 7602382105000,
-        "value": null
-       },
-       {
-        "call": 7602380527100,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2333,
-        "result": {
-         "found": true,
-         "value": "2336-10"
-        },
-        "ret": 7602383219500,
-        "value": null
-       },
-       {
-        "call": 7602382129700,
-        "expect": "2336-10",
-        "key": "k0",
-        "ok": false,
         "op": "cas",
-        "process": 2339,
+        "process": 2356,
         "result": {
-         "found": true,
-         "value": "2335-13"
+         "found": false,
+         "value": null
         },
-        "ret": 7602399611600,
-        "value": "2339-26"
+        "ret": 15503252476900,
+        "value": "2356-48"
+       },
+       {
+        "call": 15503257582300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2352,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15503259076600,
+        "value": null
        }
       ]
      }
@@ -1591,18 +1606,18 @@
    "faults": {
     "partition": 4
    },
-   "seconds": 12.8
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 13,
    "unsafe_reads": true,
-   "ops": 2711,
+   "ops": 2857,
    "by_op": {
-    "get": 1204,
-    "cas": 276,
-    "put": 967,
-    "delete": 264
+    "get": 1248,
+    "put": 1040,
+    "cas": 282,
+    "delete": 287
    },
    "unknown": 40,
    "linearizable": false,
@@ -1610,95 +1625,95 @@
    "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 451,
-    "steps": 5012,
+    "ops": 480,
+    "steps": 469,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 38,
+      "linearized": 19,
       "stuck_at": [
        {
-        "call": 7615710103100,
+        "call": 15515862670400,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2362,
+        "process": 2387,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15515864642500,
+        "value": null
+       },
+       {
+        "call": 15515864659700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2387,
         "result": {
          "found": true,
-         "value": "2366-18"
+         "value": "2381-14"
         },
-        "ret": 7615712514500,
+        "ret": 15515890409100,
         "value": null
        },
        {
-        "call": 7615739451700,
+        "call": 15515866392500,
         "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2364,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7615742622600,
-        "value": null
-       },
-       {
-        "call": 7615763293800,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2365,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7615767226400,
-        "value": null
-       },
-       {
-        "call": 7615769065000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2365,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7615770879600,
-        "value": null
-       },
-       {
-        "call": 7615783024300,
-        "expect": "2366-18",
         "key": "k0",
         "ok": false,
         "op": "cas",
-        "process": 2362,
+        "process": 2385,
         "result": {
-         "found": false,
-         "value": null
+         "found": true,
+         "value": "2381-14"
         },
-        "ret": 7615822895800,
-        "value": "2362-32"
+        "ret": 15515884069700,
+        "value": "2385-17"
        },
        {
-        "call": 7615814904900,
+        "call": 15515868778800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "delete",
-        "process": 2369,
+        "process": 2386,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15515887580600,
+        "value": null
+       },
+       {
+        "call": 15515876998700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "cas",
+        "process": 2381,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7615850563100,
-        "value": null
+        "ret": 15515916275100,
+        "value": "2381-18"
+       },
+       {
+        "call": 15515889094800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2386,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15515972948900,
+        "value": "2386-26"
        }
       ]
      }
@@ -1713,108 +1728,108 @@
    "schedule": "bridge",
    "seed": 14,
    "unsafe_reads": true,
-   "ops": 3099,
+   "ops": 2986,
    "by_op": {
-    "get": 1107,
-    "delete": 402,
-    "put": 1236,
-    "cas": 354
+    "get": 956,
+    "delete": 406,
+    "put": 1264,
+    "cas": 360
    },
-   "unknown": 657,
+   "unknown": 874,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": {
     "key": "k0",
-    "ops": 521,
-    "steps": 100,
+    "ops": 495,
+    "steps": 146,
     "verdict": {
      "NotLinearizable": {
       "linearized": 12,
       "stuck_at": [
        {
-        "call": 7627479892600,
+        "call": 15528074735900,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 2407,
+        "process": 2425,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7627480943100,
+        "ret": 15528076416500,
         "value": null
        },
        {
-        "call": 7627480958200,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 2407,
-        "result": {
-         "found": true,
-         "value": "2411-8"
-        },
-        "ret": 7627482167300,
-        "value": null
-       },
-       {
-        "call": 7627506413200,
+        "call": 15528076708500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 2413,
+        "process": 2429,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7627522858700,
-        "value": "2413-8"
+        "ret": 15528094307500,
+        "value": "2429-8"
        },
        {
-        "call": 7627512112300,
+        "call": 15528076850300,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "get",
-        "process": 2411,
+        "op": "put",
+        "process": 2424,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7627525047300,
-        "value": null
+        "ret": 15528094602600,
+        "value": "2424-10"
        },
        {
-        "call": 7627519104800,
+        "call": 15528118593800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "delete",
-        "process": 2407,
+        "process": 2425,
         "result": {
          "found": true,
          "value": null
         },
-        "ret": 7627538681600,
+        "ret": 15528134096200,
         "value": null
        },
        {
-        "call": 7627527129700,
+        "call": 15528120015200,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "put",
-        "process": 2410,
+        "op": "get",
+        "process": 2429,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7627546900500,
-        "value": "2410-10"
+        "ret": 15528122308400,
+        "value": null
+       },
+       {
+        "call": 15528146741400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2428,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15528212186100,
+        "value": "2428-10"
        }
       ]
      }
@@ -1823,135 +1838,135 @@
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "kill",
    "seed": 15,
    "unsafe_reads": true,
-   "ops": 2429,
+   "ops": 2437,
    "by_op": {
-    "get": 40,
-    "cas": 445,
-    "put": 1497,
-    "delete": 447
+    "get": 26,
+    "put": 1505,
+    "delete": 458,
+    "cas": 448
    },
-   "unknown": 2378,
+   "unknown": 2393,
    "linearizable": false,
    "gave_up": true,
-   "check_seconds": 60.011,
+   "check_seconds": 67.302,
    "violation": null,
    "faults": {
     "kill": 1
    },
-   "seconds": 73.6
+   "seconds": 80.4
   },
   {
    "schedule": "kill-leader",
    "seed": 16,
    "unsafe_reads": true,
-   "ops": 2791,
+   "ops": 2555,
    "by_op": {
-    "get": 1302,
-    "put": 912,
-    "cas": 299,
-    "delete": 278
+    "get": 1168,
+    "put": 869,
+    "cas": 266,
+    "delete": 252
    },
-   "unknown": 28,
+   "unknown": 36,
    "linearizable": false,
    "gave_up": false,
    "check_seconds": 0.004,
    "violation": {
     "key": "k0",
-    "ops": 444,
-    "steps": 7399,
+    "ops": 415,
+    "steps": 7856,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 51,
+      "linearized": 73,
       "stuck_at": [
        {
-        "call": 7714670534600,
+        "call": 15623038716800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5475,
+        "process": 5727,
         "result": {
          "found": true,
-         "value": "5473-43"
+         "value": "5726-59"
         },
-        "ret": 7714672760000,
+        "ret": 15623040972700,
         "value": null
        },
        {
-        "call": 7714673076700,
+        "call": 15623044014100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5468,
+        "process": 5728,
         "result": {
          "found": true,
-         "value": "5472-55"
+         "value": "5729-63"
         },
-        "ret": 7714675425800,
+        "ret": 15623045494000,
         "value": null
        },
        {
-        "call": 7714682827200,
+        "call": 15623052902100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5468,
+        "process": 5728,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7714723798700,
-        "value": "5468-61"
+        "ret": 15623094781300,
+        "value": "5728-64"
        },
        {
-        "call": 7714722272400,
+        "call": 15623054342100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5473,
+        "process": 5725,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7714762002100,
-        "value": "5473-49"
+        "ret": 15623071823000,
+        "value": "5725-56"
        },
        {
-        "call": 7714727404900,
+        "call": 15623056530700,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "delete",
-        "process": 5477,
+        "op": "get",
+        "process": 5730,
         "result": {
          "found": true,
-         "value": null
+         "value": "5729-63"
         },
-        "ret": 7714743860900,
+        "ret": 15623058134800,
         "value": null
        },
        {
-        "call": 7714731141900,
+        "call": 15623064153900,
         "expect": null,
         "key": "k0",
         "ok": true,
-        "op": "put",
-        "process": 5472,
+        "op": "get",
+        "process": 5731,
         "result": {
-         "found": false,
-         "value": null
+         "found": true,
+         "value": "5729-63"
         },
-        "ret": 7714746833500,
-        "value": "5472-59"
+        "ret": 15623068701300,
+        "value": null
        }
       ]
      }
@@ -1966,107 +1981,107 @@
    "schedule": "packet-loss",
    "seed": 17,
    "unsafe_reads": true,
-   "ops": 3831,
+   "ops": 3912,
    "by_op": {
-    "get": 1618,
-    "put": 1420,
-    "delete": 405,
-    "cas": 388
+    "get": 1661,
+    "put": 1441,
+    "delete": 410,
+    "cas": 400
    },
    "unknown": 0,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.007,
    "violation": {
     "key": "k0",
-    "ops": 613,
-    "steps": 63,
+    "ops": 625,
+    "steps": 985,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 10,
+      "linearized": 60,
       "stuck_at": [
        {
-        "call": 7726344692100,
+        "call": 15634687257700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5505,
+        "process": 5766,
         "result": {
          "found": true,
-         "value": "5506-2"
+         "value": "5765-53"
         },
-        "ret": 7726347673200,
+        "ret": 15634711478300,
         "value": null
        },
        {
-        "call": 7726347705100,
+        "call": 15634692180000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5770,
+        "result": {
+         "found": true,
+         "value": "5765-53"
+        },
+        "ret": 15634693885100,
+        "value": null
+       },
+       {
+        "call": 15634699467500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5767,
+        "result": {
+         "found": true,
+         "value": "5765-53"
+        },
+        "ret": 15634702211300,
+        "value": null
+       },
+       {
+        "call": 15634711495700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5505,
+        "process": 5766,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7726390382500,
-        "value": "5505-10"
+        "ret": 15634756690900,
+        "value": "5766-49"
        },
        {
-        "call": 7726371473100,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 5508,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7726390188000,
-        "value": "5508-9"
-       },
-       {
-        "call": 7726386243300,
-        "expect": null,
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 5511,
-        "result": {
-         "found": true,
-         "value": "5508-9"
-        },
-        "ret": 7726404786400,
-        "value": "5511-6"
-       },
-       {
-        "call": 7726414982600,
+        "call": 15634712034300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5508,
+        "process": 5770,
         "result": {
          "found": true,
-         "value": "5508-9"
+         "value": "5764-48"
         },
-        "ret": 7726416397900,
+        "ret": 15634714262500,
         "value": null
        },
        {
-        "call": 7726442786500,
+        "call": 15634713164400,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5510,
+        "process": 5765,
         "result": {
          "found": true,
-         "value": "5508-9"
+         "value": "5764-48"
         },
-        "ret": 7726444313600,
+        "ret": 15634714927700,
         "value": null
        }
       ]
@@ -2082,107 +2097,107 @@
    "schedule": "delay",
    "seed": 18,
    "unsafe_reads": true,
-   "ops": 1535,
+   "ops": 1497,
    "by_op": {
-    "get": 668,
-    "put": 541,
-    "cas": 157,
-    "delete": 169
+    "get": 657,
+    "cas": 151,
+    "put": 522,
+    "delete": 167
    },
    "unknown": 0,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 264,
-    "steps": 43,
+    "ops": 255,
+    "steps": 282,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 3,
+      "linearized": 6,
       "stuck_at": [
        {
-        "call": 7739033832900,
+        "call": 15646623231500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5519,
+        "process": 5777,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7739037426800,
+        "ret": 15646641357000,
         "value": null
        },
        {
-        "call": 7739052237400,
-        "expect": null,
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 5521,
-        "result": {
-         "found": true,
-         "value": "5518-1"
-        },
-        "ret": 7739183983800,
-        "value": "5521-2"
-       },
-       {
-        "call": 7739052545100,
+        "call": 15646783037100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5520,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7739054676500,
-        "value": null
-       },
-       {
-        "call": 7739054690700,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 5520,
+        "process": 5775,
         "result": {
          "found": true,
-         "value": "5518-1"
+         "value": "5776-1"
         },
-        "ret": 7739070338400,
+        "ret": 15646785094700,
         "value": null
        },
        {
-        "call": 7739160579300,
+        "call": 15646783632300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5523,
+        "process": 5781,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7739280267000,
-        "value": "5523-3"
+        "ret": 15646939569100,
+        "value": "5781-3"
        },
        {
-        "call": 7739176883500,
+        "call": 15647104319100,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 5777,
+        "result": {
+         "found": true,
+         "value": "5781-3"
+        },
+        "ret": 15647273185300,
+        "value": "5777-10"
+       },
+       {
+        "call": 15647117756000,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5517,
+        "process": 5776,
         "result": {
          "found": true,
-         "value": "5518-1"
+         "value": "5781-3"
         },
-        "ret": 7739178979700,
+        "ret": 15647119180400,
+        "value": null
+       },
+       {
+        "call": 15647241921700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5781,
+        "result": {
+         "found": true,
+         "value": "5781-3"
+        },
+        "ret": 15647269092800,
         "value": null
        }
       ]
@@ -2200,9 +2215,9 @@
    "unsafe_reads": true,
    "ops": 3932,
    "by_op": {
-    "get": 1795,
-    "put": 1341,
-    "delete": 416,
+    "get": 1803,
+    "put": 1335,
+    "delete": 414,
     "cas": 380
    },
    "unknown": 0,
@@ -2211,95 +2226,95 @@
    "check_seconds": 0.003,
    "violation": {
     "key": "k0",
-    "ops": 625,
-    "steps": 105,
+    "ops": 635,
+    "steps": 77,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 14,
+      "linearized": 11,
       "stuck_at": [
        {
-        "call": 7751737183100,
+        "call": 15659288760500,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5533,
+        "process": 5793,
         "result": {
          "found": true,
-         "value": "5533-15"
+         "value": "5788-6"
         },
-        "ret": 7751739264700,
+        "ret": 15659291504100,
         "value": null
        },
        {
-        "call": 7751777820000,
+        "call": 15659345822300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5535,
+        "process": 5794,
         "result": {
          "found": true,
-         "value": "5535-11"
+         "value": "5793-11"
         },
-        "ret": 7751781673200,
+        "ret": 15659348988300,
         "value": null
        },
        {
-        "call": 7751778112700,
+        "call": 15659350661600,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5529,
+        "process": 5793,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7751798552500,
-        "value": "5529-16"
+        "ret": 15659395471700,
+        "value": "5793-21"
        },
        {
-        "call": 7751782915700,
+        "call": 15659379233100,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5534,
+        "process": 5787,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7751837587000,
-        "value": "5534-14"
+        "ret": 15659401777600,
+        "value": "5787-16"
        },
        {
-        "call": 7751819570500,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "get",
-        "process": 5531,
-        "result": {
-         "found": true,
-         "value": "5529-16"
-        },
-        "ret": 7751822570500,
-        "value": null
-       },
-       {
-        "call": 7751836402900,
+        "call": 15659379882800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "put",
-        "process": 5535,
+        "process": 5791,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7751880269200,
-        "value": "5535-21"
+        "ret": 15659401334600,
+        "value": "5791-15"
+       },
+       {
+        "call": 15659386978400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5792,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15659405667600,
+        "value": "5792-14"
        }
       ]
      }
@@ -2314,107 +2329,107 @@
    "schedule": "membership",
    "seed": 20,
    "unsafe_reads": true,
-   "ops": 3129,
+   "ops": 2758,
    "by_op": {
-    "get": 1399,
-    "put": 1113,
-    "delete": 298,
-    "cas": 319
+    "get": 1192,
+    "put": 1013,
+    "cas": 291,
+    "delete": 262
    },
-   "unknown": 2,
+   "unknown": 20,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": {
     "key": "k0",
-    "ops": 489,
-    "steps": 331,
+    "ops": 459,
+    "steps": 459,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 42,
+      "linearized": 38,
       "stuck_at": [
        {
-        "call": 7765134499300,
+        "call": 15672470805700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5544,
+        "process": 5802,
         "result": {
          "found": true,
-         "value": "5548-37"
+         "value": "5799-37"
         },
-        "ret": 7765136605100,
+        "ret": 15672473905600,
         "value": null
        },
        {
-        "call": 7765153737900,
-        "expect": "5543-19",
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 5546,
-        "result": {
-         "found": true,
-         "value": "5541-37"
-        },
-        "ret": 7765173179500,
-        "value": "5546-41"
-       },
-       {
-        "call": 7765157776500,
+        "call": 15672476416800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5544,
+        "process": 5802,
         "result": {
-         "found": true,
-         "value": "5541-37"
+         "found": false,
+         "value": null
         },
-        "ret": 7765159693200,
+        "ret": 15672478584800,
         "value": null
        },
        {
-        "call": 7765165777000,
+        "call": 15672487651800,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "delete",
-        "process": 5543,
+        "process": 5805,
         "result": {
          "found": true,
          "value": null
         },
-        "ret": 7765184084400,
+        "ret": 15672571569800,
         "value": null
        },
        {
-        "call": 7765167300000,
+        "call": 15672530693300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5544,
+        "process": 5802,
         "result": {
-         "found": true,
-         "value": "5541-37"
+         "found": false,
+         "value": null
         },
-        "ret": 7765169150800,
+        "ret": 15672533419200,
         "value": null
        },
        {
-        "call": 7765173196500,
+        "call": 15672551451200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "cas",
+        "process": 5804,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15672567357500,
+        "value": "5804-41"
+       },
+       {
+        "call": 15672567391200,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5546,
+        "process": 5804,
         "result": {
-         "found": true,
-         "value": "5541-37"
+         "found": false,
+         "value": null
         },
-        "ret": 7765175871300,
+        "ret": 15672569665600,
         "value": null
        }
       ]
@@ -2425,114 +2440,114 @@
     "member removed": 4,
     "member added": 4
    },
-   "seconds": 13.1
+   "seconds": 13.4
   },
   {
    "schedule": "mixed",
    "seed": 21,
    "unsafe_reads": true,
-   "ops": 2981,
+   "ops": 2811,
    "by_op": {
-    "get": 1374,
-    "put": 1015,
-    "cas": 301,
-    "delete": 291
+    "get": 1290,
+    "put": 944,
+    "cas": 285,
+    "delete": 292
    },
-   "unknown": 23,
+   "unknown": 35,
    "linearizable": false,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": {
     "key": "k0",
-    "ops": 534,
-    "steps": 458,
+    "ops": 513,
+    "steps": 693,
     "verdict": {
      "NotLinearizable": {
-      "linearized": 32,
+      "linearized": 15,
       "stuck_at": [
        {
-        "call": 7778181662200,
+        "call": 15685732163300,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5568,
+        "process": 5839,
         "result": {
          "found": false,
          "value": null
         },
-        "ret": 7778209063100,
+        "ret": 15685734406200,
         "value": null
        },
        {
-        "call": 7778209087200,
+        "call": 15685736025800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5842,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15685757546500,
+        "value": "5842-8"
+       },
+       {
+        "call": 15685738466500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 5843,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 15685761248700,
+        "value": null
+       },
+       {
+        "call": 15685746018400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5845,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15685768584700,
+        "value": "5845-11"
+       },
+       {
+        "call": 15685777904300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5846,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 15685800282100,
+        "value": "5846-14"
+       },
+       {
+        "call": 15685812992700,
         "expect": null,
         "key": "k0",
         "ok": true,
         "op": "get",
-        "process": 5568,
+        "process": 5841,
         "result": {
          "found": true,
-         "value": "5570-16"
+         "value": "5846-14"
         },
-        "ret": 7778211520400,
+        "ret": 15685814931700,
         "value": null
-       },
-       {
-        "call": 7778222707000,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 5569,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7778243021100,
-        "value": "5569-22"
-       },
-       {
-        "call": 7778225685300,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 5564,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7778243399000,
-        "value": "5564-25"
-       },
-       {
-        "call": 7778245966900,
-        "expect": null,
-        "key": "k0",
-        "ok": true,
-        "op": "put",
-        "process": 5564,
-        "result": {
-         "found": false,
-         "value": null
-        },
-        "ret": 7778285496200,
-        "value": "5564-27"
-       },
-       {
-        "call": 7778259763200,
-        "expect": null,
-        "key": "k0",
-        "ok": false,
-        "op": "cas",
-        "process": 5569,
-        "result": {
-         "found": true,
-         "value": "5564-25"
-        },
-        "ret": 7778279152900,
-        "value": "5569-24"
        }
       ]
      }
@@ -2543,7 +2558,7 @@
     "kill leader": 2,
     "kill": 2
    },
-   "seconds": 12.7
+   "seconds": 12.6
   }
  ]
 }

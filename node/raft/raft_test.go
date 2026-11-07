@@ -3,7 +3,9 @@ package raft
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"slices"
+	"strconv"
 	"testing"
 )
 
@@ -95,6 +97,25 @@ func newSimWith(t *testing.T, seed int64, n int, noPreVote bool) *sim {
 	return s
 }
 
+// ids and ordered visit servers by id: map order is random in Go, and the simulation must be
+// reproducible from its seed.
+func (s *sim) ids() []uint64 {
+	var out []uint64
+	for id := range s.nodes {
+		out = append(out, id)
+	}
+	slices.Sort(out)
+	return out
+}
+
+func (s *sim) ordered() []*simNode {
+	var out []*simNode
+	for _, id := range s.ids() {
+		out = append(out, s.nodes[id])
+	}
+	return out
+}
+
 func (s *sim) addNode(id uint64, bootstrap []Member) *simNode {
 	opts := Options{ID: id, ElectionTicks: 10, HeartbeatTicks: 1, MaxBatch: 8, PreVote: !s.noPreVote, CheckQuorum: !s.noPreVote,
 		Rand: s.rng.Intn, Bootstrap: bootstrap}
@@ -167,7 +188,10 @@ func (s *sim) step() {
 		to.r.Step(m)
 		s.process(to)
 	}
-	for _, n := range s.nodes {
+	// Servers tick in an order drawn from the seed: reproducible, but varied.
+	order := s.ordered()
+	s.rng.Shuffle(len(order), func(i, j int) { order[i], order[j] = order[j], order[i] })
+	for _, n := range order {
 		if !n.down {
 			n.r.Tick()
 			s.process(n)
@@ -177,7 +201,7 @@ func (s *sim) step() {
 
 func (s *sim) leader() *simNode {
 	var best *simNode
-	for _, n := range s.nodes {
+	for _, n := range s.ordered() {
 		if !n.down && n.r.role == Leader && (best == nil || n.r.term > best.r.term) {
 			best = n
 		}
@@ -200,8 +224,8 @@ func (s *sim) partition(groups ...[]uint64) {
 			group[id] = g
 		}
 	}
-	for a := range s.nodes {
-		for b := range s.nodes {
+	for _, a := range s.ids() {
+		for _, b := range s.ids() {
 			if group[a] != group[b] {
 				s.cut[[2]uint64{a, b}] = true
 			}
@@ -214,7 +238,7 @@ func (s *sim) heal() { s.cut = map[[2]uint64]bool{} }
 // checkPrefixes: what each node applied agrees, index by index, with what every other node
 // applied (State Machine Safety; s.committed holds the first value seen at each index).
 func (s *sim) checkPrefixes() {
-	for _, n := range s.nodes {
+	for _, n := range s.ordered() {
 		for _, a := range n.applied {
 			var idx uint64
 			var data string
@@ -243,7 +267,7 @@ func TestElectsOneLeaderAndReplicates(t *testing.T) {
 	for i := 0; i < 30; i++ {
 		s.step()
 	}
-	for _, n := range s.nodes {
+	for _, n := range s.ordered() {
 		if got := len(n.applied); got != 20 {
 			t.Fatalf("node %d applied %d commands, want 20", n.id, got)
 		}
@@ -257,7 +281,11 @@ func TestElectsOneLeaderAndReplicates(t *testing.T) {
 func TestSafetyUnderChaos(t *testing.T) {
 	// 200 runs: 3- and 5-server clusters, with and without pre-vote and check-quorum (which
 	// would otherwise hide some bugs in plain voting).
-	for run := int64(0); run < 200; run++ {
+	runs := int64(200)
+	if v, err := strconv.ParseInt(os.Getenv("CONCORD_SIM_RUNS"), 10, 64); err == nil {
+		runs = v
+	}
+	for run := int64(0); run < runs; run++ {
 		seed, size, noPreVote := run, 3+2*int(run%2), run%4 >= 2
 		t.Run(fmt.Sprintf("seed%d-n%d-prevote%v", seed, size, !noPreVote), func(t *testing.T) {
 			s := newSimWith(t, seed, size, noPreVote)
@@ -285,7 +313,7 @@ func TestSafetyUnderChaos(t *testing.T) {
 					n := s.nodes[uint64(1+s.rng.Intn(size))]
 					n.down = true
 				case r < 10:
-					for _, n := range s.nodes {
+					for _, n := range s.ordered() {
 						if n.down {
 							n.restart()
 							break
@@ -308,7 +336,7 @@ func TestSafetyUnderChaos(t *testing.T) {
 			// Heal everything and require progress.
 			s.heal()
 			s.loss = 0
-			for _, n := range s.nodes {
+			for _, n := range s.ordered() {
 				if n.down {
 					n.restart()
 				}
@@ -330,7 +358,7 @@ func TestSafetyUnderChaos(t *testing.T) {
 			s.checkPrefixes()
 			// Everyone converges to the same commit index.
 			var commit uint64
-			for _, n := range s.nodes {
+			for _, n := range s.ordered() {
 				if commit == 0 {
 					commit = n.r.commit
 				} else if n.r.commit != commit {
@@ -350,13 +378,13 @@ func TestMinorityCannotProgressOrDisrupt(t *testing.T) {
 	}
 	l := s.leader()
 	var minority []uint64
-	for id := range s.nodes {
+	for _, id := range s.ids() {
 		if id != l.id && len(minority) < 2 {
 			minority = append(minority, id)
 		}
 	}
 	var majority []uint64
-	for id := range s.nodes {
+	for _, id := range s.ids() {
 		if !slices.Contains(minority, id) {
 			majority = append(majority, id)
 		}
@@ -392,7 +420,7 @@ func TestReadIndexNeedsAMajority(t *testing.T) {
 	// Isolate the leader, then ask it for a read: it must never be confirmed, and must fail
 	// once check-quorum makes the leader step down.
 	var others []uint64
-	for id := range s.nodes {
+	for _, id := range s.ids() {
 		if id != l.id {
 			others = append(others, id)
 		}
@@ -432,7 +460,7 @@ func TestSnapshotCatchesUpALaggingFollower(t *testing.T) {
 	}
 	l := s.leader()
 	var lag uint64
-	for id := range s.nodes {
+	for _, id := range s.ids() {
 		if id != l.id {
 			lag = id
 			break
@@ -480,7 +508,7 @@ func TestMembershipChanges(t *testing.T) {
 	for i := 0; i < 100; i++ {
 		s.step()
 	}
-	for _, n := range s.nodes {
+	for _, n := range s.ordered() {
 		if len(n.r.config.Members) != 4 {
 			t.Fatalf("node %d sees %d members", n.id, len(n.r.config.Members))
 		}
@@ -503,7 +531,8 @@ func TestMembershipChanges(t *testing.T) {
 	for i := 0; i < 50; i++ {
 		s.step()
 	}
-	for id, n := range s.nodes {
+	for _, id := range s.ids() {
+		n := s.nodes[id]
 		if id != old && !slices.ContainsFunc(n.applied, func(a string) bool { return len(a) > 13 && a[len(a)-13:] == "after-removal" }) {
 			t.Fatalf("node %d did not apply the command after the removal", id)
 		}
@@ -554,7 +583,7 @@ func (s *sim) elect(id uint64, alive []uint64) {
 // must not be counted as committed, or a later leader can overwrite it.
 func TestFigure8(t *testing.T) {
 	s := newSimWith(t, 1, 5, true)
-	for _, n := range s.nodes {
+	for _, n := range s.ordered() {
 		n.opts.MaxBatch = 1 // one entry per message, so delivery can stop between two entries
 		n.restart()
 	}

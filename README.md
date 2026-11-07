@@ -29,22 +29,22 @@ A replicated key-value store built on Raft written from scratch, tested the way 
 
 | schedule | what it does | faults injected | operations | outcome unknown | linearizable |
 |---|---|---|---|---|---|
-| none | — | — | 116,994 | 0 | 30 / 30 |
-| partition | random minority / majority split | 155 | 110,866 | 194 | 30 / 30 |
-| isolate-leader | the leader alone on one side | 158 | 101,066 | 608 | 30 / 30 |
-| bridge | two halves that each reach one middle server | 164 | 118,147 | 0 | 30 / 30 |
-| kill | SIGKILL / TerminateProcess of 1–2 servers, restart from disk | 214 kills | 103,073 | 275 | 30 / 30 |
-| kill-leader | kill the current leader, restart it | 139 kills | 71,000 | 907 | 30 / 30 |
-| packet-loss | 10–40% of messages dropped on every server | 164 | 117,622 | 0 | 30 / 30 |
-| delay | 0–80 ms delay plus 0–80 ms jitter | 141 | 42,980 | 32 | 30 / 30 |
-| clock-skew | servers' timers run at 0.25×–4× real time | 161 | 116,899 | 0 | 30 / 30 |
-| membership | remove a server, wipe its disk, add it back empty | 93 removed, 93 added | 89,624 | 748 | 30 / 30 |
-| mixed | a random fault every 1.5–3 s | (included above) | 107,028 | 311 | 30 / 30 |
-| **all** | | **1,482** | **1,095,299** | **3,075** | **330 / 330** |
+| none | — | — | 114,076 | 0 | 30 / 30 |
+| partition | random minority / majority split | 155 | 111,739 | 186 | 30 / 30 |
+| isolate-leader | the leader alone on one side | 154 | 100,523 | 594 | 30 / 30 |
+| bridge | two halves that each reach one middle server | 162 | 116,854 | 2 | 30 / 30 |
+| kill | SIGKILL / TerminateProcess of 1–2 servers, restart from disk | 203 kills | 101,139 | 273 | 30 / 30 |
+| kill-leader | kill the current leader, restart it | 138 kills | 66,127 | 980 | 30 / 30 |
+| packet-loss | 10–40% of messages dropped on every server | 166 | 118,765 | 0 | 30 / 30 |
+| delay | 0–80 ms delay plus 0–80 ms jitter | 137 | 42,442 | 19 | 30 / 30 |
+| clock-skew | servers' timers run at 0.25×–4× real time | 154 | 113,869 | 3 | 30 / 30 |
+| membership | remove a server, wipe its disk, add it back empty | 92 removed, 92 added | 91,148 | 713 | 30 / 30 |
+| mixed | a random fault every 1.5–3 s | (included above) | 104,835 | 293 | 30 / 30 |
+| **all** | | **1,453** | **1,081,517** | **3,063** | **330 / 330** |
 
 **Unknown outcomes.** An operation that timed out may or may not have taken effect, so the checker tries both. As in Jepsen, the client that sent it continues as a new process.
 
-**Checking is fast.** Each history takes at most 12 ms, because keys are checked independently and memoisation prunes the search.
+**Checking is fast.** Each history takes at most 8 ms, because keys are checked independently and memoisation prunes the search.
 
 **Does the checker catch real bugs?** The same harness was run with `--unsafe-reads`, a deliberate bug: servers answer reads from their own state instead of confirming leadership with ReadIndex, and clients read from any server. Out of 22 runs ([`chaos-unsafe-reads.json`](results/chaos-unsafe-reads.json)):
 - **20 were reported not linearizable**, typically a read returning "not found" after a write had completed;
@@ -53,13 +53,13 @@ A replicated key-value store built on Raft written from scratch, tested the way 
 **Caveats:**
 - **Partitions are simulated in software.** Windows has no iptables, so they are made in each server's transport: each blocks messages to and from the other side, on every link, both ways.
 - **Kills are real process kills.** A killed process does not lose data the OS already holds, so this cannot catch a missing `fsync`.
-- **The campaign ran on the build before one transport fix.** That fix closes accepted connections when a node is stopped inside a process (see below). It does not affect processes that are killed, which is all the campaign does.
+- **The campaign was run twice.** The first run (330 of 330 linearizable, too) used a build with the snapshot bug described below. It did not catch the bug, so the numbers above come from a second run on the fixed build.
 
 ### Raft on a simulated network
 
-[`raft_test.go`](node/raft/raft_test.go) drives the Raft state machine deterministically, with no clocks, sockets or goroutines. That makes failure schedules cheap and repeatable:
+[`raft_test.go`](node/raft/raft_test.go) drives the Raft state machine with no clocks, sockets or goroutines. Every choice comes from one seeded random source, so a failing seed fails the same way every time. That makes failure schedules cheap and repeatable:
 
-- **200 chaos runs** on 3- and 5-server clusters, with and without pre-vote and check-quorum:
+- **200 chaos runs in CI, and 3,000 once** (`CONCORD_SIM_RUNS=3000`, all passing), on 3- and 5-server clusters, with and without pre-vote and check-quorum:
   - 10% of messages lost, plus reordering, duplication and delay;
   - random partitions, crashes and restarts from what was persisted;
   - targeted crashes of the leader right after a proposal;
@@ -165,9 +165,16 @@ The design choices:
 
 ### Bugs the tests found
 
+- **Raft (a safety bug).**
+  - **What it was.** A follower that received a snapshot it already had (its log matched the snapshot's last entry) answered with the index of the *last entry in its log*. The entries after the snapshot point could belong to another term. The leader took them as matching and could count that follower toward a majority for an entry the follower did not have. Two servers could then commit different entries at one index.
+  - **How it was found.** The simulation caught it once, in a clean-clone check: seed 176 reported "node 3 committed index 160 with term 11; another node with term 10". That seed did not fail again, because the simulation visited servers in Go's random map order, so the run could not be reproduced.
+  - **How it was pinned down.** After making the simulation fully deterministic and searching 1,200 seeds, 3 seeds failed every time. Reading the code paths that move a follower's match index then found the cause. The reply now claims only the snapshot's index, and those seeds, and 3,000 more, pass.
+  - **The real-process campaign never caught it.** It needs a follower that already holds the snapshot's last entry *and* a diverging tail, at the moment a snapshot arrives.
 - **The checker:** an operation with a zero-length interval had its return event sorted before its call.
 - **Transport:** stopping a node left the connections it had *accepted* open. The leader kept writing into a socket nobody read, so a node restarted in the same process never heard from it. The node-level test caught this.
-- **Simulation harness:** my first State Machine Safety check (comparing prefixes of applied histories) was wrong for nodes restored from a snapshot. It was replaced by a check index by index.
+- **Simulation harness:**
+  - my first State Machine Safety check (comparing prefixes of applied histories) was wrong for nodes restored from a snapshot; it was replaced by a check index by index;
+  - visiting servers in Go's map order made failures unrepeatable; servers are now visited in an order drawn from the seed.
 
 ## Running it
 

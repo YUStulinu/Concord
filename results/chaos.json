@@ -5,8 +5,8 @@
    "linearizable": 330,
    "not_linearizable": 0,
    "gave_up": 0,
-   "ops": 1095299,
-   "unknown": 3075
+   "ops": 1081517,
+   "unknown": 3063
   },
   "by_schedule": {
    "none": {
@@ -14,7 +14,7 @@
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 116994,
+    "ops": 114076,
     "unknown": 0
    },
    "partition": {
@@ -22,47 +22,47 @@
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 110866,
-    "unknown": 194
+    "ops": 111739,
+    "unknown": 186
    },
    "isolate-leader": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 101066,
-    "unknown": 608
+    "ops": 100523,
+    "unknown": 594
    },
    "bridge": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 118147,
-    "unknown": 0
+    "ops": 116854,
+    "unknown": 2
    },
    "kill": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 103073,
-    "unknown": 275
+    "ops": 101139,
+    "unknown": 273
    },
    "kill-leader": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 71000,
-    "unknown": 907
+    "ops": 66127,
+    "unknown": 980
    },
    "packet-loss": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 117622,
+    "ops": 118765,
     "unknown": 0
    },
    "delay": {
@@ -70,32 +70,32 @@
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 42980,
-    "unknown": 32
+    "ops": 42442,
+    "unknown": 19
    },
    "clock-skew": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 116899,
-    "unknown": 0
+    "ops": 113869,
+    "unknown": 3
    },
    "membership": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 89624,
-    "unknown": 748
+    "ops": 91148,
+    "unknown": 713
    },
    "mixed": {
     "runs": 30,
     "linearizable": 30,
     "not_linearizable": 0,
     "gave_up": 0,
-    "ops": 107028,
-    "unknown": 311
+    "ops": 104835,
+    "unknown": 293
    }
   }
  },
@@ -104,12 +104,12 @@
    "schedule": "none",
    "seed": 0,
    "unsafe_reads": false,
-   "ops": 3919,
+   "ops": 3820,
    "by_op": {
-    "put": 1363,
-    "get": 1781,
-    "cas": 388,
-    "delete": 387
+    "put": 1331,
+    "cas": 375,
+    "get": 1734,
+    "delete": 380
    },
    "unknown": 0,
    "linearizable": true,
@@ -117,41 +117,41 @@
    "check_seconds": 0.003,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 13.3
   },
   {
    "schedule": "partition",
    "seed": 1,
    "unsafe_reads": false,
-   "ops": 3897,
+   "ops": 3692,
    "by_op": {
-    "put": 1408,
-    "get": 1649,
-    "delete": 434,
-    "cas": 406
+    "put": 1336,
+    "get": 1566,
+    "delete": 405,
+    "cas": 385
    },
    "unknown": 4,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 2,
    "unsafe_reads": false,
-   "ops": 3545,
+   "ops": 3358,
    "by_op": {
-    "get": 1561,
-    "put": 1226,
-    "cas": 372,
-    "delete": 386
+    "put": 1167,
+    "get": 1481,
+    "delete": 368,
+    "cas": 342
    },
-   "unknown": 18,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -165,12 +165,12 @@
    "schedule": "bridge",
    "seed": 3,
    "unsafe_reads": false,
-   "ops": 3903,
+   "ops": 3750,
    "by_op": {
-    "put": 1382,
-    "get": 1719,
-    "delete": 392,
-    "cas": 410
+    "get": 1647,
+    "put": 1323,
+    "delete": 381,
+    "cas": 399
    },
    "unknown": 0,
    "linearizable": true,
@@ -180,44 +180,44 @@
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 4,
    "unsafe_reads": false,
-   "ops": 3487,
+   "ops": 3490,
    "by_op": {
-    "get": 1561,
-    "delete": 376,
-    "cas": 365,
-    "put": 1185
+    "put": 1188,
+    "get": 1567,
+    "cas": 364,
+    "delete": 371
    },
-   "unknown": 6,
+   "unknown": 11,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "kill-leader",
    "seed": 5,
    "unsafe_reads": false,
-   "ops": 2788,
+   "ops": 2427,
    "by_op": {
-    "cas": 284,
-    "get": 1258,
-    "put": 953,
-    "delete": 293
+    "cas": 243,
+    "put": 821,
+    "delete": 269,
+    "get": 1094
    },
-   "unknown": 26,
+   "unknown": 31,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
@@ -228,12 +228,12 @@
    "schedule": "packet-loss",
    "seed": 6,
    "unsafe_reads": false,
-   "ops": 4035,
+   "ops": 3910,
    "by_op": {
-    "get": 1782,
-    "put": 1435,
-    "cas": 446,
-    "delete": 372
+    "get": 1725,
+    "put": 1393,
+    "cas": 429,
+    "delete": 363
    },
    "unknown": 0,
    "linearizable": true,
@@ -243,62 +243,62 @@
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 7,
    "unsafe_reads": false,
-   "ops": 1511,
+   "ops": 1481,
    "by_op": {
-    "delete": 161,
-    "put": 520,
-    "get": 680,
-    "cas": 150
+    "put": 513,
+    "get": 664,
+    "cas": 150,
+    "delete": 154
    },
-   "unknown": 0,
+   "unknown": 5,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "clock-skew",
    "seed": 8,
    "unsafe_reads": false,
-   "ops": 3885,
+   "ops": 3583,
    "by_op": {
-    "delete": 388,
-    "put": 1413,
-    "get": 1713,
-    "cas": 371
+    "put": 1314,
+    "delete": 349,
+    "get": 1575,
+    "cas": 345
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 9,
    "unsafe_reads": false,
-   "ops": 2855,
+   "ops": 3012,
    "by_op": {
-    "put": 980,
-    "get": 1291,
-    "delete": 301,
-    "cas": 283
+    "put": 1040,
+    "get": 1369,
+    "delete": 308,
+    "cas": 295
    },
-   "unknown": 27,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -307,23 +307,23 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.1
+   "seconds": 13.4
   },
   {
    "schedule": "mixed",
    "seed": 10,
    "unsafe_reads": false,
-   "ops": 3925,
+   "ops": 3964,
    "by_op": {
-    "cas": 382,
-    "get": 1728,
-    "put": 1430,
-    "delete": 385
+    "get": 1750,
+    "put": 1434,
+    "cas": 386,
+    "delete": 394
    },
-   "unknown": 5,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.008,
    "violation": null,
    "faults": {
     "packet loss": 1,
@@ -331,79 +331,79 @@
     "clock skew": 2,
     "bridge": 2
    },
-   "seconds": 12.6
+   "seconds": 12.8
   },
   {
    "schedule": "none",
    "seed": 11,
    "unsafe_reads": false,
-   "ops": 3799,
+   "ops": 3713,
    "by_op": {
-    "put": 1319,
-    "get": 1684,
-    "cas": 398,
-    "delete": 398
+    "put": 1293,
+    "get": 1650,
+    "cas": 386,
+    "delete": 384
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 12,
    "unsafe_reads": false,
-   "ops": 2163,
+   "ops": 3573,
    "by_op": {
-    "get": 985,
-    "put": 763,
-    "delete": 213,
-    "cas": 202
+    "get": 1621,
+    "put": 1261,
+    "delete": 346,
+    "cas": 345
    },
-   "unknown": 3,
+   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 13,
    "unsafe_reads": false,
-   "ops": 2336,
+   "ops": 3098,
    "by_op": {
-    "cas": 227,
-    "put": 876,
-    "delete": 227,
-    "get": 1006
+    "put": 1153,
+    "cas": 302,
+    "delete": 308,
+    "get": 1335
    },
-   "unknown": 24,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.012,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.7
+   "seconds": 12.8
   },
   {
    "schedule": "bridge",
    "seed": 14,
    "unsafe_reads": false,
-   "ops": 3560,
+   "ops": 3947,
    "by_op": {
-    "get": 1582,
-    "delete": 367,
-    "cas": 333,
-    "put": 1278
+    "get": 1761,
+    "delete": 399,
+    "put": 1418,
+    "cas": 369
    },
    "unknown": 0,
    "linearizable": true,
@@ -419,35 +419,35 @@
    "schedule": "kill",
    "seed": 15,
    "unsafe_reads": false,
-   "ops": 3877,
+   "ops": 3015,
    "by_op": {
-    "put": 1301,
-    "cas": 394,
-    "get": 1777,
-    "delete": 405
+    "get": 1369,
+    "put": 1021,
+    "delete": 318,
+    "cas": 307
    },
-   "unknown": 0,
+   "unknown": 7,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "kill": 6
+    "kill": 5
    },
-   "seconds": 13.1
+   "seconds": 12.6
   },
   {
    "schedule": "kill-leader",
    "seed": 16,
    "unsafe_reads": false,
-   "ops": 2349,
+   "ops": 2169,
    "by_op": {
-    "get": 1048,
-    "put": 792,
-    "delete": 255,
-    "cas": 254
+    "get": 960,
+    "put": 725,
+    "delete": 239,
+    "cas": 245
    },
-   "unknown": 24,
+   "unknown": 30,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -461,33 +461,33 @@
    "schedule": "packet-loss",
    "seed": 17,
    "unsafe_reads": false,
-   "ops": 3904,
+   "ops": 3883,
    "by_op": {
-    "put": 1473,
-    "get": 1647,
-    "delete": 389,
-    "cas": 395
+    "get": 1652,
+    "put": 1451,
+    "delete": 391,
+    "cas": 389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.007,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 18,
    "unsafe_reads": false,
-   "ops": 1330,
+   "ops": 1270,
    "by_op": {
-    "get": 597,
-    "put": 475,
-    "cas": 129,
-    "delete": 129
+    "delete": 119,
+    "put": 458,
+    "get": 569,
+    "cas": 124
    },
    "unknown": 0,
    "linearizable": true,
@@ -503,57 +503,57 @@
    "schedule": "clock-skew",
    "seed": 19,
    "unsafe_reads": false,
-   "ops": 3792,
+   "ops": 3911,
    "by_op": {
-    "get": 1705,
-    "cas": 353,
-    "put": 1349,
-    "delete": 385
+    "get": 1768,
+    "put": 1389,
+    "cas": 366,
+    "delete": 388
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 20,
    "unsafe_reads": false,
-   "ops": 3600,
+   "ops": 3865,
    "by_op": {
-    "get": 1642,
-    "put": 1262,
-    "delete": 340,
-    "cas": 356
+    "get": 1762,
+    "put": 1365,
+    "delete": 360,
+    "cas": 378
    },
-   "unknown": 16,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 4,
     "member added": 4
    },
-   "seconds": 13.3
+   "seconds": 12.6
   },
   {
    "schedule": "mixed",
    "seed": 21,
    "unsafe_reads": false,
-   "ops": 2784,
+   "ops": 2945,
    "by_op": {
-    "get": 1230,
-    "put": 967,
-    "delete": 305,
-    "cas": 282
+    "put": 1030,
+    "get": 1300,
+    "delete": 316,
+    "cas": 299
    },
-   "unknown": 25,
+   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -563,142 +563,79 @@
     "kill leader": 2,
     "kill": 2
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 22,
    "unsafe_reads": false,
-   "ops": 3980,
+   "ops": 3854,
    "by_op": {
-    "put": 1431,
-    "get": 1806,
-    "delete": 391,
-    "cas": 352
+    "get": 1758,
+    "put": 1383,
+    "delete": 377,
+    "cas": 336
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 23,
    "unsafe_reads": false,
-   "ops": 3649,
+   "ops": 3776,
    "by_op": {
-    "get": 1668,
-    "put": 1264,
-    "cas": 362,
-    "delete": 355
+    "get": 1727,
+    "put": 1313,
+    "cas": 367,
+    "delete": 369
    },
-   "unknown": 9,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 24,
    "unsafe_reads": false,
-   "ops": 3474,
+   "ops": 3334,
    "by_op": {
-    "get": 1557,
-    "cas": 373,
-    "delete": 336,
-    "put": 1208
+    "get": 1491,
+    "delete": 326,
+    "cas": 339,
+    "put": 1178
    },
-   "unknown": 15,
+   "unknown": 20,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 25,
    "unsafe_reads": false,
-   "ops": 4050,
+   "ops": 3855,
    "by_op": {
-    "put": 1364,
-    "cas": 369,
-    "get": 1886,
-    "delete": 431
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "bridge": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "kill",
-   "seed": 26,
-   "unsafe_reads": false,
-   "ops": 2848,
-   "by_op": {
-    "put": 1005,
-    "get": 1276,
-    "cas": 300,
-    "delete": 267
-   },
-   "unknown": 18,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "kill": 5
-   },
-   "seconds": 13.7
-  },
-  {
-   "schedule": "kill-leader",
-   "seed": 27,
-   "unsafe_reads": false,
-   "ops": 2483,
-   "by_op": {
-    "get": 1106,
-    "put": 919,
-    "delete": 223,
-    "cas": 235
-   },
-   "unknown": 27,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "kill leader": 4
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "packet-loss",
-   "seed": 28,
-   "unsafe_reads": false,
-   "ops": 3859,
-   "by_op": {
-    "get": 1746,
-    "put": 1335,
-    "cas": 381,
-    "delete": 397
+    "put": 1297,
+    "cas": 352,
+    "get": 1792,
+    "delete": 414
    },
    "unknown": 0,
    "linearizable": true,
@@ -706,67 +643,130 @@
    "check_seconds": 0.004,
    "violation": null,
    "faults": {
+    "bridge": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "kill",
+   "seed": 26,
+   "unsafe_reads": false,
+   "ops": 3318,
+   "by_op": {
+    "put": 1166,
+    "cas": 336,
+    "get": 1503,
+    "delete": 313
+   },
+   "unknown": 9,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.006,
+   "violation": null,
+   "faults": {
+    "kill": 5
+   },
+   "seconds": 13.8
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 27,
+   "unsafe_reads": false,
+   "ops": 2031,
+   "by_op": {
+    "put": 764,
+    "get": 884,
+    "delete": 200,
+    "cas": 183
+   },
+   "unknown": 29,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 28,
+   "unsafe_reads": false,
+   "ops": 3970,
+   "by_op": {
+    "put": 1382,
+    "get": 1796,
+    "cas": 387,
+    "delete": 405
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
     "packet loss": 5
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "delay",
    "seed": 29,
    "unsafe_reads": false,
-   "ops": 1441,
+   "ops": 1332,
    "by_op": {
-    "put": 493,
-    "delete": 148,
-    "cas": 168,
-    "get": 632
+    "put": 455,
+    "get": 578,
+    "cas": 159,
+    "delete": 140
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 30,
    "unsafe_reads": false,
-   "ops": 3888,
+   "ops": 3779,
    "by_op": {
-    "get": 1739,
-    "put": 1361,
-    "delete": 398,
-    "cas": 390
+    "put": 1327,
+    "get": 1688,
+    "delete": 388,
+    "cas": 376
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.007,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 31,
    "unsafe_reads": false,
-   "ops": 4007,
+   "ops": 4010,
    "by_op": {
-    "get": 1775,
+    "get": 1776,
+    "cas": 398,
     "put": 1413,
-    "cas": 396,
     "delete": 423
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "member removed": 4,
@@ -778,17 +778,17 @@
    "schedule": "mixed",
    "seed": 32,
    "unsafe_reads": false,
-   "ops": 3452,
+   "ops": 3236,
    "by_op": {
-    "get": 1538,
-    "put": 1223,
-    "delete": 366,
-    "cas": 325
+    "delete": 343,
+    "put": 1152,
+    "get": 1446,
+    "cas": 295
    },
-   "unknown": 10,
+   "unknown": 20,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 2,
@@ -796,147 +796,147 @@
     "isolate leader": 2,
     "kill leader": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 33,
    "unsafe_reads": false,
-   "ops": 3905,
+   "ops": 3851,
    "by_op": {
-    "get": 1802,
-    "put": 1312,
-    "cas": 395,
-    "delete": 396
+    "get": 1774,
+    "put": 1290,
+    "delete": 393,
+    "cas": 394
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 34,
    "unsafe_reads": false,
-   "ops": 3715,
+   "ops": 3659,
    "by_op": {
-    "get": 1678,
-    "put": 1301,
-    "delete": 396,
-    "cas": 340
+    "get": 1655,
+    "put": 1281,
+    "cas": 338,
+    "delete": 385
    },
-   "unknown": 9,
+   "unknown": 4,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.6
+   "seconds": 12.8
   },
   {
    "schedule": "isolate-leader",
    "seed": 35,
    "unsafe_reads": false,
-   "ops": 3558,
+   "ops": 3394,
    "by_op": {
-    "put": 1244,
-    "cas": 362,
-    "delete": 315,
-    "get": 1637
+    "put": 1179,
+    "delete": 300,
+    "cas": 345,
+    "get": 1570
    },
-   "unknown": 24,
+   "unknown": 23,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 36,
    "unsafe_reads": false,
-   "ops": 4029,
+   "ops": 3945,
    "by_op": {
-    "delete": 446,
-    "get": 1802,
-    "put": 1398,
-    "cas": 383
+    "delete": 431,
+    "put": 1368,
+    "get": 1771,
+    "cas": 375
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "bridge": 5
+    "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 37,
    "unsafe_reads": false,
-   "ops": 3939,
+   "ops": 3902,
    "by_op": {
-    "cas": 387,
-    "get": 1742,
-    "delete": 403,
-    "put": 1407
+    "cas": 384,
+    "get": 1724,
+    "delete": 398,
+    "put": 1396
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "kill": 6
+    "kill": 4
    },
-   "seconds": 13.8
+   "seconds": 12.7
   },
   {
    "schedule": "kill-leader",
    "seed": 38,
    "unsafe_reads": false,
-   "ops": 2297,
+   "ops": 1900,
    "by_op": {
-    "put": 801,
-    "get": 1036,
-    "cas": 224,
-    "delete": 236
+    "get": 858,
+    "put": 685,
+    "cas": 164,
+    "delete": 193
    },
-   "unknown": 31,
+   "unknown": 34,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.8
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 39,
    "unsafe_reads": false,
-   "ops": 3823,
+   "ops": 3873,
    "by_op": {
-    "get": 1710,
-    "cas": 374,
-    "put": 1339,
-    "delete": 400
+    "get": 1725,
+    "cas": 387,
+    "put": 1356,
+    "delete": 405
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 4
@@ -947,59 +947,59 @@
    "schedule": "delay",
    "seed": 40,
    "unsafe_reads": false,
-   "ops": 1374,
+   "ops": 1369,
    "by_op": {
-    "get": 627,
-    "put": 496,
-    "delete": 128,
+    "get": 624,
+    "put": 493,
+    "delete": 129,
     "cas": 123
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 41,
    "unsafe_reads": false,
-   "ops": 3902,
+   "ops": 3784,
    "by_op": {
-    "get": 1725,
-    "delete": 434,
-    "put": 1344,
-    "cas": 399
+    "get": 1674,
+    "delete": 420,
+    "put": 1296,
+    "cas": 394
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 42,
    "unsafe_reads": false,
-   "ops": 3998,
+   "ops": 4075,
    "by_op": {
-    "get": 1812,
-    "cas": 417,
-    "put": 1355,
-    "delete": 414
+    "get": 1853,
+    "cas": 421,
+    "put": 1382,
+    "delete": 419
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "member removed": 5,
@@ -1011,40 +1011,40 @@
    "schedule": "mixed",
    "seed": 43,
    "unsafe_reads": false,
-   "ops": 4041,
+   "ops": 3898,
    "by_op": {
-    "put": 1395,
-    "get": 1865,
-    "delete": 371,
-    "cas": 410
+    "put": 1349,
+    "cas": 396,
+    "delete": 359,
+    "get": 1794
    },
-   "unknown": 0,
+   "unknown": 6,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 1,
     "packet loss": 3,
     "bridge": 2
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 44,
    "unsafe_reads": false,
-   "ops": 4057,
+   "ops": 3850,
    "by_op": {
-    "get": 1826,
-    "put": 1416,
-    "cas": 408,
-    "delete": 407
+    "get": 1736,
+    "put": 1347,
+    "cas": 388,
+    "delete": 379
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
    "seconds": 12.7
@@ -1053,309 +1053,309 @@
    "schedule": "partition",
    "seed": 45,
    "unsafe_reads": false,
-   "ops": 3671,
+   "ops": 3765,
    "by_op": {
-    "put": 1291,
-    "cas": 392,
-    "get": 1650,
-    "delete": 338
+    "put": 1318,
+    "cas": 418,
+    "get": 1683,
+    "delete": 346
    },
-   "unknown": 10,
+   "unknown": 6,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 46,
    "unsafe_reads": false,
-   "ops": 3359,
+   "ops": 3219,
    "by_op": {
-    "put": 1144,
-    "cas": 349,
-    "get": 1531,
-    "delete": 335
+    "get": 1474,
+    "put": 1090,
+    "cas": 336,
+    "delete": 319
    },
-   "unknown": 23,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 47,
    "unsafe_reads": false,
-   "ops": 3925,
+   "ops": 3850,
    "by_op": {
-    "cas": 379,
-    "put": 1374,
-    "get": 1791,
-    "delete": 381
+    "get": 1756,
+    "cas": 374,
+    "put": 1346,
+    "delete": 374
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "kill",
    "seed": 48,
    "unsafe_reads": false,
-   "ops": 3670,
+   "ops": 3135,
    "by_op": {
-    "get": 1657,
-    "put": 1229,
-    "cas": 398,
-    "delete": 386
+    "delete": 330,
+    "get": 1415,
+    "cas": 348,
+    "put": 1042
    },
-   "unknown": 0,
+   "unknown": 11,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 12.6
+   "seconds": 13.1
   },
   {
    "schedule": "kill-leader",
    "seed": 49,
    "unsafe_reads": false,
-   "ops": 2429,
+   "ops": 2487,
    "by_op": {
-    "get": 1085,
-    "put": 859,
-    "delete": 229,
-    "cas": 256
+    "put": 899,
+    "delete": 238,
+    "cas": 264,
+    "get": 1086
    },
-   "unknown": 30,
+   "unknown": 34,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 5
    },
-   "seconds": 13.0
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 50,
    "unsafe_reads": false,
-   "ops": 3917,
+   "ops": 3916,
    "by_op": {
-    "put": 1381,
+    "put": 1385,
     "cas": 397,
-    "get": 1749,
+    "get": 1744,
     "delete": 390
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 51,
    "unsafe_reads": false,
-   "ops": 1292,
+   "ops": 1311,
    "by_op": {
-    "put": 460,
+    "put": 470,
     "delete": 131,
-    "cas": 135,
-    "get": 566
+    "cas": 136,
+    "get": 574
    },
    "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 52,
-   "unsafe_reads": false,
-   "ops": 3930,
-   "by_op": {
-    "get": 1835,
-    "cas": 369,
-    "put": 1325,
-    "delete": 401
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 5
-   },
-   "seconds": 12.7
-  },
-  {
-   "schedule": "membership",
-   "seed": 53,
-   "unsafe_reads": false,
-   "ops": 2195,
-   "by_op": {
-    "get": 968,
-    "cas": 268,
-    "delete": 223,
-    "put": 736
-   },
-   "unknown": 42,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
    "violation": null,
    "faults": {
+    "delay": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 52,
+   "unsafe_reads": false,
+   "ops": 3928,
+   "by_op": {
+    "put": 1325,
+    "get": 1831,
+    "cas": 369,
+    "delete": 403
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "membership",
+   "seed": 53,
+   "unsafe_reads": false,
+   "ops": 2066,
+   "by_op": {
+    "put": 696,
+    "get": 909,
+    "cas": 244,
+    "delete": 217
+   },
+   "unknown": 39,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.3
+   "seconds": 13.4
   },
   {
    "schedule": "mixed",
    "seed": 54,
    "unsafe_reads": false,
-   "ops": 3551,
+   "ops": 3723,
    "by_op": {
-    "get": 1532,
-    "cas": 367,
-    "put": 1277,
-    "delete": 375
+    "cas": 375,
+    "get": 1607,
+    "put": 1353,
+    "delete": 388
    },
-   "unknown": 17,
+   "unknown": 1,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 2,
     "kill": 3,
     "packet loss": 2
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 55,
    "unsafe_reads": false,
-   "ops": 3790,
+   "ops": 3782,
    "by_op": {
-    "put": 1362,
-    "get": 1667,
+    "put": 1364,
     "delete": 383,
-    "cas": 378
+    "get": 1662,
+    "cas": 373
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 56,
    "unsafe_reads": false,
-   "ops": 3830,
+   "ops": 3806,
    "by_op": {
-    "delete": 356,
-    "get": 1771,
-    "cas": 367,
-    "put": 1336
+    "delete": 362,
+    "get": 1756,
+    "cas": 372,
+    "put": 1316
    },
-   "unknown": 4,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 57,
    "unsafe_reads": false,
-   "ops": 3405,
+   "ops": 3266,
    "by_op": {
-    "get": 1522,
-    "delete": 337,
-    "put": 1197,
-    "cas": 349
+    "get": 1457,
+    "delete": 325,
+    "cas": 329,
+    "put": 1155
    },
-   "unknown": 21,
+   "unknown": 18,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 58,
    "unsafe_reads": false,
-   "ops": 3949,
+   "ops": 3991,
    "by_op": {
-    "get": 1731,
-    "put": 1373,
-    "delete": 424,
-    "cas": 421
+    "get": 1747,
+    "put": 1389,
+    "delete": 430,
+    "cas": 425
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "kill",
    "seed": 59,
    "unsafe_reads": false,
-   "ops": 3757,
+   "ops": 3237,
    "by_op": {
-    "get": 1694,
-    "put": 1300,
-    "delete": 365,
-    "cas": 398
+    "get": 1443,
+    "put": 1128,
+    "cas": 337,
+    "delete": 329
    },
-   "unknown": 1,
+   "unknown": 7,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -1363,129 +1363,129 @@
    "faults": {
     "kill": 5
    },
-   "seconds": 13.6
+   "seconds": 13.8
   },
   {
    "schedule": "kill-leader",
    "seed": 60,
    "unsafe_reads": false,
-   "ops": 2163,
+   "ops": 2054,
    "by_op": {
-    "put": 767,
-    "cas": 230,
-    "get": 974,
-    "delete": 192
+    "cas": 213,
+    "put": 728,
+    "get": 925,
+    "delete": 188
    },
    "unknown": 32,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "packet-loss",
    "seed": 61,
    "unsafe_reads": false,
-   "ops": 3837,
+   "ops": 3971,
    "by_op": {
-    "get": 1729,
-    "put": 1311,
-    "delete": 398,
-    "cas": 399
+    "get": 1786,
+    "put": 1355,
+    "delete": 408,
+    "cas": 422
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 62,
    "unsafe_reads": false,
-   "ops": 1444,
+   "ops": 1404,
    "by_op": {
-    "cas": 165,
-    "delete": 145,
-    "put": 515,
-    "get": 619
+    "cas": 162,
+    "get": 605,
+    "delete": 137,
+    "put": 500
    },
-   "unknown": 8,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 63,
    "unsafe_reads": false,
-   "ops": 3955,
+   "ops": 3758,
    "by_op": {
-    "cas": 385,
-    "put": 1362,
-    "get": 1801,
-    "delete": 407
+    "get": 1714,
+    "delete": 385,
+    "put": 1299,
+    "cas": 360
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 64,
    "unsafe_reads": false,
-   "ops": 1694,
+   "ops": 1758,
    "by_op": {
-    "put": 599,
-    "delete": 163,
-    "cas": 184,
-    "get": 748
+    "put": 617,
+    "get": 778,
+    "delete": 171,
+    "cas": 192
    },
-   "unknown": 59,
+   "unknown": 56,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.2
+   "seconds": 13.6
   },
   {
    "schedule": "mixed",
    "seed": 65,
    "unsafe_reads": false,
-   "ops": 2758,
+   "ops": 2662,
    "by_op": {
-    "get": 1256,
-    "put": 930,
-    "delete": 291,
-    "cas": 281
+    "get": 1211,
+    "put": 895,
+    "cas": 276,
+    "delete": 280
    },
-   "unknown": 30,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 3,
@@ -1498,331 +1498,331 @@
    "schedule": "none",
    "seed": 66,
    "unsafe_reads": false,
-   "ops": 3900,
+   "ops": 3833,
    "by_op": {
-    "get": 1815,
-    "put": 1316,
-    "delete": 374,
-    "cas": 395
+    "get": 1784,
+    "put": 1292,
+    "delete": 370,
+    "cas": 387
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 67,
    "unsafe_reads": false,
-   "ops": 3664,
+   "ops": 3702,
    "by_op": {
-    "delete": 368,
-    "get": 1609,
-    "put": 1313,
-    "cas": 374
+    "delete": 370,
+    "get": 1631,
+    "cas": 379,
+    "put": 1322
    },
-   "unknown": 2,
+   "unknown": 5,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 68,
    "unsafe_reads": false,
-   "ops": 3373,
+   "ops": 3430,
    "by_op": {
-    "delete": 310,
-    "put": 1159,
-    "get": 1535,
-    "cas": 369
+    "get": 1550,
+    "delete": 325,
+    "put": 1188,
+    "cas": 367
    },
-   "unknown": 15,
+   "unknown": 18,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 69,
    "unsafe_reads": false,
-   "ops": 3873,
+   "ops": 3881,
    "by_op": {
-    "get": 1759,
-    "delete": 404,
-    "put": 1305,
-    "cas": 405
+    "get": 1756,
+    "delete": 407,
+    "put": 1312,
+    "cas": 406
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 70,
    "unsafe_reads": false,
-   "ops": 3433,
+   "ops": 2775,
    "by_op": {
-    "cas": 330,
-    "get": 1535,
-    "delete": 328,
-    "put": 1240
+    "delete": 272,
+    "cas": 276,
+    "get": 1234,
+    "put": 993
    },
-   "unknown": 13,
+   "unknown": 29,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 13.1
+   "seconds": 13.3
   },
   {
    "schedule": "kill-leader",
    "seed": 71,
    "unsafe_reads": false,
-   "ops": 2636,
+   "ops": 2442,
    "by_op": {
-    "get": 1136,
-    "put": 963,
-    "cas": 289,
-    "delete": 248
+    "get": 1043,
+    "put": 886,
+    "delete": 241,
+    "cas": 272
    },
-   "unknown": 26,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.6
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 72,
    "unsafe_reads": false,
-   "ops": 3794,
+   "ops": 3968,
    "by_op": {
-    "get": 1693,
-    "cas": 392,
-    "delete": 345,
-    "put": 1364
+    "get": 1793,
+    "delete": 357,
+    "put": 1408,
+    "cas": 410
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 73,
    "unsafe_reads": false,
-   "ops": 1281,
+   "ops": 1348,
    "by_op": {
-    "get": 587,
-    "cas": 126,
-    "put": 447,
-    "delete": 121
+    "cas": 133,
+    "get": 618,
+    "put": 473,
+    "delete": 124
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 74,
    "unsafe_reads": false,
-   "ops": 3835,
+   "ops": 3747,
    "by_op": {
-    "get": 1735,
-    "put": 1380,
-    "delete": 365,
-    "cas": 355
+    "get": 1702,
+    "put": 1335,
+    "delete": 361,
+    "cas": 349
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 75,
    "unsafe_reads": false,
-   "ops": 2889,
+   "ops": 3035,
    "by_op": {
-    "delete": 305,
-    "get": 1267,
-    "cas": 272,
-    "put": 1045
+    "get": 1348,
+    "put": 1087,
+    "delete": 315,
+    "cas": 285
    },
-   "unknown": 21,
+   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.1
+   "seconds": 13.7
   },
   {
    "schedule": "mixed",
    "seed": 76,
    "unsafe_reads": false,
-   "ops": 3608,
+   "ops": 3029,
    "by_op": {
-    "delete": 392,
-    "get": 1639,
-    "cas": 362,
-    "put": 1215
+    "delete": 317,
+    "put": 1028,
+    "cas": 309,
+    "get": 1375
    },
    "unknown": 14,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 4,
     "isolate leader": 2,
     "bridge": 2
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 77,
    "unsafe_reads": false,
-   "ops": 3923,
+   "ops": 3859,
    "by_op": {
-    "put": 1385,
-    "cas": 376,
-    "get": 1774,
-    "delete": 388
+    "put": 1364,
+    "cas": 372,
+    "get": 1738,
+    "delete": 385
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 78,
    "unsafe_reads": false,
-   "ops": 4041,
+   "ops": 3982,
    "by_op": {
-    "get": 1847,
-    "put": 1401,
-    "delete": 405,
-    "cas": 388
+    "put": 1382,
+    "get": 1822,
+    "delete": 399,
+    "cas": 379
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 79,
    "unsafe_reads": false,
-   "ops": 3211,
+   "ops": 3290,
    "by_op": {
-    "get": 1451,
-    "put": 1108,
-    "cas": 330,
-    "delete": 322
+    "get": 1493,
+    "put": 1139,
+    "cas": 331,
+    "delete": 327
    },
-   "unknown": 27,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 80,
    "unsafe_reads": false,
-   "ops": 3909,
+   "ops": 3994,
    "by_op": {
-    "put": 1375,
-    "cas": 402,
-    "get": 1777,
-    "delete": 355
+    "put": 1406,
+    "cas": 414,
+    "get": 1810,
+    "delete": 364
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 81,
    "unsafe_reads": false,
-   "ops": 3423,
+   "ops": 3236,
    "by_op": {
-    "delete": 378,
-    "put": 1149,
-    "get": 1572,
-    "cas": 324
+    "delete": 355,
+    "get": 1499,
+    "put": 1077,
+    "cas": 305
    },
-   "unknown": 11,
+   "unknown": 10,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 6
@@ -1833,189 +1833,190 @@
    "schedule": "kill-leader",
    "seed": 82,
    "unsafe_reads": false,
-   "ops": 2366,
+   "ops": 2328,
    "by_op": {
-    "put": 824,
-    "get": 1066,
-    "cas": 236,
-    "delete": 240
+    "put": 820,
+    "get": 1048,
+    "cas": 225,
+    "delete": 235
    },
-   "unknown": 36,
+   "unknown": 38,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.9
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 83,
    "unsafe_reads": false,
-   "ops": 3909,
+   "ops": 4003,
    "by_op": {
-    "get": 1746,
-    "put": 1361,
-    "delete": 425,
-    "cas": 377
+    "get": 1785,
+    "put": 1393,
+    "cas": 384,
+    "delete": 441
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 84,
    "unsafe_reads": false,
-   "ops": 1389,
+   "ops": 1441,
    "by_op": {
-    "get": 633,
-    "put": 466,
-    "delete": 141,
-    "cas": 149
+    "get": 658,
+    "put": 486,
+    "delete": 147,
+    "cas": 150
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 85,
    "unsafe_reads": false,
-   "ops": 3897,
+   "ops": 3862,
    "by_op": {
-    "get": 1770,
-    "cas": 403,
-    "put": 1339,
-    "delete": 385
+    "get": 1757,
+    "cas": 402,
+    "put": 1322,
+    "delete": 381
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.007,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.8
   },
   {
    "schedule": "membership",
    "seed": 86,
    "unsafe_reads": false,
-   "ops": 4017,
+   "ops": 3893,
    "by_op": {
-    "delete": 388,
-    "get": 1848,
-    "put": 1391,
-    "cas": 390
+    "delete": 379,
+    "put": 1345,
+    "cas": 383,
+    "get": 1786
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "member removed": 4,
     "member added": 4
    },
-   "seconds": 13.1
+   "seconds": 13.2
   },
   {
    "schedule": "mixed",
    "seed": 87,
    "unsafe_reads": false,
-   "ops": 3518,
+   "ops": 3891,
    "by_op": {
-    "get": 1615,
-    "put": 1165,
-    "cas": 393,
-    "delete": 345
+    "get": 1806,
+    "cas": 426,
+    "put": 1275,
+    "delete": 384
    },
-   "unknown": 14,
+   "unknown": 2,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "isolate leader": 4,
-    "clock skew": 2,
-    "kill": 2
+    "isolate leader": 1,
+    "partition": 2,
+    "packet loss": 2,
+    "bridge": 1
    },
-   "seconds": 13.1
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 88,
    "unsafe_reads": false,
-   "ops": 3954,
+   "ops": 3527,
    "by_op": {
-    "get": 1781,
-    "put": 1367,
-    "cas": 391,
-    "delete": 415
+    "get": 1580,
+    "put": 1218,
+    "cas": 352,
+    "delete": 377
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 89,
    "unsafe_reads": false,
-   "ops": 3415,
+   "ops": 3746,
    "by_op": {
-    "get": 1520,
-    "cas": 360,
-    "put": 1168,
-    "delete": 367
+    "get": 1682,
+    "put": 1286,
+    "delete": 399,
+    "cas": 379
    },
-   "unknown": 19,
+   "unknown": 10,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 90,
    "unsafe_reads": false,
-   "ops": 3595,
+   "ops": 3403,
    "by_op": {
-    "get": 1584,
-    "put": 1296,
-    "delete": 358,
-    "cas": 357
+    "get": 1507,
+    "put": 1202,
+    "cas": 346,
+    "delete": 348
    },
-   "unknown": 16,
+   "unknown": 15,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
    "violation": null,
    "faults": {
-    "isolate leader": 5
+    "isolate leader": 4
    },
    "seconds": 12.5
   },
@@ -2023,35 +2024,35 @@
    "schedule": "bridge",
    "seed": 91,
    "unsafe_reads": false,
-   "ops": 4115,
+   "ops": 4075,
    "by_op": {
-    "get": 1919,
-    "put": 1381,
-    "cas": 427,
-    "delete": 388
+    "get": 1903,
+    "put": 1367,
+    "cas": 423,
+    "delete": 382
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.4
+   "seconds": 12.5
   },
   {
    "schedule": "kill",
    "seed": 92,
    "unsafe_reads": false,
-   "ops": 3624,
+   "ops": 3683,
    "by_op": {
-    "cas": 374,
-    "delete": 330,
-    "get": 1626,
-    "put": 1294
+    "cas": 385,
+    "delete": 336,
+    "put": 1311,
+    "get": 1651
    },
-   "unknown": 7,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -2059,68 +2060,68 @@
    "faults": {
     "kill": 5
    },
-   "seconds": 13.0
+   "seconds": 13.2
   },
   {
    "schedule": "kill-leader",
    "seed": 93,
    "unsafe_reads": false,
-   "ops": 2565,
+   "ops": 2154,
    "by_op": {
-    "get": 1152,
-    "put": 892,
-    "cas": 268,
-    "delete": 253
+    "get": 966,
+    "delete": 207,
+    "put": 752,
+    "cas": 229
    },
-   "unknown": 27,
+   "unknown": 40,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.4
+   "seconds": 12.5
   },
   {
    "schedule": "packet-loss",
    "seed": 94,
    "unsafe_reads": false,
-   "ops": 3841,
+   "ops": 4108,
    "by_op": {
-    "get": 1694,
-    "put": 1355,
-    "cas": 392,
-    "delete": 400
+    "put": 1448,
+    "get": 1810,
+    "cas": 419,
+    "delete": 431
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.4
+   "seconds": 12.5
   },
   {
    "schedule": "delay",
    "seed": 95,
    "unsafe_reads": false,
-   "ops": 1372,
+   "ops": 1448,
    "by_op": {
-    "cas": 138,
-    "delete": 139,
-    "put": 484,
-    "get": 611
+    "delete": 146,
+    "put": 498,
+    "cas": 149,
+    "get": 655
    },
-   "unknown": 7,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
-    "delay": 5
+    "delay": 4
    },
    "seconds": 12.5
   },
@@ -2128,14 +2129,14 @@
    "schedule": "clock-skew",
    "seed": 96,
    "unsafe_reads": false,
-   "ops": 3826,
+   "ops": 3700,
    "by_op": {
-    "get": 1667,
-    "put": 1407,
-    "cas": 390,
-    "delete": 362
+    "get": 1617,
+    "put": 1357,
+    "cas": 372,
+    "delete": 354
    },
-   "unknown": 0,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -2143,23 +2144,23 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.4
+   "seconds": 12.5
   },
   {
    "schedule": "membership",
    "seed": 97,
    "unsafe_reads": false,
-   "ops": 2753,
+   "ops": 2875,
    "by_op": {
-    "get": 1219,
-    "cas": 272,
-    "delete": 299,
-    "put": 963
+    "put": 998,
+    "get": 1286,
+    "cas": 282,
+    "delete": 309
    },
-   "unknown": 24,
+   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "member removed": 3,
@@ -2171,40 +2172,40 @@
    "schedule": "mixed",
    "seed": 98,
    "unsafe_reads": false,
-   "ops": 3491,
+   "ops": 3263,
    "by_op": {
-    "put": 1205,
-    "get": 1567,
-    "cas": 353,
-    "delete": 366
+    "get": 1460,
+    "put": 1120,
+    "cas": 335,
+    "delete": 348
    },
-   "unknown": 10,
+   "unknown": 15,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 4,
     "kill leader": 1,
     "clock skew": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 99,
    "unsafe_reads": false,
-   "ops": 3848,
+   "ops": 3800,
    "by_op": {
-    "cas": 367,
-    "put": 1361,
-    "delete": 403,
-    "get": 1717
+    "get": 1694,
+    "put": 1349,
+    "delete": 397,
+    "cas": 360
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
    "seconds": 12.5
@@ -2213,349 +2214,54 @@
    "schedule": "partition",
    "seed": 100,
    "unsafe_reads": false,
-   "ops": 3821,
+   "ops": 3585,
    "by_op": {
-    "put": 1340,
-    "get": 1726,
-    "delete": 386,
-    "cas": 369
+    "put": 1266,
+    "cas": 346,
+    "get": 1606,
+    "delete": 367
    },
-   "unknown": 4,
+   "unknown": 11,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 101,
    "unsafe_reads": false,
-   "ops": 3466,
+   "ops": 3452,
    "by_op": {
-    "put": 1215,
-    "delete": 343,
-    "cas": 350,
-    "get": 1558
+    "put": 1210,
+    "cas": 349,
+    "delete": 345,
+    "get": 1548
    },
-   "unknown": 23,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 102,
    "unsafe_reads": false,
-   "ops": 3878,
+   "ops": 3869,
    "by_op": {
-    "get": 1720,
+    "get": 1716,
     "cas": 381,
-    "put": 1386,
-    "delete": 391
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "bridge": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "kill",
-   "seed": 103,
-   "unsafe_reads": false,
-   "ops": 2833,
-   "by_op": {
-    "put": 992,
-    "get": 1295,
-    "delete": 272,
-    "cas": 274
-   },
-   "unknown": 23,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "kill": 5
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "kill-leader",
-   "seed": 104,
-   "unsafe_reads": false,
-   "ops": 2465,
-   "by_op": {
-    "get": 1084,
-    "put": 921,
-    "cas": 226,
-    "delete": 234
-   },
-   "unknown": 25,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "kill leader": 4
-   },
-   "seconds": 13.1
-  },
-  {
-   "schedule": "packet-loss",
-   "seed": 105,
-   "unsafe_reads": false,
-   "ops": 4072,
-   "by_op": {
-    "get": 1912,
-    "delete": 369,
-    "put": 1364,
-    "cas": 427
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "packet loss": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "delay",
-   "seed": 106,
-   "unsafe_reads": false,
-   "ops": 1385,
-   "by_op": {
-    "put": 510,
-    "delete": 137,
-    "cas": 134,
-    "get": 604
-   },
-   "unknown": 17,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 107,
-   "unsafe_reads": false,
-   "ops": 3916,
-   "by_op": {
-    "put": 1386,
-    "cas": 419,
-    "get": 1756,
-    "delete": 355
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "membership",
-   "seed": 108,
-   "unsafe_reads": false,
-   "ops": 2023,
-   "by_op": {
-    "cas": 174,
-    "put": 730,
-    "delete": 189,
-    "get": 930
-   },
-   "unknown": 49,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "member removed": 2,
-    "member added": 2
-   },
-   "seconds": 13.3
-  },
-  {
-   "schedule": "mixed",
-   "seed": 109,
-   "unsafe_reads": false,
-   "ops": 3520,
-   "by_op": {
-    "delete": 359,
-    "put": 1187,
-    "get": 1621,
-    "cas": 353
-   },
-   "unknown": 13,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "kill": 4,
-    "packet loss": 1,
-    "isolate leader": 1
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "none",
-   "seed": 110,
-   "unsafe_reads": false,
-   "ops": 3837,
-   "by_op": {
-    "put": 1334,
-    "get": 1746,
-    "delete": 392,
-    "cas": 365
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {},
-   "seconds": 12.5
-  },
-  {
-   "schedule": "partition",
-   "seed": 111,
-   "unsafe_reads": false,
-   "ops": 3336,
-   "by_op": {
-    "put": 1182,
-    "delete": 339,
-    "get": 1469,
-    "cas": 346
-   },
-   "unknown": 16,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "partition": 5
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "isolate-leader",
-   "seed": 112,
-   "unsafe_reads": false,
-   "ops": 3423,
-   "by_op": {
-    "get": 1494,
-    "cas": 357,
-    "put": 1191,
-    "delete": 381
-   },
-   "unknown": 24,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "isolate leader": 4
-   },
-   "seconds": 12.4
-  },
-  {
-   "schedule": "bridge",
-   "seed": 113,
-   "unsafe_reads": false,
-   "ops": 3849,
-   "by_op": {
-    "get": 1698,
-    "cas": 384,
-    "put": 1343,
-    "delete": 424
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "bridge": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "kill",
-   "seed": 114,
-   "unsafe_reads": false,
-   "ops": 3824,
-   "by_op": {
-    "get": 1714,
-    "delete": 390,
-    "put": 1316,
-    "cas": 404
-   },
-   "unknown": 1,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "kill": 6
-   },
-   "seconds": 13.5
-  },
-  {
-   "schedule": "kill-leader",
-   "seed": 115,
-   "unsafe_reads": false,
-   "ops": 2475,
-   "by_op": {
-    "put": 910,
-    "get": 1128,
-    "cas": 214,
-    "delete": 223
-   },
-   "unknown": 28,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "kill leader": 4
-   },
-   "seconds": 12.9
-  },
-  {
-   "schedule": "packet-loss",
-   "seed": 116,
-   "unsafe_reads": false,
-   "ops": 4038,
-   "by_op": {
-    "get": 1817,
-    "cas": 382,
-    "put": 1423,
-    "delete": 416
+    "put": 1380,
+    "delete": 392
    },
    "unknown": 0,
    "linearizable": true,
@@ -2563,67 +2269,130 @@
    "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "packet loss": 5
+    "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
-   "schedule": "delay",
-   "seed": 117,
+   "schedule": "kill",
+   "seed": 103,
    "unsafe_reads": false,
-   "ops": 1427,
+   "ops": 3204,
    "by_op": {
-    "put": 507,
-    "get": 634,
-    "cas": 155,
-    "delete": 131
+    "cas": 320,
+    "put": 1106,
+    "get": 1461,
+    "delete": 317
    },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 118,
-   "unsafe_reads": false,
-   "ops": 3988,
-   "by_op": {
-    "get": 1803,
-    "cas": 393,
-    "put": 1428,
-    "delete": 364
-   },
-   "unknown": 0,
+   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
    "violation": null,
    "faults": {
+    "kill": 5
+   },
+   "seconds": 12.9
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 104,
+   "unsafe_reads": false,
+   "ops": 2160,
+   "by_op": {
+    "get": 943,
+    "put": 809,
+    "cas": 197,
+    "delete": 211
+   },
+   "unknown": 26,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 13.2
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 105,
+   "unsafe_reads": false,
+   "ops": 3899,
+   "by_op": {
+    "get": 1826,
+    "put": 1306,
+    "cas": 412,
+    "delete": 355
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "packet loss": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "delay",
+   "seed": 106,
+   "unsafe_reads": false,
+   "ops": 1379,
+   "by_op": {
+    "put": 498,
+    "get": 611,
+    "delete": 133,
+    "cas": 137
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": null,
+   "faults": {
+    "delay": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 107,
+   "unsafe_reads": false,
+   "ops": 3683,
+   "by_op": {
+    "get": 1656,
+    "put": 1301,
+    "cas": 394,
+    "delete": 332
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.006,
+   "violation": null,
+   "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
-   "seed": 119,
+   "seed": 108,
    "unsafe_reads": false,
-   "ops": 1985,
+   "ops": 1947,
    "by_op": {
-    "delete": 187,
-    "get": 912,
-    "put": 699,
-    "cas": 187
+    "cas": 170,
+    "put": 691,
+    "delete": 185,
+    "get": 901
    },
-   "unknown": 56,
+   "unknown": 43,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "member removed": 2,
@@ -2633,19 +2402,251 @@
   },
   {
    "schedule": "mixed",
-   "seed": 120,
+   "seed": 109,
    "unsafe_reads": false,
-   "ops": 3850,
+   "ops": 3067,
    "by_op": {
-    "delete": 382,
-    "get": 1722,
-    "put": 1377,
-    "cas": 369
+    "put": 1033,
+    "delete": 317,
+    "cas": 307,
+    "get": 1410
    },
-   "unknown": 3,
+   "unknown": 16,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "kill": 4,
+    "packet loss": 1,
+    "isolate leader": 1
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "none",
+   "seed": 110,
+   "unsafe_reads": false,
+   "ops": 3915,
+   "by_op": {
+    "put": 1359,
+    "delete": 402,
+    "get": 1782,
+    "cas": 372
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {},
+   "seconds": 12.6
+  },
+  {
+   "schedule": "partition",
+   "seed": 111,
+   "unsafe_reads": false,
+   "ops": 3762,
+   "by_op": {
+    "put": 1341,
+    "delete": 392,
+    "get": 1644,
+    "cas": 385
+   },
+   "unknown": 4,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "partition": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 112,
+   "unsafe_reads": false,
+   "ops": 3254,
+   "by_op": {
+    "cas": 336,
+    "put": 1126,
+    "delete": 366,
+    "get": 1426
+   },
+   "unknown": 18,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "isolate leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "bridge",
+   "seed": 113,
+   "unsafe_reads": false,
+   "ops": 3963,
+   "by_op": {
+    "get": 1760,
+    "cas": 388,
+    "put": 1377,
+    "delete": 438
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "bridge": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "kill",
+   "seed": 114,
+   "unsafe_reads": false,
+   "ops": 3617,
+   "by_op": {
+    "get": 1635,
+    "put": 1228,
+    "delete": 375,
+    "cas": 379
+   },
+   "unknown": 1,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "kill": 6
+   },
+   "seconds": 13.7
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 115,
+   "unsafe_reads": false,
+   "ops": 2355,
+   "by_op": {
+    "get": 1074,
+    "put": 871,
+    "cas": 203,
+    "delete": 207
+   },
+   "unknown": 28,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 13.0
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 116,
+   "unsafe_reads": false,
+   "ops": 3792,
+   "by_op": {
+    "put": 1334,
+    "get": 1714,
+    "delete": 390,
+    "cas": 354
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "packet loss": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "delay",
+   "seed": 117,
+   "unsafe_reads": false,
+   "ops": 1437,
+   "by_op": {
+    "put": 511,
+    "get": 639,
+    "cas": 153,
+    "delete": 134
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": null,
+   "faults": {
+    "delay": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 118,
+   "unsafe_reads": false,
+   "ops": 3654,
+   "by_op": {
+    "get": 1649,
+    "cas": 362,
+    "put": 1311,
+    "delete": 332
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "membership",
+   "seed": 119,
+   "unsafe_reads": false,
+   "ops": 2000,
+   "by_op": {
+    "get": 917,
+    "put": 706,
+    "delete": 192,
+    "cas": 185
+   },
+   "unknown": 58,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "member removed": 2,
+    "member added": 2
+   },
+   "seconds": 13.3
+  },
+  {
+   "schedule": "mixed",
+   "seed": 120,
+   "unsafe_reads": false,
+   "ops": 3977,
+   "by_op": {
+    "get": 1778,
+    "put": 1419,
+    "delete": 397,
+    "cas": 383
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 2,
@@ -2653,23 +2654,23 @@
     "partition": 1,
     "bridge": 2
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 121,
    "unsafe_reads": false,
-   "ops": 3891,
+   "ops": 3603,
    "by_op": {
-    "get": 1735,
-    "delete": 390,
-    "put": 1380,
-    "cas": 386
+    "get": 1604,
+    "delete": 364,
+    "put": 1272,
+    "cas": 363
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
    "seconds": 12.5
@@ -2678,35 +2679,35 @@
    "schedule": "partition",
    "seed": 122,
    "unsafe_reads": false,
-   "ops": 3915,
+   "ops": 3923,
    "by_op": {
-    "cas": 381,
-    "put": 1378,
-    "get": 1815,
-    "delete": 341
+    "get": 1825,
+    "put": 1383,
+    "cas": 377,
+    "delete": 338
    },
-   "unknown": 2,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 123,
    "unsafe_reads": false,
-   "ops": 3302,
+   "ops": 3106,
    "by_op": {
-    "put": 1195,
-    "cas": 337,
-    "get": 1474,
-    "delete": 296
+    "get": 1398,
+    "put": 1122,
+    "cas": 315,
+    "delete": 271
    },
-   "unknown": 15,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -2714,70 +2715,70 @@
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 124,
    "unsafe_reads": false,
-   "ops": 3856,
+   "ops": 3673,
    "by_op": {
-    "get": 1687,
-    "cas": 406,
-    "put": 1379,
-    "delete": 384
+    "delete": 368,
+    "get": 1596,
+    "put": 1320,
+    "cas": 389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 125,
    "unsafe_reads": false,
-   "ops": 3354,
+   "ops": 3431,
    "by_op": {
-    "put": 1141,
-    "get": 1541,
-    "cas": 362,
-    "delete": 310
+    "cas": 366,
+    "get": 1577,
+    "put": 1170,
+    "delete": 318
    },
-   "unknown": 5,
+   "unknown": 1,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 12.9
+   "seconds": 13.2
   },
   {
    "schedule": "kill-leader",
    "seed": 126,
    "unsafe_reads": false,
-   "ops": 2343,
+   "ops": 1933,
    "by_op": {
-    "put": 803,
-    "get": 1042,
-    "delete": 251,
-    "cas": 247
+    "put": 659,
+    "delete": 202,
+    "cas": 210,
+    "get": 862
    },
-   "unknown": 27,
+   "unknown": 29,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "packet-loss",
@@ -2785,100 +2786,100 @@
    "unsafe_reads": false,
    "ops": 3981,
    "by_op": {
-    "cas": 376,
-    "get": 1819,
-    "delete": 394,
-    "put": 1392
+    "cas": 381,
+    "get": 1818,
+    "put": 1389,
+    "delete": 393
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 128,
    "unsafe_reads": false,
-   "ops": 1423,
+   "ops": 1325,
    "by_op": {
-    "get": 632,
-    "put": 501,
-    "cas": 147,
-    "delete": 143
+    "get": 593,
+    "put": 466,
+    "delete": 132,
+    "cas": 134
    },
    "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 129,
-   "unsafe_reads": false,
-   "ops": 3889,
-   "by_op": {
-    "delete": 397,
-    "get": 1749,
-    "cas": 388,
-    "put": 1355
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 4
-   },
-   "seconds": 12.4
-  },
-  {
-   "schedule": "membership",
-   "seed": 130,
-   "unsafe_reads": false,
-   "ops": 2661,
-   "by_op": {
-    "get": 1151,
-    "put": 988,
-    "delete": 271,
-    "cas": 251
-   },
-   "unknown": 29,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
    "violation": null,
    "faults": {
+    "delay": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 129,
+   "unsafe_reads": false,
+   "ops": 3738,
+   "by_op": {
+    "get": 1685,
+    "delete": 380,
+    "put": 1300,
+    "cas": 373
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "membership",
+   "seed": 130,
+   "unsafe_reads": false,
+   "ops": 2688,
+   "by_op": {
+    "get": 1163,
+    "put": 999,
+    "delete": 273,
+    "cas": 253
+   },
+   "unknown": 31,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.3
+   "seconds": 13.1
   },
   {
    "schedule": "mixed",
    "seed": 131,
    "unsafe_reads": false,
-   "ops": 3591,
+   "ops": 3479,
    "by_op": {
-    "get": 1589,
-    "put": 1260,
-    "cas": 382,
-    "delete": 360
+    "put": 1215,
+    "get": 1550,
+    "cas": 367,
+    "delete": 347
    },
-   "unknown": 4,
+   "unknown": 5,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 2,
@@ -2886,210 +2887,210 @@
     "isolate leader": 1,
     "bridge": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 132,
    "unsafe_reads": false,
-   "ops": 3841,
+   "ops": 3665,
    "by_op": {
-    "put": 1366,
-    "get": 1723,
-    "cas": 399,
-    "delete": 353
+    "put": 1305,
+    "get": 1636,
+    "cas": 387,
+    "delete": 337
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 133,
    "unsafe_reads": false,
-   "ops": 3658,
+   "ops": 3378,
    "by_op": {
-    "delete": 418,
-    "put": 1282,
-    "cas": 358,
-    "get": 1600
+    "cas": 341,
+    "get": 1474,
+    "delete": 388,
+    "put": 1175
    },
-   "unknown": 11,
+   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 134,
    "unsafe_reads": false,
-   "ops": 3464,
+   "ops": 3358,
    "by_op": {
-    "put": 1175,
-    "cas": 328,
-    "get": 1588,
-    "delete": 373
+    "get": 1533,
+    "cas": 324,
+    "put": 1145,
+    "delete": 356
    },
-   "unknown": 19,
+   "unknown": 17,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 135,
    "unsafe_reads": false,
-   "ops": 3998,
+   "ops": 3813,
    "by_op": {
-    "get": 1745,
-    "delete": 405,
-    "put": 1441,
-    "cas": 407
+    "put": 1373,
+    "get": 1668,
+    "cas": 385,
+    "delete": 387
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 136,
    "unsafe_reads": false,
-   "ops": 2843,
+   "ops": 3336,
    "by_op": {
-    "get": 1268,
-    "cas": 276,
-    "put": 1021,
-    "delete": 278
+    "get": 1489,
+    "cas": 340,
+    "put": 1179,
+    "delete": 328
    },
-   "unknown": 18,
+   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill": 7
    },
-   "seconds": 13.5
+   "seconds": 13.7
   },
   {
    "schedule": "kill-leader",
    "seed": 137,
    "unsafe_reads": false,
-   "ops": 2358,
+   "ops": 2070,
    "by_op": {
-    "cas": 263,
-    "put": 809,
-    "get": 1054,
-    "delete": 232
+    "put": 694,
+    "cas": 231,
+    "get": 926,
+    "delete": 219
    },
-   "unknown": 29,
+   "unknown": 38,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.5
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 138,
    "unsafe_reads": false,
-   "ops": 3837,
+   "ops": 3848,
    "by_op": {
+    "cas": 400,
+    "get": 1672,
     "delete": 409,
-    "get": 1660,
-    "cas": 398,
-    "put": 1370
+    "put": 1367
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 139,
    "unsafe_reads": false,
-   "ops": 1442,
+   "ops": 1408,
    "by_op": {
-    "put": 494,
-    "delete": 133,
-    "get": 672,
-    "cas": 143
+    "get": 664,
+    "cas": 138,
+    "delete": 128,
+    "put": 478
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 140,
    "unsafe_reads": false,
-   "ops": 3810,
+   "ops": 3782,
    "by_op": {
-    "get": 1686,
-    "put": 1341,
-    "delete": 395,
-    "cas": 388
+    "put": 1338,
+    "delete": 390,
+    "get": 1670,
+    "cas": 384
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 141,
    "unsafe_reads": false,
-   "ops": 4011,
+   "ops": 4119,
    "by_op": {
-    "get": 1815,
-    "cas": 399,
-    "delete": 390,
-    "put": 1407
+    "get": 1863,
+    "put": 1448,
+    "cas": 410,
+    "delete": 398
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "member removed": 4,
@@ -3101,40 +3102,40 @@
    "schedule": "mixed",
    "seed": 142,
    "unsafe_reads": false,
-   "ops": 3833,
+   "ops": 3688,
    "by_op": {
-    "get": 1733,
-    "cas": 386,
-    "put": 1321,
-    "delete": 393
+    "get": 1667,
+    "cas": 369,
+    "put": 1276,
+    "delete": 376
    },
-   "unknown": 2,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 2,
     "partition": 3,
     "clock skew": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 143,
    "unsafe_reads": false,
-   "ops": 3866,
+   "ops": 3834,
    "by_op": {
-    "delete": 405,
-    "put": 1324,
-    "cas": 371,
-    "get": 1766
+    "delete": 404,
+    "put": 1314,
+    "cas": 367,
+    "get": 1749
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
    "seconds": 12.5
@@ -3143,414 +3144,182 @@
    "schedule": "partition",
    "seed": 144,
    "unsafe_reads": false,
-   "ops": 3657,
+   "ops": 3727,
    "by_op": {
-    "get": 1622,
-    "delete": 364,
-    "put": 1299,
-    "cas": 372
+    "put": 1328,
+    "get": 1640,
+    "delete": 375,
+    "cas": 384
    },
-   "unknown": 4,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.8
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 145,
    "unsafe_reads": false,
-   "ops": 3438,
+   "ops": 3397,
    "by_op": {
-    "get": 1566,
-    "cas": 330,
-    "put": 1203,
-    "delete": 339
+    "put": 1191,
+    "cas": 326,
+    "get": 1551,
+    "delete": 329
    },
-   "unknown": 21,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 146,
    "unsafe_reads": false,
-   "ops": 4051,
+   "ops": 3994,
    "by_op": {
-    "get": 1842,
-    "put": 1370,
-    "cas": 412,
-    "delete": 427
+    "get": 1812,
+    "put": 1356,
+    "cas": 405,
+    "delete": 421
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 147,
    "unsafe_reads": false,
-   "ops": 3975,
+   "ops": 3540,
    "by_op": {
-    "delete": 386,
-    "put": 1383,
-    "get": 1798,
-    "cas": 408
+    "get": 1591,
+    "cas": 375,
+    "delete": 347,
+    "put": 1227
    },
-   "unknown": 0,
+   "unknown": 4,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 13.0
+   "seconds": 13.2
   },
   {
    "schedule": "kill-leader",
    "seed": 148,
    "unsafe_reads": false,
-   "ops": 2371,
+   "ops": 2348,
    "by_op": {
-    "cas": 244,
-    "get": 1054,
-    "put": 830,
-    "delete": 243
+    "cas": 249,
+    "put": 823,
+    "get": 1030,
+    "delete": 246
    },
-   "unknown": 31,
+   "unknown": 23,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.7
+   "seconds": 13.1
   },
   {
    "schedule": "packet-loss",
    "seed": 149,
    "unsafe_reads": false,
-   "ops": 3835,
+   "ops": 3958,
    "by_op": {
-    "get": 1758,
-    "put": 1323,
-    "delete": 361,
-    "cas": 393
+    "put": 1363,
+    "get": 1816,
+    "delete": 375,
+    "cas": 404
    },
    "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "packet loss": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "delay",
-   "seed": 150,
-   "unsafe_reads": false,
-   "ops": 1375,
-   "by_op": {
-    "delete": 133,
-    "get": 625,
-    "put": 470,
-    "cas": 147
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 4
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 151,
-   "unsafe_reads": false,
-   "ops": 3991,
-   "by_op": {
-    "get": 1803,
-    "cas": 409,
-    "delete": 413,
-    "put": 1366
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "membership",
-   "seed": 152,
-   "unsafe_reads": false,
-   "ops": 2030,
-   "by_op": {
-    "cas": 194,
-    "put": 766,
-    "get": 881,
-    "delete": 189
-   },
-   "unknown": 51,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "member removed": 2,
-    "member added": 2
-   },
-   "seconds": 13.2
-  },
-  {
-   "schedule": "mixed",
-   "seed": 153,
-   "unsafe_reads": false,
-   "ops": 2919,
-   "by_op": {
-    "get": 1293,
-    "delete": 311,
-    "put": 1013,
-    "cas": 302
-   },
-   "unknown": 29,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "kill leader": 3,
-    "packet loss": 2,
-    "bridge": 1
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "none",
-   "seed": 154,
-   "unsafe_reads": false,
-   "ops": 3940,
-   "by_op": {
-    "get": 1791,
-    "delete": 368,
-    "put": 1409,
-    "cas": 372
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {},
-   "seconds": 12.5
-  },
-  {
-   "schedule": "partition",
-   "seed": 155,
-   "unsafe_reads": false,
-   "ops": 3767,
-   "by_op": {
-    "put": 1305,
-    "get": 1704,
-    "delete": 381,
-    "cas": 377
-   },
-   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "partition": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "isolate-leader",
-   "seed": 156,
-   "unsafe_reads": false,
-   "ops": 3354,
-   "by_op": {
-    "get": 1505,
-    "delete": 346,
-    "put": 1168,
-    "cas": 335
-   },
-   "unknown": 20,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "isolate leader": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "bridge",
-   "seed": 157,
-   "unsafe_reads": false,
-   "ops": 4040,
-   "by_op": {
-    "put": 1430,
-    "get": 1844,
-    "delete": 394,
-    "cas": 372
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "bridge": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "kill",
-   "seed": 158,
-   "unsafe_reads": false,
-   "ops": 3501,
-   "by_op": {
-    "put": 1223,
-    "get": 1578,
-    "delete": 346,
-    "cas": 354
-   },
-   "unknown": 11,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "kill": 7
-   },
-   "seconds": 13.0
-  },
-  {
-   "schedule": "kill-leader",
-   "seed": 159,
-   "unsafe_reads": false,
-   "ops": 2073,
-   "by_op": {
-    "delete": 222,
-    "get": 927,
-    "put": 704,
-    "cas": 220
-   },
-   "unknown": 31,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "kill leader": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "packet-loss",
-   "seed": 160,
-   "unsafe_reads": false,
-   "ops": 3868,
-   "by_op": {
-    "get": 1749,
-    "cas": 381,
-    "put": 1359,
-    "delete": 379
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
     "packet loss": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "delay",
-   "seed": 161,
-   "unsafe_reads": false,
-   "ops": 1382,
-   "by_op": {
-    "get": 637,
-    "put": 493,
-    "delete": 131,
-    "cas": 121
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 5
    },
    "seconds": 12.6
   },
   {
-   "schedule": "clock-skew",
-   "seed": 162,
+   "schedule": "delay",
+   "seed": 150,
    "unsafe_reads": false,
-   "ops": 3909,
+   "ops": 1367,
    "by_op": {
-    "get": 1756,
-    "delete": 384,
-    "put": 1387,
-    "cas": 382
+    "get": 623,
+    "delete": 134,
+    "put": 465,
+    "cas": 145
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
+   "violation": null,
+   "faults": {
+    "delay": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 151,
+   "unsafe_reads": false,
+   "ops": 3804,
+   "by_op": {
+    "put": 1300,
+    "get": 1715,
+    "cas": 398,
+    "delete": 391
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
-   "seed": 163,
+   "seed": 152,
    "unsafe_reads": false,
-   "ops": 1784,
+   "ops": 2167,
    "by_op": {
-    "get": 773,
-    "put": 642,
-    "cas": 184,
-    "delete": 185
+    "cas": 216,
+    "put": 821,
+    "get": 932,
+    "delete": 198
    },
-   "unknown": 50,
+   "unknown": 57,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -3563,16 +3332,248 @@
   },
   {
    "schedule": "mixed",
-   "seed": 164,
+   "seed": 153,
    "unsafe_reads": false,
-   "ops": 3842,
+   "ops": 2564,
    "by_op": {
-    "put": 1331,
-    "get": 1750,
-    "delete": 395,
+    "put": 900,
+    "delete": 269,
+    "cas": 262,
+    "get": 1133
+   },
+   "unknown": 28,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "kill leader": 3,
+    "packet loss": 2,
+    "bridge": 1
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "none",
+   "seed": 154,
+   "unsafe_reads": false,
+   "ops": 3779,
+   "by_op": {
+    "get": 1711,
+    "delete": 356,
+    "put": 1352,
+    "cas": 360
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {},
+   "seconds": 12.6
+  },
+  {
+   "schedule": "partition",
+   "seed": 155,
+   "unsafe_reads": false,
+   "ops": 3684,
+   "by_op": {
+    "put": 1270,
+    "get": 1679,
+    "delete": 369,
     "cas": 366
    },
-   "unknown": 7,
+   "unknown": 6,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "partition": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 156,
+   "unsafe_reads": false,
+   "ops": 3399,
+   "by_op": {
+    "get": 1530,
+    "put": 1188,
+    "delete": 349,
+    "cas": 332
+   },
+   "unknown": 27,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "isolate leader": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "bridge",
+   "seed": 157,
+   "unsafe_reads": false,
+   "ops": 3940,
+   "by_op": {
+    "get": 1802,
+    "put": 1399,
+    "delete": 386,
+    "cas": 353
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "bridge": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "kill",
+   "seed": 158,
+   "unsafe_reads": false,
+   "ops": 2913,
+   "by_op": {
+    "get": 1294,
+    "cas": 295,
+    "put": 1029,
+    "delete": 295
+   },
+   "unknown": 14,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "kill": 7
+   },
+   "seconds": 13.3
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 159,
+   "unsafe_reads": false,
+   "ops": 1919,
+   "by_op": {
+    "get": 850,
+    "delete": 205,
+    "put": 657,
+    "cas": 207
+   },
+   "unknown": 36,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 160,
+   "unsafe_reads": false,
+   "ops": 3960,
+   "by_op": {
+    "get": 1784,
+    "cas": 396,
+    "put": 1396,
+    "delete": 384
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "packet loss": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "delay",
+   "seed": 161,
+   "unsafe_reads": false,
+   "ops": 1393,
+   "by_op": {
+    "get": 646,
+    "put": 491,
+    "delete": 133,
+    "cas": 123
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": null,
+   "faults": {
+    "delay": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 162,
+   "unsafe_reads": false,
+   "ops": 3784,
+   "by_op": {
+    "get": 1696,
+    "put": 1351,
+    "cas": 367,
+    "delete": 370
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "membership",
+   "seed": 163,
+   "unsafe_reads": false,
+   "ops": 1918,
+   "by_op": {
+    "get": 828,
+    "delete": 198,
+    "put": 700,
+    "cas": 192
+   },
+   "unknown": 51,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "member removed": 2,
+    "member added": 2
+   },
+   "seconds": 13.2
+  },
+  {
+   "schedule": "mixed",
+   "seed": 164,
+   "unsafe_reads": false,
+   "ops": 3637,
+   "by_op": {
+    "put": 1244,
+    "get": 1667,
+    "cas": 348,
+    "delete": 378
+   },
+   "unknown": 5,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -3583,81 +3584,81 @@
     "bridge": 2,
     "isolate leader": 1
    },
-   "seconds": 12.7
+   "seconds": 12.5
   },
   {
    "schedule": "none",
    "seed": 165,
    "unsafe_reads": false,
-   "ops": 4007,
+   "ops": 3884,
    "by_op": {
-    "get": 1817,
-    "cas": 390,
-    "put": 1426,
-    "delete": 374
+    "get": 1763,
+    "put": 1380,
+    "cas": 375,
+    "delete": 366
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 166,
    "unsafe_reads": false,
-   "ops": 3410,
+   "ops": 3777,
    "by_op": {
-    "cas": 321,
-    "delete": 361,
-    "get": 1525,
-    "put": 1203
+    "get": 1678,
+    "cas": 366,
+    "put": 1325,
+    "delete": 408
    },
-   "unknown": 17,
+   "unknown": 4,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 167,
    "unsafe_reads": false,
-   "ops": 3449,
+   "ops": 3339,
    "by_op": {
-    "cas": 348,
-    "get": 1547,
-    "put": 1212,
-    "delete": 342
+    "get": 1498,
+    "put": 1173,
+    "cas": 334,
+    "delete": 334
    },
    "unknown": 22,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 168,
    "unsafe_reads": false,
-   "ops": 3793,
+   "ops": 3722,
    "by_op": {
-    "put": 1359,
-    "delete": 368,
-    "get": 1685,
-    "cas": 381
+    "put": 1348,
+    "get": 1635,
+    "delete": 362,
+    "cas": 377
    },
-   "unknown": 0,
+   "unknown": 2,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -3665,60 +3666,60 @@
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 169,
    "unsafe_reads": false,
-   "ops": 3258,
+   "ops": 3836,
    "by_op": {
-    "put": 1121,
-    "delete": 345,
-    "cas": 343,
-    "get": 1449
+    "get": 1719,
+    "put": 1313,
+    "delete": 405,
+    "cas": 399
    },
-   "unknown": 12,
+   "unknown": 1,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 6
    },
-   "seconds": 12.8
+   "seconds": 13.0
   },
   {
    "schedule": "kill-leader",
    "seed": 170,
    "unsafe_reads": false,
-   "ops": 2410,
+   "ops": 2239,
    "by_op": {
-    "cas": 230,
-    "get": 1104,
-    "put": 839,
-    "delete": 237
+    "get": 1018,
+    "put": 786,
+    "cas": 213,
+    "delete": 222
    },
-   "unknown": 25,
+   "unknown": 28,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "packet-loss",
    "seed": 171,
    "unsafe_reads": false,
-   "ops": 3919,
+   "ops": 3751,
    "by_op": {
-    "delete": 402,
-    "get": 1750,
-    "cas": 392,
-    "put": 1375
+    "delete": 389,
+    "get": 1676,
+    "cas": 377,
+    "put": 1309
    },
    "unknown": 0,
    "linearizable": true,
@@ -3728,18 +3729,18 @@
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 172,
    "unsafe_reads": false,
-   "ops": 1424,
+   "ops": 1320,
    "by_op": {
-    "get": 650,
-    "cas": 139,
-    "put": 485,
-    "delete": 150
+    "get": 608,
+    "cas": 129,
+    "put": 446,
+    "delete": 137
    },
    "unknown": 0,
    "linearizable": true,
@@ -3755,267 +3756,267 @@
    "schedule": "clock-skew",
    "seed": 173,
    "unsafe_reads": false,
-   "ops": 3898,
+   "ops": 3786,
    "by_op": {
-    "delete": 396,
-    "get": 1748,
-    "put": 1373,
-    "cas": 381
+    "get": 1688,
+    "put": 1333,
+    "delete": 391,
+    "cas": 374
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "clock skew": 5
+    "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 174,
    "unsafe_reads": false,
-   "ops": 4133,
+   "ops": 4066,
    "by_op": {
-    "put": 1451,
-    "delete": 406,
-    "get": 1878,
-    "cas": 398
+    "cas": 393,
+    "get": 1847,
+    "put": 1424,
+    "delete": 402
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "member removed": 5,
-    "member added": 5
+    "member removed": 4,
+    "member added": 4
    },
-   "seconds": 13.1
+   "seconds": 12.5
   },
   {
    "schedule": "mixed",
    "seed": 175,
    "unsafe_reads": false,
-   "ops": 2870,
+   "ops": 2814,
    "by_op": {
-    "put": 1004,
-    "get": 1287,
-    "cas": 281,
-    "delete": 298
+    "put": 989,
+    "get": 1269,
+    "delete": 285,
+    "cas": 271
    },
    "unknown": 21,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 3,
     "clock skew": 1,
     "packet loss": 1
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 176,
    "unsafe_reads": false,
-   "ops": 3780,
+   "ops": 3794,
    "by_op": {
-    "put": 1351,
-    "get": 1683,
-    "delete": 366,
-    "cas": 380
+    "put": 1353,
+    "get": 1687,
+    "delete": 370,
+    "cas": 384
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 177,
    "unsafe_reads": false,
-   "ops": 3869,
+   "ops": 3407,
    "by_op": {
-    "put": 1357,
-    "get": 1750,
-    "delete": 385,
-    "cas": 377
+    "put": 1191,
+    "get": 1539,
+    "cas": 333,
+    "delete": 344
    },
-   "unknown": 0,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
-    "partition": 5
+    "partition": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 178,
    "unsafe_reads": false,
-   "ops": 3330,
+   "ops": 3375,
    "by_op": {
     "delete": 353,
-    "put": 1155,
-    "get": 1486,
-    "cas": 336
+    "put": 1162,
+    "get": 1513,
+    "cas": 347
    },
    "unknown": 21,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.4
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 179,
    "unsafe_reads": false,
-   "ops": 3960,
+   "ops": 3946,
    "by_op": {
-    "get": 1818,
-    "delete": 377,
-    "put": 1401,
-    "cas": 364
+    "put": 1402,
+    "get": 1811,
+    "cas": 359,
+    "delete": 374
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 180,
    "unsafe_reads": false,
-   "ops": 3789,
+   "ops": 3331,
    "by_op": {
-    "put": 1310,
-    "get": 1684,
-    "cas": 443,
-    "delete": 352
+    "delete": 307,
+    "get": 1478,
+    "cas": 383,
+    "put": 1163
    },
-   "unknown": 10,
+   "unknown": 13,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 6
    },
-   "seconds": 13.6
+   "seconds": 13.7
   },
   {
    "schedule": "kill-leader",
    "seed": 181,
    "unsafe_reads": false,
-   "ops": 2122,
+   "ops": 2106,
    "by_op": {
-    "put": 760,
-    "get": 950,
-    "cas": 219,
-    "delete": 193
+    "put": 755,
+    "get": 949,
+    "delete": 193,
+    "cas": 209
    },
-   "unknown": 38,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "kill leader": 5
-   },
-   "seconds": 13.1
-  },
-  {
-   "schedule": "packet-loss",
-   "seed": 182,
-   "unsafe_reads": false,
-   "ops": 3843,
-   "by_op": {
-    "put": 1313,
-    "get": 1746,
-    "delete": 413,
-    "cas": 371
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "packet loss": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "delay",
-   "seed": 183,
-   "unsafe_reads": false,
-   "ops": 1618,
-   "by_op": {
-    "get": 738,
-    "put": 555,
-    "cas": 165,
-    "delete": 160
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.001,
-   "violation": null,
-   "faults": {
-    "delay": 5
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 184,
-   "unsafe_reads": false,
-   "ops": 3931,
-   "by_op": {
-    "put": 1386,
-    "get": 1782,
-    "cas": 410,
-    "delete": 353
-   },
-   "unknown": 0,
+   "unknown": 26,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
    "violation": null,
    "faults": {
+    "kill leader": 4
+   },
+   "seconds": 12.9
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 182,
+   "unsafe_reads": false,
+   "ops": 3926,
+   "by_op": {
+    "get": 1778,
+    "put": 1340,
+    "delete": 425,
+    "cas": 383
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "packet loss": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "delay",
+   "seed": 183,
+   "unsafe_reads": false,
+   "ops": 1565,
+   "by_op": {
+    "get": 714,
+    "put": 533,
+    "cas": 162,
+    "delete": 156
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": null,
+   "faults": {
+    "delay": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 184,
+   "unsafe_reads": false,
+   "ops": 3893,
+   "by_op": {
+    "put": 1368,
+    "get": 1767,
+    "cas": 408,
+    "delete": 350
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
     "clock skew": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 185,
    "unsafe_reads": false,
-   "ops": 2825,
+   "ops": 2964,
    "by_op": {
-    "get": 1262,
-    "cas": 293,
-    "put": 1023,
-    "delete": 247
+    "cas": 304,
+    "put": 1062,
+    "get": 1330,
+    "delete": 268
    },
-   "unknown": 25,
+   "unknown": 15,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4024,23 +4025,23 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 12.9
+   "seconds": 13.0
   },
   {
    "schedule": "mixed",
    "seed": 186,
    "unsafe_reads": false,
-   "ops": 3589,
+   "ops": 3511,
    "by_op": {
-    "get": 1577,
-    "put": 1256,
-    "delete": 394,
-    "cas": 362
+    "get": 1537,
+    "put": 1231,
+    "cas": 357,
+    "delete": 386
    },
-   "unknown": 10,
+   "unknown": 13,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 2,
@@ -4048,60 +4049,60 @@
     "clock skew": 2,
     "partition": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 187,
    "unsafe_reads": false,
-   "ops": 3964,
+   "ops": 3751,
    "by_op": {
-    "put": 1314,
-    "get": 1855,
-    "cas": 405,
-    "delete": 390
+    "cas": 387,
+    "get": 1748,
+    "put": 1245,
+    "delete": 371
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "partition",
    "seed": 188,
    "unsafe_reads": false,
-   "ops": 3755,
+   "ops": 3866,
    "by_op": {
-    "get": 1651,
-    "delete": 369,
-    "put": 1367,
-    "cas": 368
+    "get": 1692,
+    "put": 1406,
+    "delete": 384,
+    "cas": 384
    },
    "unknown": 4,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 189,
    "unsafe_reads": false,
-   "ops": 3552,
+   "ops": 3424,
    "by_op": {
-    "put": 1239,
-    "get": 1622,
-    "delete": 348,
-    "cas": 343
+    "put": 1197,
+    "get": 1557,
+    "cas": 331,
+    "delete": 339
    },
-   "unknown": 19,
+   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4109,62 +4110,62 @@
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.4
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 190,
    "unsafe_reads": false,
-   "ops": 3876,
+   "ops": 3519,
    "by_op": {
-    "delete": 388,
-    "get": 1732,
-    "cas": 432,
-    "put": 1324
+    "delete": 350,
+    "get": 1580,
+    "cas": 399,
+    "put": 1190
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 191,
    "unsafe_reads": false,
-   "ops": 3917,
+   "ops": 3913,
    "by_op": {
-    "put": 1366,
-    "cas": 393,
-    "get": 1783,
-    "delete": 375
+    "put": 1367,
+    "get": 1782,
+    "cas": 390,
+    "delete": 374
    },
    "unknown": 1,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "kill": 5
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "kill-leader",
    "seed": 192,
    "unsafe_reads": false,
-   "ops": 2410,
+   "ops": 2194,
    "by_op": {
-    "get": 1065,
-    "cas": 242,
-    "put": 860,
-    "delete": 243
+    "put": 769,
+    "get": 976,
+    "delete": 221,
+    "cas": 228
    },
-   "unknown": 32,
+   "unknown": 33,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -4178,12 +4179,12 @@
    "schedule": "packet-loss",
    "seed": 193,
    "unsafe_reads": false,
-   "ops": 3911,
+   "ops": 3977,
    "by_op": {
-    "get": 1785,
-    "put": 1362,
-    "delete": 392,
-    "cas": 372
+    "get": 1811,
+    "put": 1386,
+    "delete": 399,
+    "cas": 381
    },
    "unknown": 0,
    "linearizable": true,
@@ -4193,23 +4194,23 @@
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 194,
    "unsafe_reads": false,
-   "ops": 1425,
+   "ops": 1434,
    "by_op": {
-    "get": 634,
-    "put": 530,
-    "cas": 119,
-    "delete": 142
+    "get": 635,
+    "cas": 123,
+    "put": 532,
+    "delete": 144
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
@@ -4220,12 +4221,12 @@
    "schedule": "clock-skew",
    "seed": 195,
    "unsafe_reads": false,
-   "ops": 3964,
+   "ops": 3987,
    "by_op": {
-    "get": 1782,
-    "cas": 388,
-    "put": 1416,
-    "delete": 378
+    "get": 1788,
+    "put": 1424,
+    "cas": 391,
+    "delete": 384
    },
    "unknown": 0,
    "linearizable": true,
@@ -4235,63 +4236,63 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.4
+   "seconds": 12.5
   },
   {
    "schedule": "membership",
    "seed": 196,
    "unsafe_reads": false,
-   "ops": 2979,
+   "ops": 3155,
    "by_op": {
-    "get": 1301,
-    "put": 1073,
-    "delete": 323,
-    "cas": 282
+    "get": 1382,
+    "put": 1130,
+    "delete": 343,
+    "cas": 300
    },
-   "unknown": 19,
+   "unknown": 23,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.1
+   "seconds": 13.3
   },
   {
    "schedule": "mixed",
    "seed": 197,
    "unsafe_reads": false,
-   "ops": 3288,
+   "ops": 3712,
    "by_op": {
-    "put": 1158,
-    "cas": 337,
-    "get": 1481,
-    "delete": 312
+    "get": 1658,
+    "cas": 396,
+    "put": 1301,
+    "delete": 357
    },
-   "unknown": 17,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "packet loss": 2,
-    "clock skew": 1,
-    "kill": 5
+    "packet loss": 3,
+    "isolate leader": 2,
+    "clock skew": 1
    },
-   "seconds": 13.6
+   "seconds": 12.7
   },
   {
    "schedule": "none",
    "seed": 198,
    "unsafe_reads": false,
-   "ops": 3927,
+   "ops": 3793,
    "by_op": {
-    "put": 1349,
-    "get": 1825,
-    "cas": 391,
-    "delete": 362
+    "put": 1292,
+    "get": 1776,
+    "cas": 378,
+    "delete": 347
    },
    "unknown": 0,
    "linearizable": true,
@@ -4299,23 +4300,23 @@
    "check_seconds": 0.003,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 199,
    "unsafe_reads": false,
-   "ops": 3575,
+   "ops": 3896,
    "by_op": {
-    "delete": 347,
-    "get": 1595,
-    "put": 1282,
-    "cas": 351
+    "delete": 380,
+    "get": 1744,
+    "put": 1388,
+    "cas": 384
    },
-   "unknown": 9,
+   "unknown": 6,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
@@ -4326,33 +4327,33 @@
    "schedule": "isolate-leader",
    "seed": 200,
    "unsafe_reads": false,
-   "ops": 3313,
+   "ops": 3314,
    "by_op": {
-    "get": 1441,
-    "put": 1204,
-    "delete": 332,
-    "cas": 336
+    "get": 1450,
+    "delete": 333,
+    "put": 1192,
+    "cas": 339
    },
-   "unknown": 29,
+   "unknown": 25,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.5
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 201,
    "unsafe_reads": false,
-   "ops": 3969,
+   "ops": 3834,
    "by_op": {
-    "get": 1761,
-    "put": 1370,
-    "cas": 420,
-    "delete": 418
+    "get": 1706,
+    "put": 1317,
+    "cas": 406,
+    "delete": 405
    },
    "unknown": 0,
    "linearizable": true,
@@ -4360,22 +4361,22 @@
    "check_seconds": 0.003,
    "violation": null,
    "faults": {
-    "bridge": 5
+    "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 202,
    "unsafe_reads": false,
-   "ops": 3466,
+   "ops": 3537,
    "by_op": {
-    "get": 1558,
-    "put": 1208,
-    "cas": 357,
-    "delete": 343
+    "get": 1590,
+    "put": 1237,
+    "cas": 363,
+    "delete": 347
    },
-   "unknown": 10,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4389,33 +4390,33 @@
    "schedule": "kill-leader",
    "seed": 203,
    "unsafe_reads": false,
-   "ops": 2502,
+   "ops": 2287,
    "by_op": {
-    "cas": 235,
-    "put": 879,
-    "get": 1131,
-    "delete": 257
+    "delete": 232,
+    "cas": 220,
+    "put": 819,
+    "get": 1016
    },
-   "unknown": 32,
+   "unknown": 37,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.7
+   "seconds": 12.9
   },
   {
    "schedule": "packet-loss",
    "seed": 204,
    "unsafe_reads": false,
-   "ops": 3793,
+   "ops": 3991,
    "by_op": {
-    "get": 1636,
-    "delete": 401,
-    "put": 1370,
-    "cas": 386
+    "put": 1448,
+    "get": 1722,
+    "delete": 419,
+    "cas": 402
    },
    "unknown": 0,
    "linearizable": true,
@@ -4425,18 +4426,18 @@
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 205,
    "unsafe_reads": false,
-   "ops": 1436,
+   "ops": 1433,
    "by_op": {
-    "get": 669,
-    "put": 494,
-    "delete": 140,
-    "cas": 133
+    "get": 663,
+    "delete": 141,
+    "put": 495,
+    "cas": 134
    },
    "unknown": 0,
    "linearizable": true,
@@ -4444,7 +4445,7 @@
    "check_seconds": 0.002,
    "violation": null,
    "faults": {
-    "delay": 5
+    "delay": 4
    },
    "seconds": 12.5
   },
@@ -4452,17 +4453,17 @@
    "schedule": "clock-skew",
    "seed": 206,
    "unsafe_reads": false,
-   "ops": 3932,
+   "ops": 4012,
    "by_op": {
-    "get": 1766,
-    "put": 1387,
-    "delete": 420,
-    "cas": 359
+    "put": 1425,
+    "get": 1796,
+    "delete": 426,
+    "cas": 365
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
@@ -4473,36 +4474,36 @@
    "schedule": "membership",
    "seed": 207,
    "unsafe_reads": false,
-   "ops": 1653,
+   "ops": 1857,
    "by_op": {
-    "put": 572,
-    "get": 733,
-    "delete": 176,
-    "cas": 172
+    "get": 808,
+    "put": 657,
+    "delete": 194,
+    "cas": 198
    },
    "unknown": 57,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.5
+   "seconds": 13.2
   },
   {
    "schedule": "mixed",
    "seed": 208,
    "unsafe_reads": false,
-   "ops": 3651,
+   "ops": 3406,
    "by_op": {
-    "get": 1641,
-    "cas": 365,
-    "put": 1288,
-    "delete": 357
+    "get": 1537,
+    "put": 1200,
+    "cas": 342,
+    "delete": 327
    },
-   "unknown": 14,
+   "unknown": 17,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4517,73 +4518,73 @@
    "schedule": "none",
    "seed": 209,
    "unsafe_reads": false,
-   "ops": 3943,
+   "ops": 3882,
    "by_op": {
-    "get": 1756,
-    "cas": 413,
-    "put": 1403,
-    "delete": 371
+    "get": 1732,
+    "put": 1382,
+    "delete": 363,
+    "cas": 405
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "partition",
    "seed": 210,
    "unsafe_reads": false,
-   "ops": 4002,
+   "ops": 3901,
    "by_op": {
-    "get": 1793,
-    "put": 1401,
-    "delete": 388,
-    "cas": 420
+    "put": 1367,
+    "get": 1744,
+    "cas": 411,
+    "delete": 379
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "isolate-leader",
    "seed": 211,
    "unsafe_reads": false,
-   "ops": 3334,
+   "ops": 3417,
    "by_op": {
-    "get": 1521,
-    "cas": 340,
-    "put": 1152,
-    "delete": 321
+    "get": 1550,
+    "put": 1178,
+    "cas": 348,
+    "delete": 341
    },
-   "unknown": 22,
+   "unknown": 20,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.9
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 212,
    "unsafe_reads": false,
-   "ops": 4120,
+   "ops": 3853,
    "by_op": {
-    "get": 1889,
-    "put": 1421,
-    "cas": 388,
-    "delete": 422
+    "get": 1752,
+    "put": 1336,
+    "delete": 401,
+    "cas": 364
    },
    "unknown": 0,
    "linearizable": true,
@@ -4599,38 +4600,38 @@
    "schedule": "kill",
    "seed": 213,
    "unsafe_reads": false,
-   "ops": 3308,
+   "ops": 3849,
    "by_op": {
-    "get": 1450,
-    "put": 1155,
-    "delete": 347,
-    "cas": 356
+    "get": 1692,
+    "put": 1340,
+    "delete": 408,
+    "cas": 409
    },
-   "unknown": 11,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 6
    },
-   "seconds": 13.4
+   "seconds": 13.3
   },
   {
    "schedule": "kill-leader",
    "seed": 214,
    "unsafe_reads": false,
-   "ops": 2465,
+   "ops": 2254,
    "by_op": {
-    "delete": 259,
-    "get": 1101,
-    "put": 848,
-    "cas": 257
+    "put": 767,
+    "get": 1002,
+    "delete": 248,
+    "cas": 237
    },
-   "unknown": 26,
+   "unknown": 35,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 5
@@ -4641,33 +4642,33 @@
    "schedule": "packet-loss",
    "seed": 215,
    "unsafe_reads": false,
-   "ops": 3845,
+   "ops": 3831,
    "by_op": {
-    "get": 1728,
-    "put": 1334,
-    "cas": 389,
-    "delete": 394
+    "get": 1719,
+    "cas": 387,
+    "put": 1335,
+    "delete": 390
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 216,
    "unsafe_reads": false,
-   "ops": 1502,
+   "ops": 1443,
    "by_op": {
-    "get": 668,
-    "put": 545,
-    "delete": 148,
-    "cas": 141
+    "get": 641,
+    "put": 524,
+    "delete": 140,
+    "cas": 138
    },
    "unknown": 0,
    "linearizable": true,
@@ -4683,17 +4684,17 @@
    "schedule": "clock-skew",
    "seed": 217,
    "unsafe_reads": false,
-   "ops": 3960,
+   "ops": 3840,
    "by_op": {
-    "cas": 367,
-    "get": 1825,
-    "put": 1329,
-    "delete": 439
+    "get": 1778,
+    "cas": 353,
+    "put": 1281,
+    "delete": 428
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "clock skew": 4
@@ -4704,14 +4705,14 @@
    "schedule": "membership",
    "seed": 218,
    "unsafe_reads": false,
-   "ops": 2891,
+   "ops": 3047,
    "by_op": {
-    "delete": 295,
-    "get": 1287,
-    "cas": 273,
-    "put": 1036
+    "delete": 316,
+    "get": 1358,
+    "put": 1079,
+    "cas": 294
    },
-   "unknown": 33,
+   "unknown": 29,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4720,46 +4721,46 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.5
+   "seconds": 13.0
   },
   {
    "schedule": "mixed",
    "seed": 219,
    "unsafe_reads": false,
-   "ops": 3262,
+   "ops": 3271,
    "by_op": {
-    "delete": 321,
-    "put": 1180,
-    "cas": 289,
-    "get": 1472
+    "delete": 323,
+    "put": 1186,
+    "cas": 288,
+    "get": 1474
    },
-   "unknown": 12,
+   "unknown": 7,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 2,
     "kill leader": 2,
     "kill": 3
    },
-   "seconds": 13.6
+   "seconds": 13.5
   },
   {
    "schedule": "none",
    "seed": 220,
    "unsafe_reads": false,
-   "ops": 4080,
+   "ops": 3957,
    "by_op": {
-    "get": 1910,
-    "put": 1378,
-    "delete": 401,
-    "cas": 391
+    "get": 1850,
+    "put": 1339,
+    "delete": 389,
+    "cas": 379
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
    "seconds": 12.6
@@ -4768,17 +4769,17 @@
    "schedule": "partition",
    "seed": 221,
    "unsafe_reads": false,
-   "ops": 3772,
+   "ops": 3971,
    "by_op": {
-    "get": 1703,
-    "put": 1312,
-    "delete": 376,
-    "cas": 381
+    "put": 1375,
+    "get": 1798,
+    "delete": 397,
+    "cas": 401
    },
-   "unknown": 3,
+   "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
@@ -4789,14 +4790,14 @@
    "schedule": "isolate-leader",
    "seed": 222,
    "unsafe_reads": false,
-   "ops": 3200,
+   "ops": 3131,
    "by_op": {
-    "get": 1463,
-    "cas": 322,
-    "put": 1122,
-    "delete": 293
+    "get": 1442,
+    "put": 1079,
+    "cas": 321,
+    "delete": 289
    },
-   "unknown": 22,
+   "unknown": 24,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -4804,62 +4805,62 @@
    "faults": {
     "isolate leader": 5
    },
-   "seconds": 12.8
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 223,
    "unsafe_reads": false,
-   "ops": 3896,
+   "ops": 3974,
    "by_op": {
-    "delete": 390,
-    "put": 1368,
-    "get": 1753,
-    "cas": 385
+    "get": 1792,
+    "put": 1392,
+    "delete": 401,
+    "cas": 389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 224,
    "unsafe_reads": false,
-   "ops": 3897,
+   "ops": 3226,
    "by_op": {
-    "get": 1737,
-    "put": 1369,
-    "cas": 399,
-    "delete": 392
+    "get": 1443,
+    "delete": 328,
+    "put": 1131,
+    "cas": 324
    },
-   "unknown": 1,
+   "unknown": 11,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 4
    },
-   "seconds": 12.9
+   "seconds": 13.1
   },
   {
    "schedule": "kill-leader",
    "seed": 225,
    "unsafe_reads": false,
-   "ops": 2384,
+   "ops": 2118,
    "by_op": {
-    "get": 1060,
-    "cas": 245,
-    "put": 859,
-    "delete": 220
+    "put": 766,
+    "delete": 202,
+    "get": 930,
+    "cas": 220
    },
-   "unknown": 28,
+   "unknown": 30,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -4867,39 +4868,39 @@
    "faults": {
     "kill leader": 4
    },
-   "seconds": 13.0
+   "seconds": 13.2
   },
   {
    "schedule": "packet-loss",
    "seed": 226,
    "unsafe_reads": false,
-   "ops": 3951,
+   "ops": 4010,
    "by_op": {
-    "put": 1358,
-    "get": 1798,
-    "delete": 405,
-    "cas": 390
+    "get": 1820,
+    "put": 1380,
+    "cas": 396,
+    "delete": 414
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "packet loss": 5
+    "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 227,
    "unsafe_reads": false,
-   "ops": 1536,
+   "ops": 1523,
    "by_op": {
-    "put": 549,
-    "get": 706,
-    "cas": 135,
-    "delete": 146
+    "get": 702,
+    "put": 541,
+    "cas": 133,
+    "delete": 147
    },
    "unknown": 0,
    "linearizable": true,
@@ -4909,23 +4910,23 @@
    "faults": {
     "delay": 5
    },
-   "seconds": 12.8
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 228,
    "unsafe_reads": false,
-   "ops": 3839,
+   "ops": 3895,
    "by_op": {
-    "get": 1714,
-    "put": 1301,
-    "cas": 375,
-    "delete": 449
+    "get": 1733,
+    "put": 1323,
+    "delete": 456,
+    "cas": 383
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "clock skew": 4
@@ -4936,118 +4937,12 @@
    "schedule": "membership",
    "seed": 229,
    "unsafe_reads": false,
-   "ops": 4102,
+   "ops": 4005,
    "by_op": {
-    "put": 1458,
-    "get": 1839,
-    "cas": 412,
-    "delete": 393
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "member removed": 4,
-    "member added": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "mixed",
-   "seed": 230,
-   "unsafe_reads": false,
-   "ops": 3692,
-   "by_op": {
-    "put": 1314,
-    "get": 1646,
-    "delete": 339,
-    "cas": 393
-   },
-   "unknown": 2,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 3,
-    "bridge": 2,
-    "isolate leader": 2
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "none",
-   "seed": 231,
-   "unsafe_reads": false,
-   "ops": 3781,
-   "by_op": {
-    "get": 1701,
-    "put": 1320,
+    "put": 1420,
+    "get": 1796,
     "cas": 405,
-    "delete": 355
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {},
-   "seconds": 12.5
-  },
-  {
-   "schedule": "partition",
-   "seed": 232,
-   "unsafe_reads": false,
-   "ops": 3762,
-   "by_op": {
-    "get": 1698,
-    "cas": 367,
-    "delete": 371,
-    "put": 1326
-   },
-   "unknown": 11,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "partition": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "isolate-leader",
-   "seed": 233,
-   "unsafe_reads": false,
-   "ops": 3270,
-   "by_op": {
-    "put": 1170,
-    "cas": 335,
-    "get": 1456,
-    "delete": 309
-   },
-   "unknown": 23,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "isolate leader": 4
-   },
-   "seconds": 12.5
-  },
-  {
-   "schedule": "bridge",
-   "seed": 234,
-   "unsafe_reads": false,
-   "ops": 3997,
-   "by_op": {
-    "put": 1417,
-    "delete": 354,
-    "get": 1842,
-    "cas": 384
+    "delete": 384
    },
    "unknown": 0,
    "linearizable": true,
@@ -5055,22 +4950,128 @@
    "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "bridge": 5
+    "member removed": 4,
+    "member added": 4
    },
-   "seconds": 12.4
+   "seconds": 12.6
+  },
+  {
+   "schedule": "mixed",
+   "seed": 230,
+   "unsafe_reads": false,
+   "ops": 3568,
+   "by_op": {
+    "delete": 328,
+    "put": 1267,
+    "get": 1600,
+    "cas": 373
+   },
+   "unknown": 7,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {
+    "clock skew": 3,
+    "bridge": 2,
+    "isolate leader": 1
+   },
+   "seconds": 12.5
+  },
+  {
+   "schedule": "none",
+   "seed": 231,
+   "unsafe_reads": false,
+   "ops": 3848,
+   "by_op": {
+    "put": 1344,
+    "cas": 410,
+    "get": 1732,
+    "delete": 362
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": null,
+   "faults": {},
+   "seconds": 12.7
+  },
+  {
+   "schedule": "partition",
+   "seed": 232,
+   "unsafe_reads": false,
+   "ops": 3812,
+   "by_op": {
+    "get": 1710,
+    "delete": 380,
+    "put": 1344,
+    "cas": 378
+   },
+   "unknown": 7,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "partition": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 233,
+   "unsafe_reads": false,
+   "ops": 3473,
+   "by_op": {
+    "cas": 366,
+    "put": 1235,
+    "get": 1548,
+    "delete": 324
+   },
+   "unknown": 17,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": null,
+   "faults": {
+    "isolate leader": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "bridge",
+   "seed": 234,
+   "unsafe_reads": false,
+   "ops": 3969,
+   "by_op": {
+    "delete": 354,
+    "put": 1408,
+    "get": 1830,
+    "cas": 377
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "bridge": 4
+   },
+   "seconds": 12.5
   },
   {
    "schedule": "kill",
    "seed": 235,
    "unsafe_reads": false,
-   "ops": 3754,
+   "ops": 3443,
    "by_op": {
-    "delete": 387,
-    "put": 1350,
-    "cas": 365,
-    "get": 1652
+    "delete": 363,
+    "put": 1242,
+    "cas": 337,
+    "get": 1501
    },
-   "unknown": 2,
+   "unknown": 4,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -5078,20 +5079,20 @@
    "faults": {
     "kill": 8
    },
-   "seconds": 13.5
+   "seconds": 13.6
   },
   {
    "schedule": "kill-leader",
    "seed": 236,
    "unsafe_reads": false,
-   "ops": 2194,
+   "ops": 1791,
    "by_op": {
-    "cas": 223,
-    "get": 979,
-    "put": 765,
-    "delete": 227
+    "cas": 177,
+    "get": 788,
+    "put": 635,
+    "delete": 191
    },
-   "unknown": 29,
+   "unknown": 40,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -5105,17 +5106,17 @@
    "schedule": "packet-loss",
    "seed": 237,
    "unsafe_reads": false,
-   "ops": 4104,
+   "ops": 4221,
    "by_op": {
-    "put": 1413,
-    "cas": 402,
-    "delete": 398,
-    "get": 1891
+    "get": 1948,
+    "put": 1454,
+    "cas": 411,
+    "delete": 408
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 5
@@ -5126,33 +5127,12 @@
    "schedule": "delay",
    "seed": 238,
    "unsafe_reads": false,
-   "ops": 1512,
+   "ops": 1473,
    "by_op": {
-    "put": 522,
-    "get": 680,
-    "cas": 171,
-    "delete": 139
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.002,
-   "violation": null,
-   "faults": {
-    "delay": 4
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "clock-skew",
-   "seed": 239,
-   "unsafe_reads": false,
-   "ops": 3887,
-   "by_op": {
-    "cas": 417,
-    "get": 1741,
-    "put": 1341,
-    "delete": 388
+    "put": 515,
+    "get": 659,
+    "delete": 135,
+    "cas": 164
    },
    "unknown": 0,
    "linearizable": true,
@@ -5160,22 +5140,43 @@
    "check_seconds": 0.003,
    "violation": null,
    "faults": {
-    "clock skew": 5
+    "delay": 4
    },
-   "seconds": 12.5
+   "seconds": 13.0
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 239,
+   "unsafe_reads": false,
+   "ops": 3757,
+   "by_op": {
+    "cas": 404,
+    "get": 1672,
+    "put": 1306,
+    "delete": 375
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 240,
    "unsafe_reads": false,
-   "ops": 1874,
+   "ops": 2121,
    "by_op": {
-    "get": 790,
-    "cas": 194,
-    "put": 691,
-    "delete": 199
+    "get": 917,
+    "delete": 217,
+    "put": 770,
+    "cas": 217
    },
-   "unknown": 51,
+   "unknown": 39,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.002,
@@ -5184,107 +5185,107 @@
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.3
+   "seconds": 13.0
   },
   {
    "schedule": "mixed",
    "seed": 241,
    "unsafe_reads": false,
-   "ops": 4077,
+   "ops": 3989,
    "by_op": {
-    "put": 1438,
-    "get": 1866,
-    "cas": 405,
-    "delete": 368
+    "put": 1402,
+    "get": 1839,
+    "cas": 391,
+    "delete": 357
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "clock skew": 2,
     "packet loss": 2,
     "kill": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 242,
    "unsafe_reads": false,
-   "ops": 3892,
+   "ops": 3799,
    "by_op": {
-    "delete": 370,
-    "get": 1769,
-    "put": 1348,
-    "cas": 405
+    "delete": 354,
+    "get": 1729,
+    "put": 1323,
+    "cas": 393
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 243,
    "unsafe_reads": false,
-   "ops": 3986,
+   "ops": 3434,
    "by_op": {
-    "put": 1357,
-    "cas": 411,
-    "get": 1818,
-    "delete": 400
+    "cas": 362,
+    "put": 1165,
+    "get": 1566,
+    "delete": 341
    },
-   "unknown": 2,
+   "unknown": 17,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 244,
    "unsafe_reads": false,
-   "ops": 3412,
+   "ops": 3519,
    "by_op": {
-    "put": 1199,
-    "cas": 322,
-    "delete": 360,
-    "get": 1531
+    "put": 1231,
+    "delete": 366,
+    "cas": 332,
+    "get": 1590
    },
-   "unknown": 18,
+   "unknown": 21,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 245,
    "unsafe_reads": false,
-   "ops": 3849,
+   "ops": 3942,
    "by_op": {
-    "get": 1713,
-    "put": 1367,
-    "cas": 388,
-    "delete": 381
+    "delete": 393,
+    "get": 1751,
+    "put": 1401,
+    "cas": 397
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 5
@@ -5295,14 +5296,14 @@
    "schedule": "kill",
    "seed": 246,
    "unsafe_reads": false,
-   "ops": 3477,
+   "ops": 3072,
    "by_op": {
-    "put": 1224,
-    "get": 1566,
-    "delete": 328,
-    "cas": 359
+    "get": 1388,
+    "put": 1075,
+    "delete": 293,
+    "cas": 316
    },
-   "unknown": 12,
+   "unknown": 21,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -5316,101 +5317,101 @@
    "schedule": "kill-leader",
    "seed": 247,
    "unsafe_reads": false,
-   "ops": 2513,
+   "ops": 2287,
    "by_op": {
-    "get": 1108,
-    "delete": 250,
-    "put": 912,
-    "cas": 243
+    "get": 1008,
+    "cas": 223,
+    "put": 826,
+    "delete": 230
    },
-   "unknown": 28,
+   "unknown": 31,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.8
+   "seconds": 13.0
   },
   {
    "schedule": "packet-loss",
    "seed": 248,
    "unsafe_reads": false,
-   "ops": 3934,
+   "ops": 3987,
    "by_op": {
-    "get": 1747,
-    "put": 1373,
-    "delete": 430,
-    "cas": 384
+    "put": 1387,
+    "delete": 433,
+    "get": 1778,
+    "cas": 389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "delay",
    "seed": 249,
    "unsafe_reads": false,
-   "ops": 1438,
+   "ops": 1320,
    "by_op": {
-    "delete": 139,
-    "get": 644,
-    "put": 506,
-    "cas": 149
+    "get": 575,
+    "put": 476,
+    "delete": 133,
+    "cas": 136
    },
-   "unknown": 0,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
-    "delay": 5
+    "delay": 4
    },
-   "seconds": 12.7
+   "seconds": 12.8
   },
   {
    "schedule": "clock-skew",
    "seed": 250,
    "unsafe_reads": false,
-   "ops": 3879,
+   "ops": 3810,
    "by_op": {
-    "get": 1730,
-    "cas": 355,
-    "put": 1407,
-    "delete": 387
+    "get": 1704,
+    "cas": 347,
+    "put": 1379,
+    "delete": 380
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 251,
    "unsafe_reads": false,
-   "ops": 4167,
+   "ops": 4025,
    "by_op": {
-    "put": 1421,
-    "get": 1929,
-    "cas": 421,
-    "delete": 396
+    "put": 1382,
+    "get": 1863,
+    "cas": 397,
+    "delete": 383
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 4,
@@ -5422,17 +5423,17 @@
    "schedule": "mixed",
    "seed": 252,
    "unsafe_reads": false,
-   "ops": 3851,
+   "ops": 3960,
    "by_op": {
-    "get": 1759,
-    "put": 1291,
-    "cas": 398,
-    "delete": 403
+    "cas": 411,
+    "get": 1806,
+    "put": 1326,
+    "delete": 417
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 3,
@@ -5445,17 +5446,17 @@
    "schedule": "none",
    "seed": 253,
    "unsafe_reads": false,
-   "ops": 4032,
+   "ops": 3890,
    "by_op": {
-    "get": 1893,
-    "put": 1339,
-    "delete": 416,
-    "cas": 384
+    "get": 1824,
+    "delete": 403,
+    "put": 1294,
+    "cas": 369
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
    "seconds": 12.6
@@ -5464,59 +5465,59 @@
    "schedule": "partition",
    "seed": 254,
    "unsafe_reads": false,
-   "ops": 3845,
+   "ops": 3736,
    "by_op": {
-    "cas": 381,
-    "put": 1316,
-    "get": 1760,
-    "delete": 388
+    "put": 1302,
+    "cas": 371,
+    "get": 1683,
+    "delete": 380
    },
-   "unknown": 8,
+   "unknown": 3,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 255,
    "unsafe_reads": false,
-   "ops": 3529,
+   "ops": 3265,
    "by_op": {
-    "put": 1196,
-    "delete": 334,
-    "get": 1645,
-    "cas": 354
+    "put": 1085,
+    "delete": 312,
+    "get": 1547,
+    "cas": 321
    },
-   "unknown": 18,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "isolate leader": 5
+    "isolate leader": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 256,
    "unsafe_reads": false,
-   "ops": 4092,
+   "ops": 3908,
    "by_op": {
-    "put": 1457,
-    "delete": 380,
-    "get": 1846,
-    "cas": 409
+    "put": 1393,
+    "cas": 389,
+    "delete": 366,
+    "get": 1760
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 4
@@ -5527,59 +5528,59 @@
    "schedule": "kill",
    "seed": 257,
    "unsafe_reads": false,
-   "ops": 3285,
+   "ops": 2988,
    "by_op": {
-    "get": 1425,
-    "put": 1223,
-    "cas": 322,
-    "delete": 315
+    "get": 1290,
+    "put": 1109,
+    "cas": 297,
+    "delete": 292
    },
-   "unknown": 13,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 7
    },
-   "seconds": 13.7
+   "seconds": 13.8
   },
   {
    "schedule": "kill-leader",
    "seed": 258,
    "unsafe_reads": false,
-   "ops": 2538,
+   "ops": 2079,
    "by_op": {
-    "put": 893,
-    "get": 1152,
-    "cas": 242,
-    "delete": 251
+    "get": 940,
+    "put": 730,
+    "cas": 189,
+    "delete": 220
    },
-   "unknown": 31,
+   "unknown": 35,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "packet-loss",
    "seed": 259,
    "unsafe_reads": false,
-   "ops": 3899,
+   "ops": 3947,
    "by_op": {
-    "get": 1730,
-    "cas": 393,
-    "put": 1401,
-    "delete": 375
+    "get": 1743,
+    "cas": 401,
+    "put": 1425,
+    "delete": 378
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
@@ -5590,81 +5591,81 @@
    "schedule": "delay",
    "seed": 260,
    "unsafe_reads": false,
-   "ops": 1422,
+   "ops": 1442,
    "by_op": {
-    "get": 619,
-    "put": 522,
-    "cas": 146,
-    "delete": 135
+    "put": 530,
+    "cas": 149,
+    "get": 624,
+    "delete": 139
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.001,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.6
+   "seconds": 13.0
   },
   {
    "schedule": "clock-skew",
    "seed": 261,
    "unsafe_reads": false,
-   "ops": 4036,
+   "ops": 3892,
    "by_op": {
-    "get": 1880,
-    "put": 1368,
-    "cas": 397,
-    "delete": 391
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "clock skew": 5
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "membership",
-   "seed": 262,
-   "unsafe_reads": false,
-   "ops": 4038,
-   "by_op": {
-    "get": 1848,
-    "cas": 388,
-    "put": 1405,
-    "delete": 397
-   },
-   "unknown": 0,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "member removed": 4,
-    "member added": 4
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "mixed",
-   "seed": 263,
-   "unsafe_reads": false,
-   "ops": 3989,
-   "by_op": {
-    "get": 1724,
-    "cas": 421,
-    "put": 1448,
-    "delete": 396
+    "get": 1817,
+    "delete": 371,
+    "put": 1317,
+    "cas": 387
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.5
+  },
+  {
+   "schedule": "membership",
+   "seed": 262,
+   "unsafe_reads": false,
+   "ops": 3917,
+   "by_op": {
+    "put": 1362,
+    "get": 1794,
+    "cas": 379,
+    "delete": 382
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "member removed": 4,
+    "member added": 4
+   },
+   "seconds": 13.1
+  },
+  {
+   "schedule": "mixed",
+   "seed": 263,
+   "unsafe_reads": false,
+   "ops": 3860,
+   "by_op": {
+    "get": 1667,
+    "put": 1404,
+    "delete": 382,
+    "cas": 407
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "clock skew": 3,
@@ -5676,36 +5677,36 @@
    "schedule": "none",
    "seed": 264,
    "unsafe_reads": false,
-   "ops": 3790,
+   "ops": 3853,
    "by_op": {
-    "get": 1688,
-    "put": 1338,
-    "cas": 401,
-    "delete": 363
+    "put": 1360,
+    "delete": 372,
+    "get": 1718,
+    "cas": 403
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 265,
    "unsafe_reads": false,
-   "ops": 3813,
+   "ops": 3810,
    "by_op": {
-    "delete": 369,
-    "put": 1296,
-    "cas": 355,
-    "get": 1793
+    "cas": 351,
+    "delete": 370,
+    "put": 1295,
+    "get": 1794
    },
    "unknown": 6,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "partition": 6
@@ -5716,17 +5717,17 @@
    "schedule": "isolate-leader",
    "seed": 266,
    "unsafe_reads": false,
-   "ops": 3554,
+   "ops": 3412,
    "by_op": {
-    "get": 1615,
-    "cas": 360,
-    "put": 1208,
-    "delete": 371
+    "cas": 348,
+    "put": 1149,
+    "delete": 362,
+    "get": 1553
    },
    "unknown": 20,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
@@ -5737,59 +5738,59 @@
    "schedule": "bridge",
    "seed": 267,
    "unsafe_reads": false,
-   "ops": 4008,
+   "ops": 3982,
    "by_op": {
-    "get": 1795,
-    "put": 1399,
-    "delete": 389,
-    "cas": 425
+    "get": 1786,
+    "put": 1387,
+    "cas": 421,
+    "delete": 388
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "kill",
    "seed": 268,
    "unsafe_reads": false,
-   "ops": 3757,
+   "ops": 3470,
    "by_op": {
-    "put": 1285,
-    "get": 1703,
-    "cas": 361,
-    "delete": 408
+    "get": 1574,
+    "put": 1175,
+    "cas": 339,
+    "delete": 382
    },
-   "unknown": 5,
+   "unknown": 12,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.006,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
-    "kill": 6
+    "kill": 5
    },
-   "seconds": 13.2
+   "seconds": 12.7
   },
   {
    "schedule": "kill-leader",
    "seed": 269,
    "unsafe_reads": false,
-   "ops": 2347,
+   "ops": 2481,
    "by_op": {
-    "put": 818,
-    "cas": 245,
-    "get": 1071,
-    "delete": 213
+    "get": 1128,
+    "delete": 230,
+    "put": 867,
+    "cas": 256
    },
-   "unknown": 31,
+   "unknown": 35,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.002,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
@@ -5800,12 +5801,12 @@
    "schedule": "packet-loss",
    "seed": 270,
    "unsafe_reads": false,
-   "ops": 4136,
+   "ops": 3992,
    "by_op": {
-    "get": 1913,
-    "put": 1388,
-    "cas": 439,
-    "delete": 396
+    "get": 1850,
+    "cas": 427,
+    "put": 1334,
+    "delete": 381
    },
    "unknown": 0,
    "linearizable": true,
@@ -5815,18 +5816,18 @@
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 271,
    "unsafe_reads": false,
-   "ops": 1375,
+   "ops": 1330,
    "by_op": {
-    "put": 514,
-    "get": 602,
-    "cas": 141,
-    "delete": 118
+    "get": 587,
+    "put": 491,
+    "cas": 139,
+    "delete": 113
    },
    "unknown": 0,
    "linearizable": true,
@@ -5836,18 +5837,18 @@
    "faults": {
     "delay": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 272,
    "unsafe_reads": false,
-   "ops": 3946,
+   "ops": 3799,
    "by_op": {
-    "put": 1377,
-    "get": 1747,
-    "cas": 425,
-    "delete": 397
+    "get": 1685,
+    "put": 1319,
+    "cas": 413,
+    "delete": 382
    },
    "unknown": 0,
    "linearizable": true,
@@ -5863,17 +5864,17 @@
    "schedule": "membership",
    "seed": 273,
    "unsafe_reads": false,
-   "ops": 4239,
+   "ops": 4060,
    "by_op": {
-    "get": 1958,
-    "put": 1450,
-    "cas": 418,
-    "delete": 413
+    "get": 1875,
+    "put": 1396,
+    "cas": 394,
+    "delete": 395
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "member removed": 4,
@@ -5885,17 +5886,17 @@
    "schedule": "mixed",
    "seed": 274,
    "unsafe_reads": false,
-   "ops": 3885,
+   "ops": 3749,
    "by_op": {
-    "get": 1745,
-    "delete": 404,
-    "put": 1368,
-    "cas": 368
+    "cas": 357,
+    "get": 1685,
+    "put": 1318,
+    "delete": 389
    },
-   "unknown": 7,
+   "unknown": 6,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "isolate leader": 2,
@@ -5903,18 +5904,18 @@
     "bridge": 2,
     "clock skew": 1
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 275,
    "unsafe_reads": false,
-   "ops": 4052,
+   "ops": 3746,
    "by_op": {
-    "put": 1385,
-    "get": 1812,
-    "cas": 442,
-    "delete": 413
+    "put": 1274,
+    "get": 1668,
+    "cas": 417,
+    "delete": 387
    },
    "unknown": 0,
    "linearizable": true,
@@ -5928,17 +5929,17 @@
    "schedule": "partition",
    "seed": 276,
    "unsafe_reads": false,
-   "ops": 4033,
+   "ops": 3685,
    "by_op": {
-    "get": 1818,
-    "delete": 389,
-    "put": 1405,
-    "cas": 421
+    "put": 1283,
+    "get": 1662,
+    "cas": 386,
+    "delete": 354
    },
-   "unknown": 0,
+   "unknown": 9,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
@@ -5949,80 +5950,80 @@
    "schedule": "isolate-leader",
    "seed": 277,
    "unsafe_reads": false,
-   "ops": 3405,
+   "ops": 3486,
    "by_op": {
-    "put": 1168,
-    "delete": 358,
-    "get": 1554,
-    "cas": 325
+    "get": 1596,
+    "put": 1209,
+    "delete": 353,
+    "cas": 328
    },
-   "unknown": 16,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.003,
-   "violation": null,
-   "faults": {
-    "isolate leader": 4
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "bridge",
-   "seed": 278,
-   "unsafe_reads": false,
-   "ops": 3923,
-   "by_op": {
-    "get": 1719,
-    "delete": 425,
-    "put": 1398,
-    "cas": 381
-   },
-   "unknown": 0,
+   "unknown": 17,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
    "violation": null,
    "faults": {
+    "isolate leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "bridge",
+   "seed": 278,
+   "unsafe_reads": false,
+   "ops": 3782,
+   "by_op": {
+    "delete": 410,
+    "get": 1647,
+    "put": 1359,
+    "cas": 366
+   },
+   "unknown": 0,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.006,
+   "violation": null,
+   "faults": {
     "bridge": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "kill",
    "seed": 279,
    "unsafe_reads": false,
-   "ops": 2682,
+   "ops": 3251,
    "by_op": {
-    "put": 1015,
-    "get": 1150,
-    "cas": 252,
-    "delete": 265
+    "put": 1196,
+    "cas": 320,
+    "get": 1416,
+    "delete": 319
    },
-   "unknown": 20,
+   "unknown": 18,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 7
    },
-   "seconds": 13.8
+   "seconds": 13.7
   },
   {
    "schedule": "kill-leader",
    "seed": 280,
    "unsafe_reads": false,
-   "ops": 2096,
+   "ops": 2149,
    "by_op": {
-    "get": 921,
-    "put": 752,
-    "cas": 216,
-    "delete": 207
+    "get": 956,
+    "delete": 212,
+    "put": 764,
+    "cas": 217
    },
-   "unknown": 35,
+   "unknown": 40,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "kill leader": 4
@@ -6033,12 +6034,12 @@
    "schedule": "packet-loss",
    "seed": 281,
    "unsafe_reads": false,
-   "ops": 3998,
+   "ops": 3972,
    "by_op": {
-    "get": 1823,
-    "delete": 434,
-    "put": 1341,
-    "cas": 400
+    "get": 1809,
+    "delete": 432,
+    "put": 1334,
+    "cas": 397
    },
    "unknown": 0,
    "linearizable": true,
@@ -6054,12 +6055,12 @@
    "schedule": "delay",
    "seed": 282,
    "unsafe_reads": false,
-   "ops": 1322,
+   "ops": 1350,
    "by_op": {
-    "put": 492,
-    "get": 575,
-    "delete": 137,
-    "cas": 118
+    "put": 503,
+    "get": 587,
+    "delete": 139,
+    "cas": 121
    },
    "unknown": 0,
    "linearizable": true,
@@ -6069,18 +6070,18 @@
    "faults": {
     "delay": 4
    },
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "schedule": "clock-skew",
    "seed": 283,
    "unsafe_reads": false,
-   "ops": 3787,
+   "ops": 3683,
    "by_op": {
-    "put": 1361,
-    "cas": 371,
-    "get": 1690,
-    "delete": 365
+    "put": 1325,
+    "get": 1641,
+    "cas": 362,
+    "delete": 355
    },
    "unknown": 0,
    "linearizable": true,
@@ -6088,7 +6089,7 @@
    "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "clock skew": 3
+    "clock skew": 4
    },
    "seconds": 12.7
   },
@@ -6096,39 +6097,39 @@
    "schedule": "membership",
    "seed": 284,
    "unsafe_reads": false,
-   "ops": 2056,
+   "ops": 2077,
    "by_op": {
-    "put": 698,
-    "get": 923,
-    "delete": 209,
-    "cas": 226
+    "get": 934,
+    "put": 700,
+    "delete": 215,
+    "cas": 228
    },
-   "unknown": 38,
+   "unknown": 40,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.0
+   "seconds": 13.8
   },
   {
    "schedule": "mixed",
    "seed": 285,
    "unsafe_reads": false,
-   "ops": 3398,
+   "ops": 3413,
    "by_op": {
-    "get": 1527,
-    "cas": 348,
-    "put": 1194,
-    "delete": 329
+    "get": 1524,
+    "put": 1206,
+    "cas": 350,
+    "delete": 333
    },
-   "unknown": 14,
+   "unknown": 12,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "packet loss": 2,
@@ -6136,18 +6137,18 @@
     "kill leader": 1,
     "isolate leader": 1
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 286,
    "unsafe_reads": false,
-   "ops": 3824,
+   "ops": 3637,
    "by_op": {
-    "get": 1734,
-    "cas": 402,
-    "put": 1304,
-    "delete": 384
+    "get": 1642,
+    "cas": 382,
+    "put": 1242,
+    "delete": 371
    },
    "unknown": 0,
    "linearizable": true,
@@ -6161,14 +6162,14 @@
    "schedule": "partition",
    "seed": 287,
    "unsafe_reads": false,
-   "ops": 3599,
+   "ops": 3682,
    "by_op": {
-    "delete": 381,
-    "get": 1650,
-    "put": 1202,
-    "cas": 366
+    "get": 1686,
+    "put": 1221,
+    "delete": 394,
+    "cas": 381
    },
-   "unknown": 6,
+   "unknown": 14,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6176,39 +6177,39 @@
    "faults": {
     "partition": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "isolate-leader",
    "seed": 288,
    "unsafe_reads": false,
-   "ops": 3460,
+   "ops": 3571,
    "by_op": {
-    "get": 1607,
-    "put": 1204,
-    "cas": 317,
-    "delete": 332
+    "get": 1651,
+    "put": 1244,
+    "delete": 340,
+    "cas": 336
    },
-   "unknown": 18,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.7
+   "seconds": 12.5
   },
   {
    "schedule": "bridge",
    "seed": 289,
    "unsafe_reads": false,
-   "ops": 3901,
+   "ops": 4074,
    "by_op": {
-    "put": 1417,
-    "delete": 398,
-    "get": 1725,
-    "cas": 361
+    "put": 1488,
+    "delete": 410,
+    "get": 1794,
+    "cas": 382
    },
    "unknown": 0,
    "linearizable": true,
@@ -6218,20 +6219,20 @@
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "kill",
    "seed": 290,
    "unsafe_reads": false,
-   "ops": 2939,
+   "ops": 3756,
    "by_op": {
-    "get": 1316,
-    "delete": 287,
-    "cas": 316,
-    "put": 1020
+    "get": 1667,
+    "cas": 423,
+    "put": 1301,
+    "delete": 365
    },
-   "unknown": 20,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6245,33 +6246,33 @@
    "schedule": "kill-leader",
    "seed": 291,
    "unsafe_reads": false,
-   "ops": 2475,
+   "ops": 2588,
    "by_op": {
-    "get": 1085,
-    "delete": 270,
-    "put": 856,
-    "cas": 264
+    "get": 1113,
+    "delete": 283,
+    "put": 911,
+    "cas": 281
    },
-   "unknown": 29,
+   "unknown": 38,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 13.2
+   "seconds": 13.1
   },
   {
    "schedule": "packet-loss",
    "seed": 292,
    "unsafe_reads": false,
-   "ops": 3965,
+   "ops": 3985,
    "by_op": {
-    "cas": 371,
-    "put": 1448,
-    "get": 1750,
-    "delete": 396
+    "get": 1761,
+    "cas": 370,
+    "delete": 397,
+    "put": 1457
    },
    "unknown": 0,
    "linearizable": true,
@@ -6281,18 +6282,18 @@
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "delay",
    "seed": 293,
    "unsafe_reads": false,
-   "ops": 1559,
+   "ops": 1496,
    "by_op": {
-    "get": 690,
-    "put": 545,
-    "delete": 156,
-    "cas": 168
+    "put": 521,
+    "get": 667,
+    "delete": 149,
+    "cas": 159
    },
    "unknown": 0,
    "linearizable": true,
@@ -6308,12 +6309,12 @@
    "schedule": "clock-skew",
    "seed": 294,
    "unsafe_reads": false,
-   "ops": 3803,
+   "ops": 3731,
    "by_op": {
-    "get": 1696,
-    "cas": 384,
-    "put": 1344,
-    "delete": 379
+    "delete": 374,
+    "get": 1669,
+    "put": 1310,
+    "cas": 378
    },
    "unknown": 0,
    "linearizable": true,
@@ -6323,42 +6324,42 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 295,
    "unsafe_reads": false,
-   "ops": 2046,
+   "ops": 2153,
    "by_op": {
-    "put": 785,
-    "get": 852,
-    "delete": 203,
-    "cas": 206
+    "get": 899,
+    "put": 819,
+    "delete": 215,
+    "cas": 220
    },
-   "unknown": 51,
+   "unknown": 55,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "member removed": 2,
     "member added": 2
    },
-   "seconds": 13.3
+   "seconds": 13.5
   },
   {
    "schedule": "mixed",
    "seed": 296,
    "unsafe_reads": false,
-   "ops": 3622,
+   "ops": 3899,
    "by_op": {
-    "get": 1648,
-    "put": 1238,
-    "cas": 384,
-    "delete": 352
+    "put": 1334,
+    "cas": 417,
+    "delete": 377,
+    "get": 1771
    },
-   "unknown": 6,
+   "unknown": 5,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6367,18 +6368,18 @@
     "partition": 2,
     "clock skew": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 297,
    "unsafe_reads": false,
-   "ops": 3878,
+   "ops": 3804,
    "by_op": {
-    "get": 1737,
-    "put": 1352,
-    "delete": 381,
-    "cas": 408
+    "get": 1702,
+    "put": 1332,
+    "delete": 374,
+    "cas": 396
    },
    "unknown": 0,
    "linearizable": true,
@@ -6392,35 +6393,35 @@
    "schedule": "partition",
    "seed": 298,
    "unsafe_reads": false,
-   "ops": 3547,
+   "ops": 3462,
    "by_op": {
-    "put": 1233,
-    "delete": 346,
-    "cas": 347,
-    "get": 1621
+    "put": 1197,
+    "cas": 336,
+    "delete": 337,
+    "get": 1592
    },
-   "unknown": 11,
+   "unknown": 13,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.007,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 5
    },
-   "seconds": 12.8
+   "seconds": 12.7
   },
   {
    "schedule": "isolate-leader",
    "seed": 299,
    "unsafe_reads": false,
-   "ops": 3322,
+   "ops": 3348,
    "by_op": {
-    "delete": 343,
-    "get": 1465,
-    "cas": 374,
-    "put": 1140
+    "delete": 356,
+    "cas": 370,
+    "put": 1149,
+    "get": 1473
    },
-   "unknown": 16,
+   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6428,44 +6429,44 @@
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 300,
    "unsafe_reads": false,
-   "ops": 4066,
+   "ops": 3931,
    "by_op": {
-    "get": 1840,
-    "put": 1439,
-    "delete": 392,
-    "cas": 395
+    "get": 1781,
+    "put": 1393,
+    "cas": 376,
+    "delete": 381
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.006,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 5
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 301,
    "unsafe_reads": false,
-   "ops": 2764,
+   "ops": 2964,
    "by_op": {
-    "get": 1225,
-    "delete": 302,
-    "put": 957,
-    "cas": 280
+    "get": 1315,
+    "delete": 322,
+    "put": 1026,
+    "cas": 301
    },
-   "unknown": 15,
+   "unknown": 18,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill": 6
@@ -6476,14 +6477,14 @@
    "schedule": "kill-leader",
    "seed": 302,
    "unsafe_reads": false,
-   "ops": 2089,
+   "ops": 2129,
    "by_op": {
-    "put": 758,
-    "cas": 213,
-    "get": 904,
-    "delete": 214
+    "put": 777,
+    "delete": 214,
+    "cas": 223,
+    "get": 915
    },
-   "unknown": 32,
+   "unknown": 34,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -6491,23 +6492,23 @@
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "packet-loss",
    "seed": 303,
    "unsafe_reads": false,
-   "ops": 3758,
+   "ops": 4072,
    "by_op": {
-    "get": 1712,
-    "put": 1314,
-    "cas": 344,
-    "delete": 388
+    "get": 1852,
+    "put": 1425,
+    "cas": 376,
+    "delete": 419
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 5
@@ -6518,12 +6519,12 @@
    "schedule": "delay",
    "seed": 304,
    "unsafe_reads": false,
-   "ops": 1460,
+   "ops": 1541,
    "by_op": {
-    "get": 676,
-    "put": 503,
-    "cas": 141,
-    "delete": 140
+    "put": 530,
+    "get": 702,
+    "cas": 156,
+    "delete": 153
    },
    "unknown": 0,
    "linearizable": true,
@@ -6533,18 +6534,18 @@
    "faults": {
     "delay": 5
    },
-   "seconds": 13.0
+   "seconds": 12.7
   },
   {
    "schedule": "clock-skew",
    "seed": 305,
    "unsafe_reads": false,
-   "ops": 3947,
+   "ops": 3828,
    "by_op": {
-    "get": 1860,
-    "put": 1327,
-    "cas": 394,
-    "delete": 366
+    "get": 1810,
+    "put": 1280,
+    "cas": 379,
+    "delete": 359
    },
    "unknown": 0,
    "linearizable": true,
@@ -6554,20 +6555,20 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "membership",
    "seed": 306,
    "unsafe_reads": false,
-   "ops": 3405,
+   "ops": 3330,
    "by_op": {
-    "get": 1485,
-    "cas": 352,
-    "put": 1230,
-    "delete": 338
+    "get": 1452,
+    "delete": 333,
+    "cas": 348,
+    "put": 1197
    },
-   "unknown": 18,
+   "unknown": 23,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6576,20 +6577,20 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.0
+   "seconds": 13.3
   },
   {
    "schedule": "mixed",
    "seed": 307,
    "unsafe_reads": false,
-   "ops": 3728,
+   "ops": 3584,
    "by_op": {
-    "get": 1663,
-    "put": 1341,
-    "delete": 360,
-    "cas": 364
+    "get": 1605,
+    "put": 1274,
+    "delete": 351,
+    "cas": 354
    },
-   "unknown": 11,
+   "unknown": 10,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6600,84 +6601,84 @@
     "isolate leader": 1,
     "partition": 1
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "none",
    "seed": 308,
    "unsafe_reads": false,
-   "ops": 3744,
+   "ops": 3910,
    "by_op": {
-    "delete": 371,
-    "put": 1217,
-    "get": 1766,
-    "cas": 390
+    "get": 1837,
+    "put": 1276,
+    "delete": 388,
+    "cas": 409
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.006,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {},
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "partition",
    "seed": 309,
    "unsafe_reads": false,
-   "ops": 3825,
+   "ops": 3840,
    "by_op": {
-    "get": 1742,
-    "put": 1316,
-    "delete": 378,
-    "cas": 389
+    "get": 1748,
+    "put": 1324,
+    "delete": 383,
+    "cas": 385
    },
    "unknown": 4,
-   "linearizable": true,
-   "gave_up": false,
-   "check_seconds": 0.004,
-   "violation": null,
-   "faults": {
-    "partition": 5
-   },
-   "seconds": 12.6
-  },
-  {
-   "schedule": "isolate-leader",
-   "seed": 310,
-   "unsafe_reads": false,
-   "ops": 3314,
-   "by_op": {
-    "get": 1509,
-    "put": 1158,
-    "delete": 311,
-    "cas": 336
-   },
-   "unknown": 22,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "isolate leader": 4
+    "partition": 5
    },
    "seconds": 12.7
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 310,
+   "unsafe_reads": false,
+   "ops": 3336,
+   "by_op": {
+    "get": 1523,
+    "put": 1175,
+    "delete": 315,
+    "cas": 323
+   },
+   "unknown": 15,
+   "linearizable": true,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": null,
+   "faults": {
+    "isolate leader": 4
+   },
+   "seconds": 12.6
   },
   {
    "schedule": "bridge",
    "seed": 311,
    "unsafe_reads": false,
-   "ops": 3735,
+   "ops": 3955,
    "by_op": {
-    "get": 1694,
-    "put": 1303,
-    "cas": 364,
-    "delete": 374
+    "get": 1800,
+    "put": 1379,
+    "cas": 387,
+    "delete": 389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.006,
    "violation": null,
    "faults": {
     "bridge": 4
@@ -6688,14 +6689,14 @@
    "schedule": "kill",
    "seed": 312,
    "unsafe_reads": false,
-   "ops": 2849,
+   "ops": 3130,
    "by_op": {
-    "get": 1306,
-    "put": 995,
-    "delete": 277,
-    "cas": 271
+    "put": 1088,
+    "get": 1438,
+    "delete": 303,
+    "cas": 301
    },
-   "unknown": 20,
+   "unknown": 10,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -6703,60 +6704,60 @@
    "faults": {
     "kill": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "kill-leader",
    "seed": 313,
    "unsafe_reads": false,
-   "ops": 2098,
+   "ops": 2282,
    "by_op": {
-    "put": 767,
-    "get": 934,
-    "delete": 190,
-    "cas": 207
+    "put": 835,
+    "get": 1014,
+    "cas": 222,
+    "delete": 211
    },
-   "unknown": 44,
+   "unknown": 32,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.003,
    "violation": null,
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.7
+   "seconds": 12.5
   },
   {
    "schedule": "packet-loss",
    "seed": 314,
    "unsafe_reads": false,
-   "ops": 3971,
+   "ops": 4048,
    "by_op": {
-    "get": 1773,
-    "put": 1381,
-    "delete": 411,
-    "cas": 406
+    "put": 1409,
+    "delete": 423,
+    "get": 1800,
+    "cas": 416
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "packet loss": 4
    },
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "schedule": "delay",
    "seed": 315,
    "unsafe_reads": false,
-   "ops": 1584,
+   "ops": 1539,
    "by_op": {
-    "put": 579,
-    "get": 704,
-    "cas": 161,
-    "delete": 140
+    "cas": 154,
+    "get": 689,
+    "put": 560,
+    "delete": 136
    },
    "unknown": 0,
    "linearizable": true,
@@ -6766,18 +6767,18 @@
    "faults": {
     "delay": 5
    },
-   "seconds": 12.9
+   "seconds": 12.6
   },
   {
    "schedule": "clock-skew",
    "seed": 316,
    "unsafe_reads": false,
-   "ops": 3891,
+   "ops": 3843,
    "by_op": {
-    "get": 1752,
-    "put": 1345,
-    "delete": 402,
-    "cas": 392
+    "put": 1333,
+    "delete": 394,
+    "cas": 388,
+    "get": 1728
    },
    "unknown": 0,
    "linearizable": true,
@@ -6787,20 +6788,20 @@
    "faults": {
     "clock skew": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "membership",
    "seed": 317,
    "unsafe_reads": false,
-   "ops": 2669,
+   "ops": 2755,
    "by_op": {
-    "get": 1166,
-    "cas": 307,
-    "delete": 264,
-    "put": 932
+    "get": 1215,
+    "cas": 311,
+    "put": 959,
+    "delete": 270
    },
-   "unknown": 32,
+   "unknown": 28,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -6809,26 +6810,26 @@
     "member removed": 3,
     "member added": 3
    },
-   "seconds": 13.2
+   "seconds": 13.3
   },
   {
    "schedule": "mixed",
    "seed": 318,
    "unsafe_reads": false,
-   "ops": 3807,
+   "ops": 3332,
    "by_op": {
-    "put": 1373,
-    "get": 1673,
-    "cas": 389,
-    "delete": 372
+    "get": 1477,
+    "cas": 330,
+    "put": 1201,
+    "delete": 324
    },
-   "unknown": 3,
+   "unknown": 12,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
-    "clock skew": 2,
+    "clock skew": 1,
     "kill": 2,
     "partition": 2
    },
@@ -6838,36 +6839,36 @@
    "schedule": "none",
    "seed": 319,
    "unsafe_reads": false,
-   "ops": 3850,
+   "ops": 3843,
    "by_op": {
-    "delete": 371,
+    "delete": 370,
     "put": 1337,
-    "get": 1759,
-    "cas": 383
+    "get": 1755,
+    "cas": 381
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {},
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "partition",
    "seed": 320,
    "unsafe_reads": false,
-   "ops": 3874,
+   "ops": 3700,
    "by_op": {
-    "put": 1310,
-    "delete": 412,
-    "cas": 375,
-    "get": 1777
+    "put": 1260,
+    "cas": 360,
+    "delete": 385,
+    "get": 1695
    },
-   "unknown": 7,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "partition": 4
@@ -6878,59 +6879,59 @@
    "schedule": "isolate-leader",
    "seed": 321,
    "unsafe_reads": false,
-   "ops": 3319,
+   "ops": 3355,
    "by_op": {
-    "get": 1489,
-    "delete": 349,
-    "put": 1165,
-    "cas": 316
+    "get": 1513,
+    "put": 1176,
+    "delete": 355,
+    "cas": 311
    },
-   "unknown": 17,
+   "unknown": 19,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.005,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "isolate leader": 4
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "bridge",
    "seed": 322,
    "unsafe_reads": false,
-   "ops": 3977,
+   "ops": 3923,
    "by_op": {
-    "get": 1790,
-    "put": 1409,
-    "cas": 410,
-    "delete": 368
+    "delete": 364,
+    "cas": 404,
+    "get": 1766,
+    "put": 1389
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.006,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "bridge": 4
    },
-   "seconds": 12.7
+   "seconds": 12.6
   },
   {
    "schedule": "kill",
    "seed": 323,
    "unsafe_reads": false,
-   "ops": 3543,
+   "ops": 3541,
    "by_op": {
-    "get": 1593,
-    "cas": 373,
-    "put": 1203,
-    "delete": 374
+    "get": 1594,
+    "cas": 374,
+    "put": 1204,
+    "delete": 369
    },
    "unknown": 9,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.004,
    "violation": null,
    "faults": {
     "kill": 7
@@ -6941,14 +6942,14 @@
    "schedule": "kill-leader",
    "seed": 324,
    "unsafe_reads": false,
-   "ops": 2196,
+   "ops": 2366,
    "by_op": {
-    "cas": 219,
-    "get": 982,
-    "put": 781,
-    "delete": 214
+    "get": 1066,
+    "put": 838,
+    "delete": 225,
+    "cas": 237
    },
-   "unknown": 37,
+   "unknown": 33,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.003,
@@ -6956,18 +6957,18 @@
    "faults": {
     "kill leader": 4
    },
-   "seconds": 12.9
+   "seconds": 13.0
   },
   {
    "schedule": "packet-loss",
    "seed": 325,
    "unsafe_reads": false,
-   "ops": 4045,
+   "ops": 4015,
    "by_op": {
-    "put": 1448,
-    "get": 1767,
-    "cas": 414,
-    "delete": 416
+    "put": 1433,
+    "get": 1750,
+    "delete": 415,
+    "cas": 417
    },
    "unknown": 0,
    "linearizable": true,
@@ -6977,39 +6978,39 @@
    "faults": {
     "packet loss": 5
    },
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "schedule": "delay",
    "seed": 326,
    "unsafe_reads": false,
-   "ops": 1499,
+   "ops": 1520,
    "by_op": {
-    "get": 680,
-    "cas": 141,
-    "put": 542,
-    "delete": 136
+    "put": 548,
+    "get": 688,
+    "cas": 146,
+    "delete": 138
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.003,
+   "check_seconds": 0.002,
    "violation": null,
    "faults": {
     "delay": 5
    },
-   "seconds": 12.8
+   "seconds": 12.6
   },
   {
    "schedule": "clock-skew",
    "seed": 327,
    "unsafe_reads": false,
-   "ops": 3786,
+   "ops": 3616,
    "by_op": {
-    "put": 1336,
-    "cas": 368,
-    "get": 1701,
-    "delete": 381
+    "get": 1624,
+    "delete": 361,
+    "put": 1282,
+    "cas": 349
    },
    "unknown": 0,
    "linearizable": true,
@@ -7025,17 +7026,17 @@
    "schedule": "membership",
    "seed": 328,
    "unsafe_reads": false,
-   "ops": 4045,
+   "ops": 4188,
    "by_op": {
-    "cas": 389,
-    "put": 1403,
-    "get": 1841,
-    "delete": 412
+    "cas": 394,
+    "put": 1467,
+    "get": 1904,
+    "delete": 423
    },
    "unknown": 0,
    "linearizable": true,
    "gave_up": false,
-   "check_seconds": 0.004,
+   "check_seconds": 0.005,
    "violation": null,
    "faults": {
     "member removed": 4,
@@ -7047,14 +7048,14 @@
    "schedule": "mixed",
    "seed": 329,
    "unsafe_reads": false,
-   "ops": 3636,
+   "ops": 3744,
    "by_op": {
-    "get": 1584,
-    "put": 1282,
-    "delete": 406,
-    "cas": 364
+    "put": 1317,
+    "get": 1637,
+    "delete": 411,
+    "cas": 379
    },
-   "unknown": 11,
+   "unknown": 8,
    "linearizable": true,
    "gave_up": false,
    "check_seconds": 0.004,
@@ -7063,7 +7064,7 @@
     "bridge": 4,
     "isolate leader": 2
    },
-   "seconds": 12.5
+   "seconds": 12.6
   }
  ]
 }

@@ -489,9 +489,10 @@ func (r *Raft) handleSnapshot(m Message) {
 		return
 	}
 	if r.log.matchTerm(s.Index, s.Term) {
-		// We already have everything it covers.
+		// We already have everything it covers. Only up to the snapshot is known to match the
+		// leader: entries after it may be from another term, so do not claim them.
 		r.commit = s.Index
-		r.send(Message{Type: MsgAppResp, To: m.From, Index: r.log.last()})
+		r.send(Message{Type: MsgAppResp, To: m.From, Index: s.Index})
 		return
 	}
 	cp := *s
