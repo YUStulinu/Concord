@@ -1,0 +1,57 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Raft and server (Go), checker (Rust), chaos harness (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: node/go.mod, cache-dependency-path: "**/go.sum" }
+      - uses: dtolnay/rust-toolchain@stable
+        with: { components: "clippy, rustfmt" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.14" }
+      - name: Go formatting and vet
+        run: |
+          for m in node bench; do (cd $m && test -z "$(gofmt -l .)" && go vet ./...) || exit 1; done
+      - name: Raft simulation (chaos, Figure 8, membership, snapshots), storage and cluster tests
+        working-directory: node
+        run: go test ./...
+      - name: Checker
+        working-directory: checker
+        run: |
+          cargo fmt --check
+          cargo clippy --all-targets -- -D warnings
+          cargo test --release
+      - name: Binaries
+        run: |
+          mkdir -p bin
+          (cd node && go build -o ../bin/concord ./cmd/concord)
+          (cd checker && cargo build --release && cp target/release/concord-check ../bin/)
+          (cd bench && go build -o ../bin/concord-bench .)
+      - name: Chaos harness against real processes (isolated leader; deliberate stale reads caught)
+        working-directory: chaos
+        run: |
+          pip install -r requirements.txt
+          python -m pytest -q
+      - name: A short chaos campaign (11 schedules)
+        working-directory: chaos
+        run: |
+          python -m concord_chaos.run --runs 11 --seconds 5 --out ../ci-chaos.json
+          python -c "import json,sys; s=json.load(open('../ci-chaos.json'))['summary']['total']; print(s); sys.exit(0 if s['not_linearizable']==0 and s['gave_up']==0 else 1)"
+
+  dashboard:
+    name: Dashboard (TypeScript)
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: dashboard } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm, cache-dependency-path: dashboard/package-lock.json }
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

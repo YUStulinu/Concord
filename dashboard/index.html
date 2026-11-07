@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concord — cluster</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Concord</h1>
+        <p id="headline">connecting…</p>
+      </div>
+      <div class="controls">
+        <button id="load" type="button">Start writes</button>
+        <button id="heal" type="button">Heal everything</button>
+      </div>
+    </header>
+    <main>
+      <section id="servers"></section>
+      <section class="panel">
+        <h2>Logs <span class="hint">the last 40 entries of each server, by index; colour = term, dot = membership change, faded = not yet committed</span></h2>
+        <div id="logs"></div>
+      </section>
+      <section class="panel">
+        <h2>Events</h2>
+        <ol id="events"></ol>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

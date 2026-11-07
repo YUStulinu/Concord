@@ -1,0 +1,8 @@
+{
+  "rust-analyzer.linkedProjects": ["checker/Cargo.toml"],
+  "go.toolsEnvVars": { "GOFLAGS": "" },
+  "python.defaultInterpreterPath": "${workspaceFolder}/chaos/.venv/Scripts/python.exe",
+  "python.testing.pytestEnabled": true,
+  "python.testing.cwd": "${workspaceFolder}/chaos",
+  "files.exclude": { "**/target": true, "**/node_modules": true, "**/.venv": true }
+}

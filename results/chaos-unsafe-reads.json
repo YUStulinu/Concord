@@ -1,0 +1,2549 @@
+{
+ "summary": {
+  "total": {
+   "runs": 22,
+   "linearizable": 0,
+   "not_linearizable": 20,
+   "gave_up": 2,
+   "ops": 69090,
+   "unknown": 5325
+  },
+  "by_schedule": {
+   "none": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 7757,
+    "unknown": 0
+   },
+   "partition": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 6487,
+    "unknown": 27
+   },
+   "isolate-leader": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 5668,
+    "unknown": 72
+   },
+   "bridge": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 6689,
+    "unknown": 661
+   },
+   "kill": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 1,
+    "gave_up": 1,
+    "ops": 5831,
+    "unknown": 2389
+   },
+   "kill-leader": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 5566,
+    "unknown": 60
+   },
+   "packet-loss": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 7265,
+    "unknown": 671
+   },
+   "delay": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 1,
+    "gave_up": 1,
+    "ops": 3459,
+    "unknown": 1372
+   },
+   "clock-skew": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 7898,
+    "unknown": 0
+   },
+   "membership": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 5661,
+    "unknown": 50
+   },
+   "mixed": {
+    "runs": 2,
+    "linearizable": 0,
+    "not_linearizable": 2,
+    "gave_up": 0,
+    "ops": 6809,
+    "unknown": 23
+   }
+  }
+ },
+ "runs": [
+  {
+   "schedule": "none",
+   "seed": 0,
+   "unsafe_reads": true,
+   "ops": 3904,
+   "by_op": {
+    "get": 1730,
+    "put": 1401,
+    "cas": 404,
+    "delete": 369
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.008,
+   "violation": {
+    "key": "k0",
+    "ops": 703,
+    "steps": 1572,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 145,
+      "stuck_at": [
+       {
+        "call": 7393667510600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 4,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7393670297300,
+        "value": null
+       },
+       {
+        "call": 7393676924900,
+        "expect": "1-104",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 8,
+        "result": {
+         "found": true,
+         "value": "4-107"
+        },
+        "ret": 7393696501400,
+        "value": "8-121"
+       },
+       {
+        "call": 7393686967100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2,
+        "result": {
+         "found": true,
+         "value": "4-107"
+        },
+        "ret": 7393689100400,
+        "value": null
+       },
+       {
+        "call": 7393707998200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7393752070000,
+        "value": "5-111"
+       },
+       {
+        "call": 7393709094000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 1,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7393728278400,
+        "value": null
+       },
+       {
+        "call": 7393709455900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 3,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7393728667500,
+        "value": "3-118"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {},
+   "seconds": 12.4
+  },
+  {
+   "schedule": "partition",
+   "seed": 1,
+   "unsafe_reads": true,
+   "ops": 3115,
+   "by_op": {
+    "get": 1341,
+    "put": 1124,
+    "delete": 315,
+    "cas": 335
+   },
+   "unknown": 10,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": {
+    "key": "k0",
+    "ops": 516,
+    "steps": 46,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 7,
+      "stuck_at": [
+       {
+        "call": 7404628646200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 14,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7404630249900,
+        "value": null
+       },
+       {
+        "call": 7404642477300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 17,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7404644386600,
+        "value": null
+       },
+       {
+        "call": 7404649184800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 17,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7404686143000,
+        "value": "17-15"
+       },
+       {
+        "call": 7404656000900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 20,
+        "result": {
+         "found": true,
+         "value": "16-5"
+        },
+        "ret": 7404657889500,
+        "value": null
+       },
+       {
+        "call": 7404662069800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 18,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7404682478900,
+        "value": "18-8"
+       },
+       {
+        "call": 7404678523300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 19,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7404680974600,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "partition": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 2,
+   "unsafe_reads": true,
+   "ops": 2957,
+   "by_op": {
+    "get": 1324,
+    "put": 1033,
+    "cas": 295,
+    "delete": 305
+   },
+   "unknown": 32,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.009,
+   "violation": {
+    "key": "k0",
+    "ops": 492,
+    "steps": 1701,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 30,
+      "stuck_at": [
+       {
+        "call": 7418035281900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 45,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7418037961900,
+        "value": null
+       },
+       {
+        "call": 7418045779100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 44,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7418069245500,
+        "value": "44-27"
+       },
+       {
+        "call": 7418055770700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 43,
+        "result": {
+         "found": true,
+         "value": "46-27"
+        },
+        "ret": 7418060321200,
+        "value": null
+       },
+       {
+        "call": 7418061866400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 45,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7418079464800,
+        "value": null
+       },
+       {
+        "call": 7418065992500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 48,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7418107271300,
+        "value": "48-25"
+       },
+       {
+        "call": 7418086374300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 50,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7418167030400,
+        "value": "50-31"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "isolate leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "bridge",
+   "seed": 3,
+   "unsafe_reads": true,
+   "ops": 3590,
+   "by_op": {
+    "get": 1609,
+    "put": 1198,
+    "delete": 391,
+    "cas": 392
+   },
+   "unknown": 4,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": {
+    "key": "k0",
+    "ops": 598,
+    "steps": 1001,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 42,
+      "stuck_at": [
+       {
+        "call": 7430464197900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 80,
+        "result": {
+         "found": true,
+         "value": "81-31"
+        },
+        "ret": 7430467354600,
+        "value": null
+       },
+       {
+        "call": 7430471992000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 85,
+        "result": {
+         "found": true,
+         "value": "81-31"
+        },
+        "ret": 7430474048100,
+        "value": null
+       },
+       {
+        "call": 7430474069000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 85,
+        "result": {
+         "found": true,
+         "value": "81-31"
+        },
+        "ret": 7430476432500,
+        "value": null
+       },
+       {
+        "call": 7430489907700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 86,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7430491935600,
+        "value": null
+       },
+       {
+        "call": 7430497404900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 86,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7430499838400,
+        "value": null
+       },
+       {
+        "call": 7430511434900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 81,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7430534043200,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "bridge": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "kill",
+   "seed": 4,
+   "unsafe_reads": true,
+   "ops": 3402,
+   "by_op": {
+    "get": 1554,
+    "put": 1172,
+    "cas": 327,
+    "delete": 349
+   },
+   "unknown": 11,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": {
+    "key": "k0",
+    "ops": 533,
+    "steps": 42,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 4,
+      "stuck_at": [
+       {
+        "call": 7442711167000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 99,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7442713591500,
+        "value": null
+       },
+       {
+        "call": 7442717981400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 99,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7442769065600,
+        "value": "99-7"
+       },
+       {
+        "call": 7442734088900,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 97,
+        "result": {
+         "found": true,
+         "value": "98-7"
+        },
+        "ret": 7442750510000,
+        "value": "97-5"
+       },
+       {
+        "call": 7442745360100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 98,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7442781182200,
+        "value": "98-10"
+       },
+       {
+        "call": 7442804489600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 102,
+        "result": {
+         "found": true,
+         "value": "98-10"
+        },
+        "ret": 7442806350600,
+        "value": null
+       },
+       {
+        "call": 7442806367200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 102,
+        "result": {
+         "found": true,
+         "value": "98-10"
+        },
+        "ret": 7442808685000,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "kill": 5
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 5,
+   "unsafe_reads": true,
+   "ops": 2775,
+   "by_op": {
+    "get": 1280,
+    "cas": 282,
+    "put": 962,
+    "delete": 251
+   },
+   "unknown": 32,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": {
+    "key": "k0",
+    "ops": 471,
+    "steps": 2038,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 36,
+      "stuck_at": [
+       {
+        "call": 7456507712800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 130,
+        "result": {
+         "found": true,
+         "value": "118-3"
+        },
+        "ret": 7456510352200,
+        "value": null
+       },
+       {
+        "call": 7456511833600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 128,
+        "result": {
+         "found": true,
+         "value": "130-9"
+        },
+        "ret": 7456514594700,
+        "value": null
+       },
+       {
+        "call": 7456516618100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 119,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7456535975800,
+        "value": "119-60"
+       },
+       {
+        "call": 7456584349300,
+        "expect": "128-37",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 119,
+        "result": {
+         "found": true,
+         "value": "119-60"
+        },
+        "ret": 7456605523900,
+        "value": "119-63"
+       },
+       {
+        "call": 7456595855800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 129,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7456613516900,
+        "value": null
+       },
+       {
+        "call": 7456601820700,
+        "expect": "128-48",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 123,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7456621065500,
+        "value": "123-61"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 13.2
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 6,
+   "unsafe_reads": true,
+   "ops": 3434,
+   "by_op": {
+    "get": 1201,
+    "put": 1443,
+    "delete": 387,
+    "cas": 403
+   },
+   "unknown": 671,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": {
+    "key": "k0",
+    "ops": 591,
+    "steps": 211,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 13,
+      "stuck_at": [
+       {
+        "call": 7468680171000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 162,
+        "result": {
+         "found": true,
+         "value": "164-2"
+        },
+        "ret": 7468682692100,
+        "value": null
+       },
+       {
+        "call": 7468680316400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 168,
+        "result": {
+         "found": true,
+         "value": "164-2"
+        },
+        "ret": 7468682852100,
+        "value": null
+       },
+       {
+        "call": 7468684883000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 169,
+        "result": {
+         "found": true,
+         "value": "164-5"
+        },
+        "ret": 7468686266000,
+        "value": null
+       },
+       {
+        "call": 7468697426500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 166,
+        "result": {
+         "found": true,
+         "value": "164-5"
+        },
+        "ret": 7468698735600,
+        "value": null
+       },
+       {
+        "call": 7468705801800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 165,
+        "result": {
+         "found": true,
+         "value": "166-4"
+        },
+        "ret": 7468707118900,
+        "value": null
+       },
+       {
+        "call": 7468723503100,
+        "expect": "164-2",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 162,
+        "result": {
+         "found": true,
+         "value": "168-17"
+        },
+        "ret": 7468762960700,
+        "value": "162-12"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "packet loss": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "delay",
+   "seed": 7,
+   "unsafe_reads": true,
+   "ops": 1924,
+   "by_op": {
+    "get": 266,
+    "put": 1036,
+    "cas": 314,
+    "delete": 308
+   },
+   "unknown": 1372,
+   "linearizable": false,
+   "gave_up": true,
+   "check_seconds": 56.101,
+   "violation": {
+    "key": "k0",
+    "ops": 329,
+    "steps": 239,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 8,
+      "stuck_at": [
+       {
+        "call": 7481423557500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 856,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7481427815400,
+        "value": null
+       },
+       {
+        "call": 7481436772900,
+        "expect": null,
+        "key": "k0",
+        "ok": null,
+        "op": "put",
+        "process": 858,
+        "result": null,
+        "ret": null,
+        "value": "858-16"
+       },
+       {
+        "call": 7481444557400,
+        "expect": null,
+        "key": "k0",
+        "ok": null,
+        "op": "put",
+        "process": 860,
+        "result": null,
+        "ret": null,
+        "value": "860-18"
+       },
+       {
+        "call": 7481524615200,
+        "expect": null,
+        "key": "k0",
+        "ok": null,
+        "op": "put",
+        "process": 868,
+        "result": null,
+        "ret": null,
+        "value": "868-7"
+       },
+       {
+        "call": 7481537670600,
+        "expect": null,
+        "key": "k0",
+        "ok": null,
+        "op": "put",
+        "process": 872,
+        "result": null,
+        "ret": null,
+        "value": "872-8"
+       },
+       {
+        "call": 7481543892400,
+        "expect": null,
+        "key": "k0",
+        "ok": null,
+        "op": "put",
+        "process": 873,
+        "result": null,
+        "ret": null,
+        "value": "873-6"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "delay": 4
+   },
+   "seconds": 69.0
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 8,
+   "unsafe_reads": true,
+   "ops": 3966,
+   "by_op": {
+    "get": 1788,
+    "put": 1414,
+    "cas": 343,
+    "delete": 421
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 670,
+    "steps": 804,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 44,
+      "stuck_at": [
+       {
+        "call": 7550703463500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2229,
+        "result": {
+         "found": true,
+         "value": "2236-27"
+        },
+        "ret": 7550705276900,
+        "value": null
+       },
+       {
+        "call": 7550719276300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2230,
+        "result": {
+         "found": true,
+         "value": "2229-41"
+        },
+        "ret": 7550721152100,
+        "value": null
+       },
+       {
+        "call": 7550744881100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2233,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7550786789600,
+        "value": "2233-36"
+       },
+       {
+        "call": 7550760057200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2232,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7550807264200,
+        "value": "2232-33"
+       },
+       {
+        "call": 7550767287100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2229,
+        "result": {
+         "found": true,
+         "value": "2231-29"
+        },
+        "ret": 7550769468400,
+        "value": null
+       },
+       {
+        "call": 7550769487900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2229,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7550791018200,
+        "value": "2229-47"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "membership",
+   "seed": 9,
+   "unsafe_reads": true,
+   "ops": 2532,
+   "by_op": {
+    "get": 1142,
+    "put": 883,
+    "delete": 258,
+    "cas": 249
+   },
+   "unknown": 48,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 413,
+    "steps": 32,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 5,
+      "stuck_at": [
+       {
+        "call": 7562926481300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2245,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7562928137000,
+        "value": null
+       },
+       {
+        "call": 7562930943400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2245,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7562950445100,
+        "value": "2245-6"
+       },
+       {
+        "call": 7562946641400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2248,
+        "result": {
+         "found": true,
+         "value": "2245-6"
+        },
+        "ret": 7562968419900,
+        "value": null
+       },
+       {
+        "call": 7562976244100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2241,
+        "result": {
+         "found": true,
+         "value": "2245-6"
+        },
+        "ret": 7562977653100,
+        "value": null
+       },
+       {
+        "call": 7562981282600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2243,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7563045627100,
+        "value": "2243-5"
+       },
+       {
+        "call": 7562993683100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2247,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7563034930300,
+        "value": "2247-5"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "member removed": 3,
+    "member added": 3
+   },
+   "seconds": 13.3
+  },
+  {
+   "schedule": "mixed",
+   "seed": 10,
+   "unsafe_reads": true,
+   "ops": 3828,
+   "by_op": {
+    "get": 1729,
+    "put": 1359,
+    "cas": 366,
+    "delete": 374
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": {
+    "key": "k0",
+    "ops": 561,
+    "steps": 402,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 38,
+      "stuck_at": [
+       {
+        "call": 7576741050700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2304,
+        "result": {
+         "found": true,
+         "value": "2304-31"
+        },
+        "ret": 7576742619200,
+        "value": null
+       },
+       {
+        "call": 7576757523700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2307,
+        "result": {
+         "found": true,
+         "value": "2301-28"
+        },
+        "ret": 7576759483800,
+        "value": null
+       },
+       {
+        "call": 7576765643900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2308,
+        "result": {
+         "found": true,
+         "value": "2301-28"
+        },
+        "ret": 7576769296100,
+        "value": null
+       },
+       {
+        "call": 7576769615900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2303,
+        "result": {
+         "found": true,
+         "value": "2301-28"
+        },
+        "ret": 7576771869400,
+        "value": null
+       },
+       {
+        "call": 7576770775800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2301,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7576809831800,
+        "value": "2301-31"
+       },
+       {
+        "call": 7576789711400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2304,
+        "result": {
+         "found": true,
+         "value": "2301-28"
+        },
+        "ret": 7576792432100,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "packet loss": 1,
+    "partition": 2,
+    "clock skew": 2,
+    "bridge": 2
+   },
+   "seconds": 12.8
+  },
+  {
+   "schedule": "none",
+   "seed": 11,
+   "unsafe_reads": true,
+   "ops": 3853,
+   "by_op": {
+    "get": 1741,
+    "cas": 382,
+    "put": 1322,
+    "delete": 408
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.005,
+   "violation": {
+    "key": "k0",
+    "ops": 603,
+    "steps": 225,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 35,
+      "stuck_at": [
+       {
+        "call": 7589644533200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2317,
+        "result": {
+         "found": true,
+         "value": "2319-30"
+        },
+        "ret": 7589647376800,
+        "value": null
+       },
+       {
+        "call": 7589651222700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2314,
+        "result": {
+         "found": true,
+         "value": "2317-30"
+        },
+        "ret": 7589654506700,
+        "value": null
+       },
+       {
+        "call": 7589680371300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2319,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7589726782800,
+        "value": "2319-36"
+       },
+       {
+        "call": 7589700791300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2316,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7589718878900,
+        "value": "2316-33"
+       },
+       {
+        "call": 7589710487300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2317,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7589730689000,
+        "value": null
+       },
+       {
+        "call": 7589713527900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2320,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7589715795700,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {},
+   "seconds": 12.7
+  },
+  {
+   "schedule": "partition",
+   "seed": 12,
+   "unsafe_reads": true,
+   "ops": 3372,
+   "by_op": {
+    "get": 1553,
+    "put": 1179,
+    "delete": 317,
+    "cas": 323
+   },
+   "unknown": 17,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 570,
+    "steps": 444,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 13,
+      "stuck_at": [
+       {
+        "call": 7602334639500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2336,
+        "result": {
+         "found": true,
+         "value": "2335-8"
+        },
+        "ret": 7602337698000,
+        "value": null
+       },
+       {
+        "call": 7602342963700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2335,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7602385086000,
+        "value": "2335-13"
+       },
+       {
+        "call": 7602364547700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2337,
+        "result": {
+         "found": true,
+         "value": "2336-10"
+        },
+        "ret": 7602367215500,
+        "value": null
+       },
+       {
+        "call": 7602378766000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2339,
+        "result": {
+         "found": true,
+         "value": "2336-10"
+        },
+        "ret": 7602382105000,
+        "value": null
+       },
+       {
+        "call": 7602380527100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2333,
+        "result": {
+         "found": true,
+         "value": "2336-10"
+        },
+        "ret": 7602383219500,
+        "value": null
+       },
+       {
+        "call": 7602382129700,
+        "expect": "2336-10",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 2339,
+        "result": {
+         "found": true,
+         "value": "2335-13"
+        },
+        "ret": 7602399611600,
+        "value": "2339-26"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "partition": 4
+   },
+   "seconds": 12.8
+  },
+  {
+   "schedule": "isolate-leader",
+   "seed": 13,
+   "unsafe_reads": true,
+   "ops": 2711,
+   "by_op": {
+    "get": 1204,
+    "cas": 276,
+    "put": 967,
+    "delete": 264
+   },
+   "unknown": 40,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 451,
+    "steps": 5012,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 38,
+      "stuck_at": [
+       {
+        "call": 7615710103100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2362,
+        "result": {
+         "found": true,
+         "value": "2366-18"
+        },
+        "ret": 7615712514500,
+        "value": null
+       },
+       {
+        "call": 7615739451700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2364,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7615742622600,
+        "value": null
+       },
+       {
+        "call": 7615763293800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2365,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7615767226400,
+        "value": null
+       },
+       {
+        "call": 7615769065000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2365,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7615770879600,
+        "value": null
+       },
+       {
+        "call": 7615783024300,
+        "expect": "2366-18",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 2362,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7615822895800,
+        "value": "2362-32"
+       },
+       {
+        "call": 7615814904900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2369,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7615850563100,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "isolate leader": 5
+   },
+   "seconds": 12.8
+  },
+  {
+   "schedule": "bridge",
+   "seed": 14,
+   "unsafe_reads": true,
+   "ops": 3099,
+   "by_op": {
+    "get": 1107,
+    "delete": 402,
+    "put": 1236,
+    "cas": 354
+   },
+   "unknown": 657,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 521,
+    "steps": 100,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 12,
+      "stuck_at": [
+       {
+        "call": 7627479892600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2407,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7627480943100,
+        "value": null
+       },
+       {
+        "call": 7627480958200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2407,
+        "result": {
+         "found": true,
+         "value": "2411-8"
+        },
+        "ret": 7627482167300,
+        "value": null
+       },
+       {
+        "call": 7627506413200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2413,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7627522858700,
+        "value": "2413-8"
+       },
+       {
+        "call": 7627512112300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 2411,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7627525047300,
+        "value": null
+       },
+       {
+        "call": 7627519104800,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 2407,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7627538681600,
+        "value": null
+       },
+       {
+        "call": 7627527129700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 2410,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7627546900500,
+        "value": "2410-10"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "bridge": 5
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "kill",
+   "seed": 15,
+   "unsafe_reads": true,
+   "ops": 2429,
+   "by_op": {
+    "get": 40,
+    "cas": 445,
+    "put": 1497,
+    "delete": 447
+   },
+   "unknown": 2378,
+   "linearizable": false,
+   "gave_up": true,
+   "check_seconds": 60.011,
+   "violation": null,
+   "faults": {
+    "kill": 1
+   },
+   "seconds": 73.6
+  },
+  {
+   "schedule": "kill-leader",
+   "seed": 16,
+   "unsafe_reads": true,
+   "ops": 2791,
+   "by_op": {
+    "get": 1302,
+    "put": 912,
+    "cas": 299,
+    "delete": 278
+   },
+   "unknown": 28,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": {
+    "key": "k0",
+    "ops": 444,
+    "steps": 7399,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 51,
+      "stuck_at": [
+       {
+        "call": 7714670534600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5475,
+        "result": {
+         "found": true,
+         "value": "5473-43"
+        },
+        "ret": 7714672760000,
+        "value": null
+       },
+       {
+        "call": 7714673076700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5468,
+        "result": {
+         "found": true,
+         "value": "5472-55"
+        },
+        "ret": 7714675425800,
+        "value": null
+       },
+       {
+        "call": 7714682827200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5468,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7714723798700,
+        "value": "5468-61"
+       },
+       {
+        "call": 7714722272400,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5473,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7714762002100,
+        "value": "5473-49"
+       },
+       {
+        "call": 7714727404900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 5477,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7714743860900,
+        "value": null
+       },
+       {
+        "call": 7714731141900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5472,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7714746833500,
+        "value": "5472-59"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "kill leader": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "packet-loss",
+   "seed": 17,
+   "unsafe_reads": true,
+   "ops": 3831,
+   "by_op": {
+    "get": 1618,
+    "put": 1420,
+    "delete": 405,
+    "cas": 388
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.004,
+   "violation": {
+    "key": "k0",
+    "ops": 613,
+    "steps": 63,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 10,
+      "stuck_at": [
+       {
+        "call": 7726344692100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5505,
+        "result": {
+         "found": true,
+         "value": "5506-2"
+        },
+        "ret": 7726347673200,
+        "value": null
+       },
+       {
+        "call": 7726347705100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5505,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7726390382500,
+        "value": "5505-10"
+       },
+       {
+        "call": 7726371473100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5508,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7726390188000,
+        "value": "5508-9"
+       },
+       {
+        "call": 7726386243300,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 5511,
+        "result": {
+         "found": true,
+         "value": "5508-9"
+        },
+        "ret": 7726404786400,
+        "value": "5511-6"
+       },
+       {
+        "call": 7726414982600,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5508,
+        "result": {
+         "found": true,
+         "value": "5508-9"
+        },
+        "ret": 7726416397900,
+        "value": null
+       },
+       {
+        "call": 7726442786500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5510,
+        "result": {
+         "found": true,
+         "value": "5508-9"
+        },
+        "ret": 7726444313600,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "packet loss": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "delay",
+   "seed": 18,
+   "unsafe_reads": true,
+   "ops": 1535,
+   "by_op": {
+    "get": 668,
+    "put": 541,
+    "cas": 157,
+    "delete": 169
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.002,
+   "violation": {
+    "key": "k0",
+    "ops": 264,
+    "steps": 43,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 3,
+      "stuck_at": [
+       {
+        "call": 7739033832900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5519,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7739037426800,
+        "value": null
+       },
+       {
+        "call": 7739052237400,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 5521,
+        "result": {
+         "found": true,
+         "value": "5518-1"
+        },
+        "ret": 7739183983800,
+        "value": "5521-2"
+       },
+       {
+        "call": 7739052545100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5520,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7739054676500,
+        "value": null
+       },
+       {
+        "call": 7739054690700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5520,
+        "result": {
+         "found": true,
+         "value": "5518-1"
+        },
+        "ret": 7739070338400,
+        "value": null
+       },
+       {
+        "call": 7739160579300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5523,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7739280267000,
+        "value": "5523-3"
+       },
+       {
+        "call": 7739176883500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5517,
+        "result": {
+         "found": true,
+         "value": "5518-1"
+        },
+        "ret": 7739178979700,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "delay": 4
+   },
+   "seconds": 12.6
+  },
+  {
+   "schedule": "clock-skew",
+   "seed": 19,
+   "unsafe_reads": true,
+   "ops": 3932,
+   "by_op": {
+    "get": 1795,
+    "put": 1341,
+    "delete": 416,
+    "cas": 380
+   },
+   "unknown": 0,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 625,
+    "steps": 105,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 14,
+      "stuck_at": [
+       {
+        "call": 7751737183100,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5533,
+        "result": {
+         "found": true,
+         "value": "5533-15"
+        },
+        "ret": 7751739264700,
+        "value": null
+       },
+       {
+        "call": 7751777820000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5535,
+        "result": {
+         "found": true,
+         "value": "5535-11"
+        },
+        "ret": 7751781673200,
+        "value": null
+       },
+       {
+        "call": 7751778112700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5529,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7751798552500,
+        "value": "5529-16"
+       },
+       {
+        "call": 7751782915700,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5534,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7751837587000,
+        "value": "5534-14"
+       },
+       {
+        "call": 7751819570500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5531,
+        "result": {
+         "found": true,
+         "value": "5529-16"
+        },
+        "ret": 7751822570500,
+        "value": null
+       },
+       {
+        "call": 7751836402900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5535,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7751880269200,
+        "value": "5535-21"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "clock skew": 4
+   },
+   "seconds": 12.7
+  },
+  {
+   "schedule": "membership",
+   "seed": 20,
+   "unsafe_reads": true,
+   "ops": 3129,
+   "by_op": {
+    "get": 1399,
+    "put": 1113,
+    "delete": 298,
+    "cas": 319
+   },
+   "unknown": 2,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 489,
+    "steps": 331,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 42,
+      "stuck_at": [
+       {
+        "call": 7765134499300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5544,
+        "result": {
+         "found": true,
+         "value": "5548-37"
+        },
+        "ret": 7765136605100,
+        "value": null
+       },
+       {
+        "call": 7765153737900,
+        "expect": "5543-19",
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 5546,
+        "result": {
+         "found": true,
+         "value": "5541-37"
+        },
+        "ret": 7765173179500,
+        "value": "5546-41"
+       },
+       {
+        "call": 7765157776500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5544,
+        "result": {
+         "found": true,
+         "value": "5541-37"
+        },
+        "ret": 7765159693200,
+        "value": null
+       },
+       {
+        "call": 7765165777000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "delete",
+        "process": 5543,
+        "result": {
+         "found": true,
+         "value": null
+        },
+        "ret": 7765184084400,
+        "value": null
+       },
+       {
+        "call": 7765167300000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5544,
+        "result": {
+         "found": true,
+         "value": "5541-37"
+        },
+        "ret": 7765169150800,
+        "value": null
+       },
+       {
+        "call": 7765173196500,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5546,
+        "result": {
+         "found": true,
+         "value": "5541-37"
+        },
+        "ret": 7765175871300,
+        "value": null
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "member removed": 4,
+    "member added": 4
+   },
+   "seconds": 13.1
+  },
+  {
+   "schedule": "mixed",
+   "seed": 21,
+   "unsafe_reads": true,
+   "ops": 2981,
+   "by_op": {
+    "get": 1374,
+    "put": 1015,
+    "cas": 301,
+    "delete": 291
+   },
+   "unknown": 23,
+   "linearizable": false,
+   "gave_up": false,
+   "check_seconds": 0.003,
+   "violation": {
+    "key": "k0",
+    "ops": 534,
+    "steps": 458,
+    "verdict": {
+     "NotLinearizable": {
+      "linearized": 32,
+      "stuck_at": [
+       {
+        "call": 7778181662200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5568,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7778209063100,
+        "value": null
+       },
+       {
+        "call": 7778209087200,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "get",
+        "process": 5568,
+        "result": {
+         "found": true,
+         "value": "5570-16"
+        },
+        "ret": 7778211520400,
+        "value": null
+       },
+       {
+        "call": 7778222707000,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5569,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7778243021100,
+        "value": "5569-22"
+       },
+       {
+        "call": 7778225685300,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5564,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7778243399000,
+        "value": "5564-25"
+       },
+       {
+        "call": 7778245966900,
+        "expect": null,
+        "key": "k0",
+        "ok": true,
+        "op": "put",
+        "process": 5564,
+        "result": {
+         "found": false,
+         "value": null
+        },
+        "ret": 7778285496200,
+        "value": "5564-27"
+       },
+       {
+        "call": 7778259763200,
+        "expect": null,
+        "key": "k0",
+        "ok": false,
+        "op": "cas",
+        "process": 5569,
+        "result": {
+         "found": true,
+         "value": "5564-25"
+        },
+        "ret": 7778279152900,
+        "value": "5569-24"
+       }
+      ]
+     }
+    }
+   },
+   "faults": {
+    "isolate leader": 2,
+    "kill leader": 2,
+    "kill": 2
+   },
+   "seconds": 12.7
+  }
+ ]
+}
